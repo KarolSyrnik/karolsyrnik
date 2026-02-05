@@ -1,0 +1,1151 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, viewport-fit=cover" />
+  <title>Karteikarten</title>
+  <style>
+    :root{
+      --bg: #f5f6f8;
+      --fg: #111;
+      --muted: #6b7280;
+      --card: #ffffff;
+      --border: rgba(0,0,0,.10);
+      --shadow: 0 16px 40px rgba(0,0,0,.12);
+      --accent: #2563eb;
+      --danger: #ef4444;
+
+      --cardW: 14cm;
+      --cardH: 10cm;
+
+      --radius: 18px;
+      --headerH: 44px;
+      --footerH: 54px;
+      --pad: 16px;
+      --imgMaxH: 260px;
+    }
+
+    .dark{
+      --bg: #000;
+      --fg: #f3f4f6;
+      --muted: #a1a1aa;
+      --card: #0b0b0b;
+      --border: rgba(255,255,255,.12);
+      --shadow: 0 18px 46px rgba(0,0,0,.55);
+      --accent: #60a5fa;
+      --danger: #fb7185;
+    }
+
+    *{ box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--fg);
+      overflow: hidden;
+    }
+
+    /* Top bar */
+    .topbar{
+      position: fixed;
+      top: 0;
+      left: 0; right: 0;
+      padding: calc(10px + env(safe-area-inset-top)) 12px 10px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+      z-index: 10;
+      background: linear-gradient(to bottom, rgba(0,0,0,.10), rgba(0,0,0,0));
+      pointer-events: none;
+    }
+    .topbar > *{ pointer-events: auto; }
+
+    .controls{
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      background: color-mix(in srgb, var(--card) 86%, transparent);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 10px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.10);
+      backdrop-filter: blur(10px);
+    }
+
+    .select{
+      position: relative;
+      min-width: 220px;
+      max-width: 55vw;
+    }
+    select{
+      width: 100%;
+      appearance: none;
+      -webkit-appearance: none;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 40px 10px 12px;
+      background: var(--card);
+      color: var(--fg);
+      font-weight: 600;
+      outline: none;
+      box-shadow: 0 6px 16px rgba(0,0,0,.08);
+    }
+    .select:after{
+      content: "▾";
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      pointer-events: none;
+      font-size: 14px;
+    }
+
+    .btn{
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--fg);
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-weight: 700;
+      cursor: pointer;
+      outline: none;
+      box-shadow: 0 6px 16px rgba(0,0,0,.08);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .btn:hover{ transform: translateY(-1px); }
+    .btn:active{ transform: translateY(0px) scale(.99); }
+    .btn.primary{
+      background: color-mix(in srgb, var(--accent) 12%, var(--card));
+      border-color: color-mix(in srgb, var(--accent) 30%, var(--border));
+    }
+    .btn.danger{
+      background: color-mix(in srgb, var(--danger) 10%, var(--card));
+      border-color: color-mix(in srgb, var(--danger) 30%, var(--border));
+    }
+    .btn.icon{
+      padding: 10px 12px;
+      min-width: 44px;
+      justify-content: center;
+    }
+
+    .rightControls{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      justify-content:flex-end;
+      background: color-mix(in srgb, var(--card) 86%, transparent);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 10px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.10);
+      backdrop-filter: blur(10px);
+    }
+
+    input[type="file"]{ display:none; }
+
+    /* Main layout */
+    .stage{
+      height: 100%;
+      padding-top: 86px;
+      padding-bottom: calc(22px + env(safe-area-inset-bottom));
+      display: grid;
+      grid-template-columns: 1fr minmax(0, auto) 1fr;
+      align-items: center;
+      justify-items: center;
+      gap: 10px;
+    }
+
+    .arrow{
+      font-size: 56px;
+      line-height: 1;
+      color: var(--fg);
+      opacity: .85;
+      cursor: pointer;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+      padding: 18px 14px;
+      border-radius: 18px;
+      border: 1px solid transparent;
+      transition: transform .08s ease, opacity .12s ease, border-color .12s ease, background .12s ease;
+    }
+    .arrow:hover{
+      opacity: 1;
+      border-color: var(--border);
+      background: color-mix(in srgb, var(--card) 80%, transparent);
+    }
+    .arrow:active{ transform: scale(.98); }
+
+    .arrow.left{ transform: scaleX(-1); }
+
+    /* Card */
+    .cardWrap{
+      position: relative;
+      width: var(--cardW);
+      height: var(--cardH);
+      max-width: 92vw;
+      max-height: 70vh;
+      aspect-ratio: 14 / 10;
+      filter: drop-shadow(0 18px 40px rgba(0,0,0,.18));
+      transform: translateZ(0);
+    }
+
+    .card3d{
+      width: 100%;
+      height: 100%;
+      perspective: 1400px;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .cardInner{
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform .55s cubic-bezier(.2,.9,.2,1);
+    }
+    .cardInner.flipped{ transform: rotateY(180deg); }
+
+    .side{
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      border-radius: var(--radius);
+      background: var(--card);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .back{ transform: rotateY(180deg); }
+
+    .header{
+      height: var(--headerH);
+      display:flex;
+      align-items:center;
+      padding: 0 14px;
+      font-weight: 900;
+      letter-spacing: .2px;
+      border-bottom: 1px solid var(--border);
+      background: color-mix(in srgb, var(--accent) 10%, var(--card));
+      flex: 0 0 auto;
+      gap: 10px;
+      min-width: 0;
+    }
+    .topic{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 14px;
+    }
+    .meta{
+      margin-left: auto;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .body{
+      flex: 1 1 auto;
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      min-height: 0; /* important for scroll */
+    }
+    .vlabel{
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 10px 0;
+      color: var(--muted);
+      border-right: 1px solid var(--border);
+      font-weight: 800;
+      font-size: 11px; /* smaller */
+      letter-spacing: .8px;
+      user-select: none;
+    }
+
+    .content{
+      min-height: 0;
+      padding: 14px 16px 10px;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .contentInner{
+      padding-top: 10px; /* "etwas nach unten versetzt" */
+      font-size: 18px;
+      line-height: 1.35;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .solutionTitle{
+      display:block;
+      font-weight: 900;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .markerImg{
+      display:block;
+      width: 100%;
+      height: auto;
+      max-height: var(--imgMaxH);
+      object-fit: contain;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin: 12px 0;
+      background: color-mix(in srgb, var(--card) 70%, transparent);
+    }
+
+    .footer{
+      height: var(--footerH);
+      border-top: 1px solid var(--border);
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      padding: 0 14px;
+      flex: 0 0 auto;
+      background: color-mix(in srgb, var(--card) 92%, transparent);
+    }
+
+    .dots{
+      display:flex;
+      gap: 8px;
+      align-items:center;
+    }
+    .dot{
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 2px solid color-mix(in srgb, var(--muted) 55%, transparent);
+      background: transparent;
+      opacity: .9;
+    }
+    .dot.filled{
+      background: color-mix(in srgb, var(--fg) 88%, transparent);
+      border-color: color-mix(in srgb, var(--fg) 88%, transparent);
+    }
+
+    .hint{
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      user-select: none;
+    }
+
+    .emptyState{
+      width: min(720px, 92vw);
+      margin: 0 auto;
+      text-align: center;
+      color: var(--muted);
+      font-weight: 700;
+      line-height: 1.35;
+      padding: 18px 14px;
+      border: 1px dashed var(--border);
+      border-radius: 18px;
+      background: color-mix(in srgb, var(--card) 80%, transparent);
+    }
+    .kbd{
+      display:inline-block;
+      padding: 4px 8px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 90%, transparent);
+      color: var(--fg);
+      font-weight: 900;
+      font-size: 12px;
+      margin: 0 3px;
+    }
+
+    /* Mobile tweaks */
+    @media (max-width: 520px){
+      :root{ --imgMaxH: 200px; }
+      .arrow{ font-size: 66px; padding: 22px 10px; }
+      .controls{ padding: 10px; gap: 8px; }
+      .select{ min-width: 180px; max-width: 60vw; }
+      .contentInner{ font-size: 16.5px; }
+      .topbar{
+        padding-top: calc(10px + env(safe-area-inset-top));
+      }
+      .stage{
+        padding-top: 102px;
+      }
+    }
+
+    /* Reduce motion */
+    @media (prefers-reduced-motion: reduce){
+      .cardInner{ transition: none; }
+      .btn:hover{ transform: none; }
+      .arrow:hover{ transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="controls">
+      <div class="select">
+        <select id="fileSelect" aria-label="TXT Datei auswählen"></select>
+      </div>
+
+      <label class="btn primary" for="txtInput" title="TXT Dateien hinzufügen">
+        ➕ TXT
+      </label>
+      <input id="txtInput" type="file" accept=".txt,text/plain" multiple />
+
+      <button class="btn icon" id="imgBtn" title="Bilder für diese TXT hochladen" aria-label="Bilder hochladen">🖼</button>
+      <input id="imgInput" type="file" accept="image/*" multiple />
+
+      <button class="btn icon danger" id="deleteBtn" title="Diese TXT löschen" aria-label="TXT löschen">🗑</button>
+    </div>
+
+    <div class="rightControls">
+      <button class="btn icon" id="themeBtn" title="Theme umschalten" aria-label="Theme umschalten">🌗</button>
+    </div>
+  </div>
+
+  <main class="stage" aria-live="polite">
+    <div class="arrow left" id="prevBtn" title="Vorherige Karte">➜</div>
+
+    <div class="cardWrap" id="cardWrap">
+      <div class="card3d" id="card3d" title="Klick: Flip">
+        <div class="cardInner" id="cardInner">
+          <section class="side front" id="frontSide">
+            <div class="header">
+              <div class="topic" id="frontTopic">—</div>
+              <div class="meta" id="frontMeta">—</div>
+            </div>
+            <div class="body">
+              <div class="vlabel">Frage</div>
+              <div class="content">
+                <div class="contentInner" id="frontContent"></div>
+              </div>
+            </div>
+            <div class="footer">
+              <div class="dots" id="frontDots" aria-label="Schwierigkeit">
+                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              </div>
+              <div class="hint">Klick auf Karte: Flip</div>
+            </div>
+          </section>
+
+          <section class="side back" id="backSide">
+            <div class="header">
+              <div class="topic" id="backTopic">—</div>
+              <div class="meta" id="backMeta">—</div>
+            </div>
+            <div class="body">
+              <div class="vlabel">Antwort</div>
+              <div class="content">
+                <div class="contentInner" id="backContent"></div>
+              </div>
+            </div>
+            <div class="footer">
+              <div class="dots" id="backDots" aria-label="Schwierigkeit">
+                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              </div>
+              <div class="hint">Pfeile: Navigieren</div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div class="arrow" id="nextBtn" title="Nächste Karte">➜</div>
+  </main>
+
+  <script>
+    /***********************
+     * IndexedDB (TXT + Bilder)
+     ***********************/
+    const DB_NAME = "flashcardsDB_v1";
+    const DB_VERSION = 1;
+
+    function openDB(){
+      return new Promise((resolve, reject) => {
+        const req = indexedDB.open(DB_NAME, DB_VERSION);
+        req.onupgradeneeded = (e) => {
+          const db = req.result;
+          if(!db.objectStoreNames.contains("files")){
+            const store = db.createObjectStore("files", { keyPath: "id" });
+            store.createIndex("by_name", "name", { unique: false });
+            store.createIndex("by_updatedAt", "updatedAt", { unique: false });
+          }
+          if(!db.objectStoreNames.contains("images")){
+            // key: `${fileId}::${key}`
+            const store = db.createObjectStore("images", { keyPath: "id" });
+            store.createIndex("by_file", "fileId", { unique: false });
+            store.createIndex("by_key", "key", { unique: false });
+          }
+          if(!db.objectStoreNames.contains("prefs")){
+            db.createObjectStore("prefs", { keyPath: "key" });
+          }
+        };
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = () => reject(req.error);
+      });
+    }
+
+    function tx(db, storeName, mode="readonly"){
+      return db.transaction(storeName, mode).objectStore(storeName);
+    }
+
+    function id(){
+      return (crypto?.randomUUID?.() ?? ("id_" + Math.random().toString(16).slice(2) + Date.now().toString(16)));
+    }
+
+    function normalizeKey(name){
+      // remove extension, trim, lower
+      const base = (name || "").trim().replace(/\.[^/.]+$/,"");
+      return base.toLowerCase();
+    }
+
+    /***********************
+     * Parser (robust)
+     ***********************/
+    const LABELS = ["Frage", "Schwierigkeit", "Thema", "Text", "Lösungs-Titel", "Lösung"];
+    const labelRegex = new RegExp("^\\s*(" + LABELS.map(l => l.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&")).join("|") + ")\\s*:\\s*(.*)\\s*$", "i");
+
+    function isLabelLine(line){
+      return labelRegex.test(line);
+    }
+
+    function parseTxt(raw){
+      const text = (raw || "").replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+      const lines = text.split("\n");
+
+      const cards = [];
+      let card = null;
+
+      function startCard(){
+        card = {
+          frage: "",
+          schwierigkeit: 1,
+          thema: "",
+          text: "",
+          loesungTitel: "",
+          loesung: ""
+        };
+      }
+      function pushCardIfValid(){
+        if(!card) return;
+        const hasAny =
+          (card.frage || "").trim() ||
+          (card.thema || "").trim() ||
+          (card.text || "").trim() ||
+          (card.loesungTitel || "").trim() ||
+          (card.loesung || "").trim();
+        if(hasAny) cards.push(card);
+      }
+
+      startCard();
+      let i = 0;
+
+      while(i < lines.length){
+        const line = lines[i];
+
+        const m = line.match(labelRegex);
+        if(m){
+          const label = m[1].toLowerCase();
+          let value = (m[2] ?? "").trim();
+
+          // If "Frage:" starts and current card already has content, treat as new card
+          if(label === "frage"){
+            // If current card already has some content, push and start new
+            const currentHas = (card.text || "").trim() || (card.loesung || "").trim() || (card.thema || "").trim() || (card.frage || "").trim();
+            if(currentHas){
+              pushCardIfValid();
+              startCard();
+            }
+          }
+
+          // Value may be on next line
+          if(!value){
+            let j = i + 1;
+            while(j < lines.length && lines[j].trim() === "") j++;
+            if(j < lines.length && !isLabelLine(lines[j])){
+              value = lines[j].trimEnd();
+              // Only advance i to j for single-line fields; for multiline we'll handle separately
+              i = j;
+            }
+          }
+
+          // Multiline fields: Text & Lösung
+          if(label === "text" || label === "lösung" || label === "loesung" ){
+            // gather all subsequent lines until next label line (or EOF)
+            const start = i + 1;
+            const buf = [];
+            // If we found a value on same/next line (value var), include it as first line
+            if(value) buf.push(value);
+
+            let k = start;
+            while(k < lines.length){
+              const ln = lines[k];
+              if(isLabelLine(ln)) break;
+
+              // If this looks like a new "Frage:" block without explicit label line above, it WILL match label line anyway.
+              buf.push(ln);
+              k++;
+            }
+
+            const joined = buf.join("\n").replace(/\n+$/,"").trimEnd();
+            if(label === "text") card.text = joined;
+            else card.loesung = joined;
+
+            i = k - 1; // loop will i++
+          } else if(label === "lösungs-titel" || label === "loesungs-titel"){
+            card.loesungTitel = value || "";
+          } else if(label === "thema"){
+            card.thema = value || "";
+          } else if(label === "schwierigkeit"){
+            const n = parseInt((value || "").match(/\d+/)?.[0] ?? "1", 10);
+            card.schwierigkeit = clamp(n, 1, 3);
+          } else if(label === "frage"){
+            card.frage = value || "";
+          }
+        }
+
+        i++;
+      }
+
+      pushCardIfValid();
+      return cards;
+    }
+
+    function clamp(n, a, b){
+      n = Number.isFinite(n) ? n : a;
+      return Math.max(a, Math.min(b, n));
+    }
+
+    /***********************
+     * Marker -> Images rendering
+     ***********************/
+    async function getImageBlob(db, fileId, keyLower){
+      return new Promise((resolve) => {
+        const store = tx(db, "images", "readonly");
+        const req = store.get(fileId + "::" + keyLower);
+        req.onsuccess = () => resolve(req.result?.blob || null);
+        req.onerror = () => resolve(null);
+      });
+    }
+
+    async function renderRichTextWithMarkers(container, rawText, db, fileId){
+      container.innerHTML = "";
+      const text = rawText ?? "";
+      if(!text.trim()){
+        return;
+      }
+
+      // Split by markers like #Test# (case-insensitive)
+      const parts = text.split(/#([^#]+)#/g); // odd indices are marker names
+      const frag = document.createDocumentFragment();
+
+      // Wrapper to preserve newlines while allowing images
+      const wrapper = document.createElement("div");
+      wrapper.style.whiteSpace = "pre-wrap";
+      wrapper.style.wordBreak = "break-word";
+
+      for(let idx=0; idx<parts.length; idx++){
+        if(idx % 2 === 0){
+          // normal text
+          if(parts[idx]){
+            wrapper.appendChild(document.createTextNode(parts[idx]));
+          }
+        } else {
+          const key = normalizeKey(parts[idx]);
+          if(!key) continue;
+          const blob = await getImageBlob(db, fileId, key);
+          if(!blob){
+            // marker disappears
+            continue;
+          }
+          const url = URL.createObjectURL(blob);
+          const img = document.createElement("img");
+          img.className = "markerImg";
+          img.alt = key;
+          img.src = url;
+          img.onload = () => { URL.revokeObjectURL(url); };
+          img.onerror = () => { URL.revokeObjectURL(url); };
+          wrapper.appendChild(img);
+        }
+      }
+
+      frag.appendChild(wrapper);
+      container.appendChild(frag);
+    }
+
+    /***********************
+     * App State
+     ***********************/
+    const els = {
+      fileSelect: document.getElementById("fileSelect"),
+      txtInput: document.getElementById("txtInput"),
+      imgInput: document.getElementById("imgInput"),
+      imgBtn: document.getElementById("imgBtn"),
+      deleteBtn: document.getElementById("deleteBtn"),
+      themeBtn: document.getElementById("themeBtn"),
+
+      prevBtn: document.getElementById("prevBtn"),
+      nextBtn: document.getElementById("nextBtn"),
+      card3d: document.getElementById("card3d"),
+      cardInner: document.getElementById("cardInner"),
+
+      frontTopic: document.getElementById("frontTopic"),
+      backTopic: document.getElementById("backTopic"),
+      frontMeta: document.getElementById("frontMeta"),
+      backMeta: document.getElementById("backMeta"),
+      frontContent: document.getElementById("frontContent"),
+      backContent: document.getElementById("backContent"),
+      frontDots: document.getElementById("frontDots"),
+      backDots: document.getElementById("backDots"),
+      cardWrap: document.getElementById("cardWrap"),
+      stage: document.querySelector(".stage")
+    };
+
+    let db = null;
+
+    let state = {
+      currentFileId: null,
+      files: [], // {id,name,content,updatedAt,createdAt, cardsCount}
+      cards: [],
+      idx: 0,
+      flipped: false
+    };
+
+    /***********************
+     * DB helpers (files)
+     ***********************/
+    async function dbGetAllFiles(){
+      return new Promise((resolve) => {
+        const store = tx(db, "files", "readonly");
+        const req = store.getAll();
+        req.onsuccess = () => {
+          const arr = (req.result || []).sort((a,b) => (b.updatedAt||0)-(a.updatedAt||0));
+          resolve(arr);
+        };
+        req.onerror = () => resolve([]);
+      });
+    }
+
+    async function dbPutFile(file){
+      return new Promise((resolve, reject) => {
+        const store = tx(db, "files", "readwrite");
+        const req = store.put(file);
+        req.onsuccess = () => resolve(true);
+        req.onerror = () => reject(req.error);
+      });
+    }
+
+    async function dbDeleteFile(fileId){
+      // delete file
+      await new Promise((resolve) => {
+        const store = tx(db, "files", "readwrite");
+        const req = store.delete(fileId);
+        req.onsuccess = () => resolve(true);
+        req.onerror = () => resolve(false);
+      });
+      // delete images for file
+      await new Promise((resolve) => {
+        const t = db.transaction("images", "readwrite");
+        const store = t.objectStore("images");
+        const idx = store.index("by_file");
+        const req = idx.openCursor(IDBKeyRange.only(fileId));
+        req.onsuccess = (e) => {
+          const cur = e.target.result;
+          if(cur){
+            store.delete(cur.primaryKey);
+            cur.continue();
+          }
+        };
+        t.oncomplete = () => resolve(true);
+        t.onerror = () => resolve(true);
+      });
+    }
+
+    async function dbSetPref(key, value){
+      return new Promise((resolve) => {
+        const store = tx(db, "prefs", "readwrite");
+        const req = store.put({ key, value });
+        req.onsuccess = () => resolve(true);
+        req.onerror = () => resolve(false);
+      });
+    }
+    async function dbGetPref(key){
+      return new Promise((resolve) => {
+        const store = tx(db, "prefs", "readonly");
+        const req = store.get(key);
+        req.onsuccess = () => resolve(req.result?.value ?? null);
+        req.onerror = () => resolve(null);
+      });
+    }
+
+    /***********************
+     * UI rendering
+     ***********************/
+    function setDots(container, difficulty){
+      const dots = Array.from(container.querySelectorAll(".dot"));
+      dots.forEach((d, i) => d.classList.toggle("filled", i < difficulty));
+    }
+
+    function setEmptyState(show){
+      if(show){
+        els.cardWrap.innerHTML = `
+          <div class="emptyState">
+            <div style="font-size:18px; font-weight:900; color: var(--fg); margin-bottom:8px;">Keine Karten geladen</div>
+            <div>Lade eine oder mehrere <span class="kbd">.txt</span> Dateien über <span class="kbd">➕ TXT</span> hoch.</div>
+            <div style="margin-top:10px;">Navigation: <span class="kbd">←</span> / <span class="kbd">→</span> &nbsp; Flip: <span class="kbd">Klick</span></div>
+          </div>
+        `;
+      } else {
+        // restore cardWrap if it was replaced
+        if(!document.getElementById("card3d")){
+          location.reload(); // simplest safe restore; should not happen often
+        }
+      }
+    }
+
+    function renderFileSelect(){
+      els.fileSelect.innerHTML = "";
+      if(state.files.length === 0){
+        const opt = document.createElement("option");
+        opt.value = "";
+        opt.textContent = "Keine TXT gespeichert";
+        els.fileSelect.appendChild(opt);
+        els.fileSelect.disabled = true;
+        els.imgBtn.disabled = true;
+        els.deleteBtn.disabled = true;
+        return;
+      }
+
+      els.fileSelect.disabled = false;
+      els.imgBtn.disabled = false;
+      els.deleteBtn.disabled = false;
+
+      for(const f of state.files){
+        const opt = document.createElement("option");
+        opt.value = f.id;
+        opt.textContent = f.name;
+        els.fileSelect.appendChild(opt);
+      }
+      if(state.currentFileId){
+        els.fileSelect.value = state.currentFileId;
+      } else {
+        state.currentFileId = state.files[0].id;
+        els.fileSelect.value = state.currentFileId;
+      }
+    }
+
+    async function renderCard(){
+      const total = state.cards.length;
+      if(total === 0){
+        setEmptyState(true);
+        return;
+      }
+      // ensure normal card exists
+      if(!document.getElementById("card3d")){
+        location.reload();
+        return;
+      }
+
+      setEmptyState(false);
+
+      state.idx = ((state.idx % total) + total) % total;
+      const c = state.cards[state.idx];
+
+      const topic = (c.thema || "").trim() || "—";
+      const meta = `${state.idx + 1} / ${total}`;
+
+      els.frontTopic.textContent = topic;
+      els.backTopic.textContent = topic;
+      els.frontMeta.textContent = meta;
+      els.backMeta.textContent = meta;
+
+      setDots(els.frontDots, clamp(c.schwierigkeit || 1, 1, 3));
+      setDots(els.backDots, clamp(c.schwierigkeit || 1, 1, 3));
+
+      // Render front content (Text)
+      await renderRichTextWithMarkers(els.frontContent, (c.text || "").trim(), db, state.currentFileId);
+
+      // Render back content (Lösungs-Titel + Lösung)
+      els.backContent.innerHTML = "";
+      const hasTitle = (c.loesungTitel || "").trim();
+      if(hasTitle){
+        const st = document.createElement("span");
+        st.className = "solutionTitle";
+        st.textContent = c.loesungTitel.trim();
+        els.backContent.appendChild(st);
+      }
+      const solutionBox = document.createElement("div");
+      els.backContent.appendChild(solutionBox);
+      await renderRichTextWithMarkers(solutionBox, (c.loesung || "").trim(), db, state.currentFileId);
+
+      // Reset scroll positions per side
+      document.querySelectorAll(".side .content").forEach(el => el.scrollTop = 0);
+
+      // Keep flip state, but update label content already handled by CSS; no change needed
+    }
+
+    function setFlipped(on){
+      state.flipped = !!on;
+      els.cardInner.classList.toggle("flipped", state.flipped);
+    }
+
+    function prev(){
+      if(state.cards.length === 0) return;
+      state.idx = (state.idx - 1 + state.cards.length) % state.cards.length;
+      setFlipped(false);
+      renderCard();
+    }
+
+    function next(){
+      if(state.cards.length === 0) return;
+      state.idx = (state.idx + 1) % state.cards.length;
+      setFlipped(false);
+      renderCard();
+    }
+
+    /***********************
+     * Loading / switching files
+     ***********************/
+    async function loadFile(fileId){
+      const f = state.files.find(x => x.id === fileId);
+      if(!f){
+        state.cards = [];
+        state.idx = 0;
+        setFlipped(false);
+        await renderCard();
+        return;
+      }
+      state.currentFileId = f.id;
+      await dbSetPref("currentFileId", state.currentFileId);
+
+      const cards = parseTxt(f.content || "");
+      state.cards = cards;
+      state.idx = 0;
+      setFlipped(false);
+      await renderCard();
+    }
+
+    async function refreshFilesAndUI(){
+      const files = await dbGetAllFiles();
+      state.files = files.map(f => ({
+        ...f,
+        cardsCount: parseTxt(f.content || "").length
+      }));
+      renderFileSelect();
+    }
+
+    /***********************
+     * TXT upload
+     ***********************/
+    async function handleTxtUpload(fileList){
+      const files = Array.from(fileList || []).filter(f => f && (f.type === "text/plain" || f.name.toLowerCase().endsWith(".txt") || !f.type));
+      for(const file of files){
+        const content = await file.text();
+        const now = Date.now();
+        const rec = {
+          id: id(),
+          name: file.name.replace(/\.txt$/i, "") || ("TXT " + new Date(now).toLocaleString()),
+          content,
+          createdAt: now,
+          updatedAt: now
+        };
+        await dbPutFile(rec);
+        state.currentFileId = rec.id;
+      }
+      await refreshFilesAndUI();
+      if(state.currentFileId){
+        els.fileSelect.value = state.currentFileId;
+        await loadFile(state.currentFileId);
+      }
+      els.txtInput.value = "";
+    }
+
+    /***********************
+     * Image upload (per TXT)
+     ***********************/
+    async function putImage(fileId, fileObj){
+      const key = normalizeKey(fileObj.name);
+      if(!key) return;
+
+      const blob = fileObj; // File is a Blob
+      const rec = {
+        id: fileId + "::" + key,
+        fileId,
+        key,
+        blob,
+        name: fileObj.name,
+        updatedAt: Date.now()
+      };
+
+      await new Promise((resolve) => {
+        const store = tx(db, "images", "readwrite");
+        const req = store.put(rec);
+        req.onsuccess = () => resolve(true);
+        req.onerror = () => resolve(false);
+      });
+    }
+
+    async function handleImageUpload(fileList){
+      const fileId = state.currentFileId;
+      if(!fileId) return;
+
+      const imgs = Array.from(fileList || []).filter(f => f && (f.type.startsWith("image/") || !f.type));
+      for(const img of imgs){
+        await putImage(fileId, img);
+      }
+      els.imgInput.value = "";
+
+      // Re-render current card to show newly available markers
+      await renderCard();
+    }
+
+    /***********************
+     * Delete current TXT
+     ***********************/
+    async function deleteCurrentFile(){
+      const fileId = state.currentFileId;
+      if(!fileId) return;
+
+      const f = state.files.find(x => x.id === fileId);
+      const name = f?.name ?? "diese Datei";
+      const ok = confirm(`„${name}“ wirklich löschen?\n\nTXT + alle dazugehörigen Bilder werden lokal entfernt.`);
+      if(!ok) return;
+
+      await dbDeleteFile(fileId);
+
+      // choose next file
+      await refreshFilesAndUI();
+      const pref = await dbGetPref("currentFileId");
+      if(state.files.length === 0){
+        state.currentFileId = null;
+        state.cards = [];
+        state.idx = 0;
+        setFlipped(false);
+        await renderCard();
+        return;
+      }
+
+      // If deleted file was current, pick first
+      if(!state.files.some(x => x.id === pref)){
+        state.currentFileId = state.files[0].id;
+        await dbSetPref("currentFileId", state.currentFileId);
+      } else {
+        state.currentFileId = pref;
+      }
+      renderFileSelect();
+      await loadFile(state.currentFileId);
+    }
+
+    /***********************
+     * Theme
+     ***********************/
+    function applyTheme(theme){
+      document.documentElement.classList.toggle("dark", theme === "dark");
+    }
+
+    async function toggleTheme(){
+      const isDark = document.documentElement.classList.contains("dark");
+      const next = isDark ? "light" : "dark";
+      applyTheme(next);
+      await dbSetPref("theme", next);
+    }
+
+    /***********************
+     * Events
+     ***********************/
+    function wireEvents(){
+      els.prevBtn.addEventListener("click", prev);
+      els.nextBtn.addEventListener("click", next);
+
+      els.card3d.addEventListener("click", (e) => {
+        // avoid flipping when user selects text/scrolls? keep simple
+        setFlipped(!state.flipped);
+      });
+
+      els.fileSelect.addEventListener("change", async () => {
+        const id = els.fileSelect.value;
+        if(!id) return;
+        await loadFile(id);
+      });
+
+      els.txtInput.addEventListener("change", async () => {
+        if(els.txtInput.files?.length){
+          await handleTxtUpload(els.txtInput.files);
+        }
+      });
+
+      els.imgBtn.addEventListener("click", () => {
+        if(!state.currentFileId) return;
+        els.imgInput.click();
+      });
+
+      els.imgInput.addEventListener("change", async () => {
+        if(els.imgInput.files?.length){
+          await handleImageUpload(els.imgInput.files);
+        }
+      });
+
+      els.deleteBtn.addEventListener("click", deleteCurrentFile);
+
+      els.themeBtn.addEventListener("click", toggleTheme);
+
+      // Keyboard navigation
+      window.addEventListener("keydown", (e) => {
+        if(e.key === "ArrowLeft"){ e.preventDefault(); prev(); }
+        if(e.key === "ArrowRight"){ e.preventDefault(); next(); }
+        if(e.key === " " || e.key === "Enter"){
+          // Flip (only if not focused in select)
+          const tag = (document.activeElement?.tagName || "").toLowerCase();
+          if(tag !== "select" && tag !== "option" && tag !== "button"){
+            e.preventDefault();
+            setFlipped(!state.flipped);
+          }
+        }
+      }, { passive: false });
+    }
+
+    /***********************
+     * Init
+     ***********************/
+    (async function init(){
+      db = await openDB();
+
+      const theme = await dbGetPref("theme");
+      applyTheme(theme || "light");
+
+      await refreshFilesAndUI();
+
+      const prefFileId = await dbGetPref("currentFileId");
+      if(prefFileId && state.files.some(f => f.id === prefFileId)){
+        state.currentFileId = prefFileId;
+      } else if(state.files.length){
+        state.currentFileId = state.files[0].id;
+      }
+
+      renderFileSelect();
+      wireEvents();
+
+      if(state.currentFileId){
+        await loadFile(state.currentFileId);
+      } else {
+        state.cards = [];
+        await renderCard();
+      }
+    })();
+  </script>
+</body>
+</html>
