@@ -473,41 +473,79 @@
     }
 
     
+
+    function minutesToTimeString(totalMinutes) {
+      const normalized = ((totalMinutes % (24 * 60)) + (24 * 60)) % (24 * 60);
+      const h = Math.floor(normalized / 60);
+      const m = normalized % 60;
+      return `${h.toString().padStart(2, "0")}:${m.toString().padStart(2, "0")}`;
+    }
+
+    function setBreakStartForMultiRows(tag, minutes) {
+      const tbody = document.getElementById(`${tag}_zeiten`);
+      if (!tbody) return false;
+
+      const rows = Array.from(tbody.rows);
+      if (rows.length <= 1) return false;
+
+      const lastRow = rows[rows.length - 1];
+      const previousRow = rows[rows.length - 2];
+
+      const previousGehtInput = previousRow.querySelector(".geht");
+      const lastKommtInput = lastRow.querySelector(".kommt");
+      const lastGehtInput = lastRow.querySelector(".geht");
+
+      if (!previousGehtInput || !lastKommtInput || !lastGehtInput) return false;
+
+      const previousGeht = parseTimeToMinutes(previousGehtInput.value);
+      if (previousGeht === null) return false;
+
+      lastKommtInput.value = "";
+      lastKommtInput.value = minutesToTimeString(previousGeht + minutes);
+
+      lastGehtInput.value = "";
+      return true;
+    }
+
 function pause30(tag) {
-  lastPauseAction = 30;
-  selectedPauseOverride = 30;
-  overtimeNextNoPause = false;
+      lastPauseAction = 30;
+      selectedPauseOverride = null;
+      overtimeNextNoPause = false;
 
-  const rows = document.getElementById(`${tag}_zeiten`).rows.length;
-  const pauseInput = document.getElementById(`${tag}_pause`);
+      const rows = document.getElementById(`${tag}_zeiten`).rows.length;
+      const pauseInput = document.getElementById(`${tag}_pause`);
 
-  if (rows === 1 && pauseInput) {
-    pauseInput.value = "";
-    pauseInput.value = "30";
-  }
+      if (rows === 1 && pauseInput) {
+        pauseInput.value = "";
+        pauseInput.value = "30";
+        clearLastGehtValue(tag);
+      } else {
+        setBreakStartForMultiRows(tag, 30);
+      }
 
-  clearLastGehtValue(tag);
-  computeDeparture(tag);
-  updateCountdown();
-}
+      computeDeparture(tag);
+      updateCountdown();
+    }
 
 function pause45(tag) {
-  lastPauseAction = 45;
-  selectedPauseOverride = 45;
-  overtimeNextNoPause = false;
+      lastPauseAction = 45;
+      selectedPauseOverride = null;
+      overtimeNextNoPause = false;
 
-  const rows = document.getElementById(`${tag}_zeiten`).rows.length;
-  const pauseInput = document.getElementById(`${tag}_pause`);
+      const rows = document.getElementById(`${tag}_zeiten`).rows.length;
+      const pauseInput = document.getElementById(`${tag}_pause`);
 
-  if (rows === 1 && pauseInput) {
-    pauseInput.value = "";
-    pauseInput.value = "45";
-  }
+      if (rows === 1 && pauseInput) {
+        pauseInput.value = "";
+        pauseInput.value = "45";
+        clearLastGehtValue(tag);
+      } else {
+        setBreakStartForMultiRows(tag, 45);
+      }
 
-  clearLastGehtValue(tag);
-  computeDeparture(tag);
-  updateCountdown();
-}
+      computeDeparture(tag);
+      updateCountdown();
+    }
 
 
 function setPauseAndComputeDeparture(tag, minutes) {
