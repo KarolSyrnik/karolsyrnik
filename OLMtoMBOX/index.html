@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OLM zu MBOX Converter v2</title>
+<style>
+  body{margin:0;background:#0d0d0d;color:#eee;font-family:Arial,Helvetica,sans-serif;padding:30px}
+  .box{max-width:900px;margin:auto;background:#151515;border:1px solid #333;border-radius:12px;padding:24px}
+  h1{margin-top:0}.row{margin:18px 0}input,button{font-size:16px}
+  input[type=file]{width:100%;padding:14px;border:1px solid #444;border-radius:8px;background:#101010;color:#eee}
+  button{padding:12px 18px;border:0;border-radius:8px;background:#bcd4ff;color:#111;font-weight:bold;cursor:pointer}
+  button:disabled{opacity:.5;cursor:not-allowed}
+  progress{width:100%;height:22px}.log{white-space:pre-wrap;background:#050505;border:1px solid #333;border-radius:8px;padding:14px;min-height:160px}
+  .hint{color:#bbb;font-size:14px;line-height:1.5}
+</style>
+</head>
+<body>
+<div class="box">
+  <h1>OLM zu MBOX Converter v2</h1>
+  <p class="hint">Läuft komplett im Browser. Bei großen OLM-Dateien bitte warten, bis der Export fertig ist.</p>
+  <div class="row"><input id="file" type="file" accept=".olm,.txt,.eml,.mbox"></div>
+  <div class="row"><button id="btn">OLM scannen und MBOX exportieren</button></div>
+  <div class="row"><progress id="bar" value="0" max="100"></progress></div>
+  <div id="log" class="log">Bereit.</div>
+</div>
+<script>
+const $ = id => document.getElementById(id);
+$('btn').addEventListener('click', run);
+
+function log(t){ $('log').textContent += '\n' + t; }
+function setLog(t){ $('log').textContent = t; }
+function pct(v){ $('bar').value = Math.max(0, Math.min(100, v)); }
+function yieldUI(){ return new Promise(r => setTimeout(r, 0)); }
+
+async function run(){
+  const f = $('file').files[0];
+  if(!f){ setLog('Bitte eine OLM-Datei auswählen.'); return; }
+  $('btn').disabled = true; pct(0); setLog('Datei: ' + f.name + ' (' + Math.round(f.size/1024/1024) + ' MB)');
+  try{
+    log('Lese Datei...');
+    const buf = await f.arrayBuffer();
+    pct(10); await yieldUI();
+    log('Scanne nach Nachrichten...');
+    const mbox = await buildMbox(buf, p => pct(10 + p * 0.8));
+    pct(95);
+    if(!mbox.count){ log('Keine Nachrichten gefunden. Diese OLM-Datei ist vermutlich vollständig binär/proprietär.'); return; }
+    log('Gefundene Nachrichten: ' + mbox.count);
+    log('MBOX-Größe: ' + Math.round(mbox.text.length/1024/1024*10)/10 + ' MB');
+    download((f.name.replace(/\.olm$/i,'') || 'export') + '.mbox', mbox.text);
+    pct(100); log('Download gestartet.');
+  }catch(e){
+    console.error(e); log('Fehler: ' + (e && e.message ? e.message : e));
+  }finally{ $('btn').disabled = false; }
+}
+
+async function buildMbox(buffer, progress){
+  const bytes = new Uint8Array(buffer);
+  const decoder = new TextDecoder('windows-1252');
+  const chunkSize = 8 * 1024 * 1024;
+  let carry = '';
+  let parts = [];
+  let count = 0;
+  let seen = new Set();
+
+  for(let pos=0; pos<bytes.length; pos += chunkSize){
+    const end = Math.min(bytes.length, pos + chunkSize);
+    const text = carry + decoder.decode(bytes.slice(pos, end));
+    const cut = Math.max(0, text.length - 300000);
+    const work = text.slice(0, cut);
+    carry = text.slice(cut);
+    const found = extractMessages(work);
+    for(const raw of found){
+      const msg = normalizeMessage(raw);
+      if(!msg) continue;
+      const key = fingerprint(msg);
+      if(seen.has(key)) continue;
+      seen.add(key);
+      parts.push(toMbox(msg));
+      count++;
+    }
+    progress((end / bytes.length) * 100);
+    await yieldUI();
+  }
+
+  for(const raw of extractMessages(carry)){
+    const msg = normalizeMessage(raw);
+    if(!msg) continue;
+    const key = fingerprint(msg);
+    if(seen.has(key)) continue;
+    seen.add(key);
+    parts.push(toMbox(msg));
+    count++;
+  }
+  return {text: parts.join('\n'), count};
+}
+
+function extractMessages(text){
+  text = text.replace(/\0/g, '').replace(/\r\n/g,'\n').replace(/\r/g,'\n');
+  const starts = [];
+  const re = /(?:^|\n)(?:Return-Path:|Received:|From:)[^\n]*(?:\n(?:Date:|Subject:|To:|Message-ID:|MIME-Version:|Received:|From:)|[\s\S]{0,1200}\n(?:Subject:|Message-ID:))/gi;
+  let m;
+  while((m = re.exec(text))){
+    const idx = m.index + (text[m.index] === '\n' ? 1 : 0);
+    starts.push(idx);
+  }
+  if(!starts.length) return [];
+  const out = [];
+  for(let i=0;i<starts.length;i++){
+    const s = starts[i];
+    const e = i+1 < starts.length ? starts[i+1] : text.length;
+    let block = text.slice(s,e).trim();
+    if(block.length < 80) continue;
+    if(!/(^|\n)Subject:/i.test(block) && !/(^|\n)Message-ID:/i.test(block)) continue;
+    out.push(block);
+  }
+  return out;
+}
+
+function normalizeMessage(raw){
+  raw = raw.replace(/\r\n/g,'\n').replace(/\r/g,'\n').replace(/\0/g,'').trim();
+  raw = raw.replace(/\n[ \t]+(?=[A-Za-z-]+:)/g, '\n');
+
+  let headerEnd = raw.search(/\n\s*\n/);
+  let head = '', body = '';
+  if(headerEnd >= 0){
+    head = raw.slice(0, headerEnd).trim();
+    body = raw.slice(headerEnd).trim();
+  } else {
+    const lines = raw.split('\n');
+    let i = 0, h = [];
+    for(; i<lines.length; i++){
+      if(/^[A-Za-z][A-Za-z0-9-]{1,60}:/.test(lines[i]) || /^[ \t]/.test(lines[i])) h.push(lines[i]);
+      else break;
+    }
+    head = h.join('\n').trim();
+    body = lines.slice(i).join('\n').trim();
+  }
+
+  if(!/(^|\n)(From|Date|Subject|To|Message-ID):/i.test(head)) return null;
+  head = cleanHeaders(head);
+  body = cleanBody(body, head);
+  if(!body && raw.length > head.length) body = cleanBody(raw.slice(head.length), head);
+  return head + '\n\n' + body.trim() + '\n';
+}
+
+function cleanHeaders(head){
+  const allowed = ['From','To','Cc','Bcc','Subject','Date','Message-ID','References','In-Reply-To','MIME-Version','Content-Type','Content-Transfer-Encoding','Reply-To','Return-Path'];
+  const lines = head.split('\n');
+  const out = [];
+  let keep = false;
+  for(const line of lines){
+    const m = line.match(/^([A-Za-z][A-Za-z0-9-]{1,60}):/);
+    if(m) keep = allowed.map(x=>x.toLowerCase()).includes(m[1].toLowerCase());
+    if(keep) out.push(decodeMimeWords(line));
+  }
+  return out.join('\n').replace(/\n{2,}/g,'\n').trim();
+}
+
+function cleanBody(body, head){
+  let b = body || '';
+  const enc = ((head.match(/Content-Transfer-Encoding:\s*([^\n]+)/i)||[])[1]||'').toLowerCase();
+  if(enc.includes('quoted-printable') || /=([0-9A-F]{2})/i.test(b)) b = decodeQP(b);
+  if(/Content-Type:\s*text\/html/i.test(head) || /&lt;|<html|<body|<br|<p[\s>]/i.test(b)) b = htmlToText(b);
+  b = decodeEntities(b);
+  b = b.replace(/^\s*Content-(Type|Transfer-Encoding):.*$/gim,'');
+  b = b.replace(/^\s*--[-_A-Za-z0-9=.]+--?\s*$/gm,'');
+  b = b.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g,'');
+  b = b.replace(/[ \t]+\n/g,'\n').replace(/\n{4,}/g,'\n\n\n').trim();
+  return b;
+}
+
+function decodeQP(s){
+  return s.replace(/=\r?\n/g,'').replace(/=([0-9A-F]{2})/gi, (_,h)=>String.fromCharCode(parseInt(h,16)));
+}
+
+function decodeEntities(s){
+  const ta = document.createElement('textarea');
+  ta.innerHTML = s;
+  return ta.value;
+}
+
+function htmlToText(s){
+  s = decodeEntities(s);
+  s = s.replace(/<style[\s\S]*?<\/style>/gi,'').replace(/<script[\s\S]*?<\/script>/gi,'');
+  s = s.replace(/<br\s*\/?\s*>/gi,'\n').replace(/<\/p>/gi,'\n').replace(/<\/div>/gi,'\n').replace(/<\/tr>/gi,'\n');
+  s = s.replace(/<li[^>]*>/gi,'\n- ');
+  s = s.replace(/<[^>]+>/g,'');
+  return s;
+}
+
+function decodeMimeWords(str){
+  return str.replace(/=\?([^?]+)\?([BQbq])\?([^?]*)\?=/g, (_,cs,enc,txt)=>{
+    try{
+      let bin = '';
+      if(enc.toUpperCase()==='B') bin = atob(txt.replace(/\s/g,''));
+      else bin = txt.replace(/_/g,' ').replace(/=([0-9A-F]{2})/gi,(_,h)=>String.fromCharCode(parseInt(h,16)));
+      const arr = Uint8Array.from(bin, c=>c.charCodeAt(0));
+      return new TextDecoder(cs).decode(arr);
+    }catch(e){ return txt; }
+  });
+}
+
+function toMbox(msg){
+  const head = msg.split('\n\n')[0];
+  const d = (head.match(/^Date:\s*(.+)$/im)||[])[1];
+  const date = d && !isNaN(new Date(d).getTime()) ? new Date(d) : new Date();
+  msg = msg.replace(/^From /gm, '>From ');
+  return 'From olm-converter ' + date.toUTCString() + '\n' + msg.trim() + '\n';
+}
+
+function fingerprint(msg){
+  const id = (msg.match(/^Message-ID:\s*(.+)$/im)||[])[1];
+  if(id) return id.trim();
+  return msg.slice(0,2000);
+}
+
+function download(name, text){
+  const blob = new Blob([text], {type:'application/mbox;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = name; document.body.appendChild(a); a.click();
+  setTimeout(()=>{URL.revokeObjectURL(url); a.remove();}, 1000);
+}
+</script>
+</body>
+</html>
