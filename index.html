@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KarolSyrnik</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      text-align: center;
+      max-width: 900px;
+      padding: 40px 20px;
+    }
+    h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    p {
+      color: #cbd5e1;
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+    .card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 18px;
+      padding: 30px;
+      text-decoration: none;
+      color: white;
+      transition: 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      background: rgba(255,255,255,0.15);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Meine GitHub-Seite</h1>
+    <p>Wähle eine Anwendung aus</p>
+
+    <div class="cards">
+      <a class="card" href="arbeitszeitrechner/">
+        <h2>Arbeitszeitrechner</h2>
+        <p>Berechne deine Arbeitszeit einfach online.</p>
+      </a>
+
+      <a class="card" href="karteikarten/">
+        <h2>Karteikarten</h2>
+        <p>Lerne mit digitalen Karteikarten direkt im Browser.</p>
+      </a>
+
+      <a class="card" href="OLMtoMBOX/">
+        <h2>OLM to MBOX</h2>
+        <p>Konvertiere OLM-Dateien in das MBOX-Format.</p>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
