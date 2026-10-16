@@ -1,0 +1,2289 @@
+Karte: 1
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist der Unterschied zwischen den Begriffen Datenschutz und Datensicherheit?
+Lösung:
+Beim Datenschutz geht es um den Schutz personenbezogener Daten von natürlichen Personen. Datenschutz zielt darauf ab, die Privatsphäre der Menschen zu schützen und Missbrauch von persönlichen Daten zu verhindern. Gesetze und Vorschriften, wie die Europäische Datenschutz-Grundverordnung (DSGVO), definieren, was im Datenschutz gilt und wie Unternehmen und Organisationen personenbezogene Daten behandeln müssen.
+
+Der Bereich der Datensicherheit umfasst den Schutz von Daten gegen Verlust, Manipulation, Beschädigung oder unautorisierten Zugriff, unabhängig davon, ob diese Daten einen Personenbezug aufweisen oder nicht.
+
+Karte: 2
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Welche Betroffenenrechte gibt es laut DSGVO?
+Lösung:
+Die DSGVO nennt die folgenden Betroffenenrechte:
+- Recht auf Information
+- Recht auf Auskunft
+- Recht auf Berichtigung
+- Recht auf Löschung
+- Recht auf Einschränkung der Verarbeitung
+- Recht auf Datenübertragbarkeit
+- Recht auf Widerspruch
+
+Karte: 3
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Das Datenschutzrecht basiert auf dem Verbotsprinzip mit Erlaubnisvorbehalt. Erklären Sie dieses Grundprinzip.
+Lösung:
+Jegliche Erhebung, Verarbeitung und Nutzung von personenbezogenen Daten ist grundsätzlich verboten, außer die Einwilligung des Betroffenen liegt vor oder eine gesetzliche Regelung ist in Kraft.
+
+Karte: 4
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erläutern Sie den Zusammenhang zwischen dem Prinzip der Zweckbindung, dem Prinzip der Datenminimierung und Speicherbegrenzung im Datenschutz.
+Lösung:
+Das Grundprinzip der Zweckbindung besagt, dass personenbezogene Daten nur für den Zweck verwendet werden dürfen, für den sie erhoben worden sind. Eine Verarbeitung von personenbezogenen Daten zu anderen Zwecken ist unzulässig. Hierbei dürfen nur die Daten erfasst werden, welche auch wirklich für den genannten Zweck benötigt werden. Das Ziel des Prinzips der Datenminimierung und Speicherbegrenzung ist es, möglichst wenig personenbezogenen Daten zu verarbeiten. Wenn die personenbezogenen Daten für den Zweck, für den sie erhoben wurden, nicht mehr notwendig sind, müssen diese gelöscht werden.
+
+Karte: 5
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären Sie den Grundsatz der Transparenz und den Grundsatz der Richtigkeit im Datenschutz.
+Lösung:
+Die Prinzipien der Transparenz und Richtigkeit spielen eine wichtige Rolle bei der Einhaltung der Datenschutzgesetze und der Verarbeitung personenbezogener Daten.
+
+Transparenz bezieht sich darauf, dass Organisationen jederzeit offen und klar darüber informieren müssen, welche personenbezogene Daten durch wen und zu welchen Zwecken verarbeitet werden und wurden.
+
+Das Prinzip der Richtigkeit bedeutet, dass personenbezogene Daten korrekt sein sollten. Organisationen sind dafür verantwortlich sicherzustellen, dass die von ihnen verarbeiteten Daten richtig sind. Personen haben das Recht, ungenaue oder veraltete Daten korrigieren zu lassen.
+
+Karte: 6
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Welche besonderen Kategorien personenbezogener Daten werden gemäß der Datenschutz-Grundverordnung (DSGVO) definiert?
+Lösung:
+Die DSGVO unterscheidet zwischen „personenbezogenen Daten“ und „besonderen Kategorien personenbezogener Daten“. Zu den besonderen Kategorien personenbezogener Daten gehören Daten, die folgende Informationen enthalten:
+- Ethnische Herkunft
+- Politische Meinungen
+- Religiöse oder philosophische Überzeugungen
+- Gewerkschaftszugehörigkeit
+- Genetische Daten
+- Biometrische Daten
+- Gesundheitsdaten
+- Daten zur sexuellen Orientierung
+
+Diese besonderen Kategorien personenbezogener Daten sind besonders schützenswert, da ihre Verarbeitung ein höheres Risiko für die Grundrechte und Freiheiten der betroffenen Personen darstellen könnte.
+
+Karte: 7
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Wer muss bei einer Datenschutzverletzung informiert werden?
+Lösung:
+Bei einer Datenschutzverletzung müssen zwei Hauptparteien informiert werden:
+
+1. Die Datenschutzbehörde: Innerhalb von 72 Stunden nach Feststellung der Verletzung.
+
+2. Betroffene Einzelpersonen: Wenn die Verletzung ein hohes Risiko für ihre Rechte und Freiheiten darstellt.
+
+Karte: 8
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was sind die Hauptaufgaben und Verantwortlichkeiten von Datenschutzbeauftragten?
+Lösung:
+Datenschutzbeauftragte beraten das Unternehmen hinsichtlich der Einhaltung von Datenschutzgesetzen und -richtlinien. Sie überwachen die Einhaltung dieser Regeln innerhalb des Unternehmens. Sie sind die Schnittstelle zu Datenschutzaufsichtsbehörden und bearbeiten Anfragen und Beschwerden von Betroffenen in Bezug auf ihre Datenschutzrechte. Zudem beraten sie bei Datenschutzfolgenabschätzungen.
+
+Karte: 9
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Die Ziele der Datensicherheit sind Vertraulichkeit, Integrität, Verfügbarkeit und Authentizität.
+
+Erläutern Sie diese 4 Begriffe.
+Lösung:
+Vertraulichkeit: Daten und Systeme dürfen nur berechtigten Personen zugänglich sein.
+
+Integrität: Daten müssen immer korrekt sein und dürfen nicht unbemerkt verändert werden können.
+
+Verfügbarkeit: Daten und IT-Systeme müssen zur Verfügung stehen um von autorisierten Personen genutzt werden können. Authentizität: Die Echtheit und Vertrauenswürdigkeit von Daten müssen gewährleistet sein.
+
+Karte: 10
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Nennen Sie drei Aufgaben von IT-Sicherheitsbeauftragten.
+Lösung:
+Zu den Aufgaben von IT-Sicherheitsbeauftragten gehören:
+- Erstellung von Richtlinien zur Informationssicherheit
+- Praktische Umsetzung von Maßnahmen der IT-Sicherheit
+- Organisation von Schulungen und Trainings
+- Bearbeitung von IT-Sicherheitsvorfällen
+- Dokumentation und Überwachung der Sicherheitsmaßnahmen
+- Ansprechpartner im Bereich IT-Sicherheit für Mitarbeitende und Unternehmensleitung
+- u.a.
+
+Karte: 11
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Welche gesetzlichen Bestimmungen regeln in der Bunderepublik Deutschland den Umgang mit personenbezogenen Daten?
+Lösung:
+Die Datenschutz-Grundverordnung (DSGVO) ist eine europaweit gültige Verordnung, welche die Belange des Datenschutzes für alle Mitgliedsstaaten der Europäischen Union regelt.
+
+Das Bundesdatenschutzgesetz (BDSG-neu) ergänzt die Vorgaben der DSGVO, bzw. konkretisiert die dortigen Regelungen. Beide Vorschriften sind gemeinsam gültig und müssen umgesetzt werden. Hierbei ist zu beachten, dass die DSGVO Anwendungsvorrang vor dem BDSG hat.
+
+Karte: 12
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Womit beschäftigen sich die Standards ISO 27001 und BSI IT-Grundschutz?
+Lösung:
+Die ISO 27001 und der BSI IT-Grundschutz sind Standards im Bereich der Informationssicherheit. Sie geben u. a. Empfehlungen und Regeln für den Aufbau und die Weiterentwicklung eines Informationssicherheitsmanagementsystems (ISMS). Hierbei ist die ISO 27001 ein weit verbreiteter internationaler Standard, welcher weltweit für Unternehmen jeglicher Größe anwendbar ist.
+
+Der BSI IT-Grundschutz ist ein nationaler deutscher Standard. Er ist sehr gut geeignet für die Anwendung in Behörden und Unternehmen aus kritischen Bereichen (KRITIS).
+
+Karte: 13
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Wie werden Schutzbedarfskategorien wie „normal“, „hoch“ und „sehr hoch“ verwendet, um den Sicherheitsbedarf von Informationen, Systemen oder Infrastrukturen einzuschätzen?
+Lösung:
+Die Schutzbedarfskategorien wie „normal“, „hoch“ und „sehr hoch“ helfen dabei, den Sicherheitsbedarf von Informationen oder Systemen zu bestimmen.
+
+- „Normal“: Begrenzte und überschaubare Schadensauswirkung bei einem Sicherheitsvorfall
+- „Hoch“: ein Sicherheitsvorfall würde zu erheblichen Schäden führen, oder könnte die Existenz der Organisation bedrohen
+- „Sehr hoch“: ein Sicherheitsvorfall würde zu katastrophalen Schäden führen oder existentiell bedrohlich sein
+
+Diese Kategorisierung ermöglicht es, angemessene Sicherheitsmaßnahmen zu implementieren, basierend auf dem Schutzbedarf.
+
+Karte: 14
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Nennen Sie im Zusammenhang mit dem Thema Datenschutz jeweils drei Beispiele für geeignete technische und organisatorische Maßnahmen (TOM).
+Lösung:
+TOMs sind technische und organisatorische Maßnahmen, welche die Sicherheit der Verarbeitung von personenbezogenen Daten gewährleisten sollen.
+
+- Verfahren zur Durchsetzung von Komplexitätsanforderungen von Passwörtern
+- Anonymisierung und Pseudonymisierung von personenbezogenen Daten
+- Verschlüsselung von Datenträgern und Datenübertragungen
+- Datensicherung
+- bauliche Absicherung von kritischen Bereichen
+- Zugangs- und Zutrittskontrolle
+- Alarmanlagen
+- Richtlinien für die Nutzung der IT, des Internets oder mobiler Geräte
+- Verfahren zur datenschutzkonformen Entsorgung von Datenträgern
+- Verpflichtungserklärung auf das Datengeheimnis
+- u.a.
+
+Karte: 15
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären Sie was in der DSGVO unter dem Ausdruck „Stand der Technik“ zu verstehen ist.
+Lösung:
+Gemäß Artikel 32 der DSGVO müssen Datenverantwortliche und Datenverarbeitende unter Berücksichtigung des Stands der Technik geeignete technische und organisatorische Maßnahmen treffen, um ein dem Risiko angemessenes Schutzniveau zu gewährleisten.
+
+Dies bedeutet, dass Unternehmen und Organisationen, die personenbezogene Daten verarbeiten, dafür sorgen müssen, dass sie die neuesten und effektivsten Sicherheitsmaßnahmen und -technologien einsetzen, um ein angemessenes Schutzniveau für personenbezogene Daten zu gewährleisten. Der „Stand der Technik“ ist hierbei nicht statisch, sondern entwickelt sich mit dem Fortschritt der Technologie weiter.
+
+Karte: 16
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Beschreiben Sie den grundsätzlichen Unterschied zwischen der Anonymisierung und der Pseudonymisierung von personenbezogenen Daten.
+Lösung:
+Anonymisierung ist ein Prozess, bei dem alle identifizierenden Merkmale aus den Daten entfernt werden, sodass eine Person nicht mehr identifizierbar ist. Dies ist ein irreversibler Prozess. Sobald Daten anonymisiert sind, können sie nicht mehr zu einer bestimmten Person zurückverfolgt werden.
+
+Pseudonymisierung ist ein Prozess, bei dem personenbezogene Daten so verändert werden, dass sie ohne zusätzliche Informationen nicht mehr einer spezifischen Person zugeordnet werden können. Identifizierende Merkmale werden durch ein Pseudonym ersetzt. Dieser Prozess ist reversibel. Mit der richtigen Information kann eine Person identifiziert werden.
+
+Karte: 17
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was versteht man unter dem Begriff Compliance?
+Lösung:
+Compliance bezieht sich auf die Einhaltung von gesetzlichen Bestimmungen, branchenspezifischen Standards, internen Richtlinien und ethischen Prinzipien durch Unternehmen. Es umfasst die Umsetzung und Überwachung von Regeln und Vorschriften, um Risiken zu minimieren, Haftungsansprüche zu vermeiden und das Vertrauen von Kunden, Investoren und der Öffentlichkeit zu erhalten. Die Nichteinhaltung von Compliance kann zu rechtlichen Konsequenzen, finanziellen Verlusten und Reputationsschäden führen.
+
+Karte: 18
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären Sie den Unterschied zwischen „Privacy by Design“ und „Privacy by Default“.
+Lösung:
+Privacy by Design: Das Thema Datenschutz soll bereits im gesamten Entwicklungsprozess von Software, Hardware oder auch IT-Systemen berücksichtigt werden. Datenschutz wird hierdurch zu einem festen Bestandteil eines fertigen IT-Produktes. Man spricht hier auch von Datenschutz durch Technikgestaltung.
+
+Privacy by Default: Der Schutz von personenbezogen Daten wird durch datenschutzfreundliche Voreinstellungen unterstützt. Der Grundgedanke hierbei ist, dass die Grundeinstellungen von Anwendungen bereits datenschutzfreundlich eingestellt sind. Hierdurch sollen vor allem Nutzerinnen und Nutzer geschützt werden, die weniger technikversiert sind.
+
+Karte: 19
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Nennen Sie drei Komplexitätsanforderungen für Passwörter und erklären Sie warum diese für eine höhere Passwortsicherheit sorgen.
+Lösung:
+Typische Anforderungen an sichere Passwörter sind:
+- Verwendung von Kleinbuchstaben
+- Verwendung von Großbuchstaben
+- Verwendung von Zahlen
+- Verwendung von Sonderzeichen
+- ausreichende Passwortlänge
+
+Die Verwendung eines möglichst großen Zeichenvorrates erhöht die Anzahl der möglichen Variationen eines Passwortes. Die Nutzung von Sonderzeichen und Zahlen verhindert zusätzlich die Verwendung von „Dudenworten“ als Passwort. Ein möglichst langes Passwort erhöht nochmals den Aufwand für die Ermittlung eines Passwortes durch systematisches Probieren.
+
+Karte: 20
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Nennen Sie Vorteile und Nachteile der Nutzung von Single Sign-On (SSO).
+Lösung:
+Single Sign-On (SSO) ist ein Authentifizierungsdienst, der es erlaubt, mit einem Satz von Anmeldeinformationen auf mehrere Anwendungen zuzugreifen.
+
+Vorteile:
+- einmalige Anmeldung, um auf mehrere Anwendungen zuzugreifen
+- reduziert das Risiko vergessener Passwörter
+- es besteht die Möglichkeit, schnell und zentralisiert auf Sicherheitsvorfälle zu reagieren
+
+Nachteile:
+- ein Ausfall oder eine Kompromittierung des SSO-Dienstes kann den Zugriff auf alle Anwendungen beeinträchtigen
+- technisch komplex zu implementieren und zu verwalten
+- Anbieterabhängigkeit: Risiken im Zusammenhang mit der Verwendung eines externen SSO-Dienstleisters
+
+Karte: 21
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist OAuth2 und wofür wird es in der Authentifizierung und Autorisierung verwendet?
+Lösung:
+OAuth 2.0 ist ein offenes Protokoll zur sicheren Delegierung von Zugriffsrechten im Internet. Es ermöglicht Benutzern, Drittanbieter-Apps Zugriff auf ihre Daten zu gewähren, ohne dabei ihre Anmeldeinformationen preiszugeben.
+
+Hierbei gibt es mehrere Rollen:
+- Der Ressourcenbesitzer besitzt die Daten und kann anderen den Zugriff auf diese Daten gewähren.
+- Der Client ist die Anwendung, die den Zugriff auf die Ressource des Benutzers anfordert.
+- Der Autorisierungsserver überprüft die Identität des Benutzers und erteilt Zugriffstoken.
+- Der Ressourcenserver hält die Benutzerdaten und gewährt den Zugriff auf sie, wenn er ein gültiges Token erhält.
+
+Karte: 22
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Beschreiben Sie den Autorisierungs-Prozess von OAuth2.
+Lösung:
+Die folgenden Schritte werden im Autorisierungs-Prozess von OAuth 2.0 durchlaufen:
+- Eine Anwendung (der „Client“) fordert den Zugriff auf Benutzerdaten an, die auf einem anderen Server (dem „Ressourcenserver“) gespeichert sind.
+- Der Benutzer (der „Ressourcenbesitzer“) stimmt zu, dem Client den Zugriff zu gewähren.
+- Der Client erhält ein Zugriffstoken vom „Autorisierungsserver“.
+- Der Client verwendet das Zugriffstoken, um auf die Benutzerdaten auf dem Ressourcenserver zuzugreifen.
+
+Karte: 23
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Beschreiben Sie den Unterschied zwischen Zugangskontrolle und Zugriffskontrolle.
+Lösung:
+Das Konzept der Zugangskontrolle (Access Control) bezieht sich auf die Möglichkeit, den physischen oder virtuellen Zugang zu einer Ressource zu kontrollieren. Die Zugangskontrolle bestimmt, wer oder was Zugang zu einer Ressource hat. Die Zugriffskontrolle (Authorization Control) regelt, was ein Benutzer oder System nach dem Zugang machen darf. Nachdem jemand Zugang zu einer Ressource erlangt hat, kann die Zugriffskontrolle festlegen, welche Operationen er auf dieser Ressource ausführen darf. Sie regelt die Befugnisse oder Berechtigungen, die einem Benutzer oder System gewährt werden, nachdem der Zugang gewährt wurde.
+
+Karte: 24
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist in Bezug auf die Systemsicherheit unter dem Begriff der „Betriebssystemhärtung“ zu verstehen?
+Lösung:
+Betriebssystemhärtung bezieht sich auf eine Reihe von Maßnahmen, die darauf abzielen, die Sicherheit eines Betriebssystems zu erhöhen, indem dessen Anfälligkeiten reduziert und potenzielle Angriffspunkte minimiert werden.
+
+Beispiele für wirksame Maßnahmen sind:
+- nur die absolut notwendigen Softwarekomponenten und
+- dienste installieren
+- Patch-Management
+- Einschränkung von Systemzugriffsrechten
+- Aktivieren der verfügbaren Sicherheitsfunktionen
+- Nutzung von Firewall und Antivirensoftware
+- Verwendung von Verschlüsselung
+
+Karte: 25
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Es gibt verschiedene Tools und Technologien, die bei der Updateverwaltung eingesetzt werden können.
+
+Erklären Sie kurz WSUS, SCCM und APT.
+Lösung:
+WSUS (Windows Server Update Services) ist ein Microsoft-Tool, das zur Verwaltung von Updates für Windows-Betriebssysteme und andere Microsoft-Produkte verwendet wird.
+
+SCCM (System Center Configuration Manager) ist eine umfassendere Lösung von Microsoft für das IT-Management. Es bietet Funktionen zur Bereitstellung, Überwachung und Verwaltung von Softwareupdates für eine Vielzahl von Betriebssystemen und Anwendungen.
+
+APT (Advanced Packaging Tool) ist ein Paketverwaltungssystem, das in verschiedenen Linux-Distributionen verwendet wird. Es ermöglicht das einfache Herunterladen, Installieren, Aktualisieren und Entfernen von Softwarepaketen.
+
+Karte: 26
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist der Unterschied zwischen einem Update und einem Upgrade?
+Lösung:
+Ein Update ist eine kleinere Änderung an einer bestehenden Softwareversion. Es dient in der Regel dazu, Fehler zu beheben, Sicherheitslücken zu schließen oder kleinere Verbesserungen vorzunehmen. Ein Upgrade hingegen ist ein größerer Versionssprung. Dabei wird die Software auf eine neue Hauptversion aktualisiert, die in der Regel neue Funktionen, ein überarbeitetes Design oder grundlegende technische Verbesserungen mit sich bringt.
+
+Karte: 27
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Die IT-Infrastruktur eines Unternehmens ist verschiedenen Gefahren ausgesetzt. Erläutern Sie die folgenden Angriffsmethoden:
+- Trojaner
+- Ransomware
+- Phishing
+- Distributed Denial of Service (DDoS)
+Lösung:
+Trojaner: Ein Programm, das als nützliche Anwendung getarnt ist, im Hintergrund aber ohne das Wissen des Anwenders eine andere Funktion erfüllt.
+
+Ransomware: Die Nutzung von Daten und Systemen wird z. B. durch Verschlüsselung verhindert, um Lösegeld vom Geschädigten zu erpressen, Phishing: Abfrage von Anmeldeinformationen per E-Mail oder über gefälschte Websites, um sich später den unerlaubten Zugriff auf die Systeme zu ermöglichen.
+
+Distributed Denial of Service (DDoS): Überlastung eines Computersystems durch Massenabfragen, die von einer großen Anzahl anderer Computersysteme verursacht wird.
+
+Karte: 28
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären Sie das Sicherheitsproblem SQL-Injection.
+Lösung:
+SQL-Injection ist eine Sicherheitslücke, bei der Angreifer schädlichen SQL-Code in eine Abfrage einschleusen, um unbefugt auf Daten oder eine Datenbank zuzugreifen oder um sie zu manipulieren.
+
+Karte: 29
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was versteht man unter einem „Man-in-the-Middle“-Angriff und welche Maßnahmen können getroffen werden, um sich davor zu schützen?
+Lösung:
+Ein „Man-in-the-Middle“ Angriff ist ein Angriff auf die Kommunikation zwischen zwei Parteien, bei dem sich ein Angreifer unbemerkt dazwischenschaltet.
+
+Ziel ist es, Daten abzufangen, mitzulesen oder zu manipulieren.
+
+Mögliche Schutzmaßnahmen:
+- Verschlüsselung verwenden
+- Zertifikate prüfen
+- MFA aktivieren
+- sichere Netzwerke nutzen
+
+Karte: 30
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Unter welchen Voraussetzungen ist es einem Spamfilter oder dem Administrator eines Unternehmens erlaubt, E-Mails auf unerwünschte Inhalte zu überprüfen?
+Lösung:
+Der Inhalt von E-Mails fällt unter das Briefgeheimnis und Datenschutzbestimmungen, was bedeutet, dass sie nicht ohne weiteres eingesehen oder überwacht werden dürfen. Die Mitarbeitenden müssen über die mögliche Überwachung ihrer E-Mails informiert werden.
+
+Die Überwachung von E-Mails kann nur dann erfolgen, wenn die E-Mail-Dienste ausschließlich beruflich genutzt werden. Wenn die Mitarbeitenden ihre geschäftlichen E-Mail-Konten auch für private Zwecke nutzen dürfen, ist eine Kontrolle der Inhalte in der Regel nicht zulässig.
+
+Karte: 31
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist im Bereich der IT-Sicherheit unter einem Honeypot zu verstehen?
+Lösung:
+Im Bereich der IT-Sicherheit ist ein Honeypot ein speziell präpariertes System, welches gezielt Angreifer und Schadprogramme anlocken soll. Es simuliert z. B. einen Rechner, Netzwerkdienst oder Anwendungsprogramm, um Angriffsmethoden zu studieren, von anderen Systemen abzulenken oder um Angreifern eine Falle zu stellen.
+
+Karte: 32
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Beschreiben Sie die Aufgabe einer Sandbox in Bezug auf die IT-Sicherheit.
+Lösung:
+Eine Sandbox ist eine abgesicherte Umgebung in der Software oder Code ausgeführt werden kann, ohne dass das umliegende System oder Netzwerk beeinflusst wird. Diese Umgebung isoliert die Ausführung der Software, um sicherzustellen, dass möglicher schädlicher oder nicht verifizierter Code nicht auf das zugrundeliegende System oder Netzwerk zugreifen kann.
+
+Karte: 33
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären Sie den Unterschied zwischen der differenziellen und der inkrementellen Datensicherung. Gehen Sie hierbei auch auf den Aufwand bei der Wiederherstellung von Daten ein.
+Lösung:
+Differenzielle Datensicherung:
+- startet mit einer Vollsicherung
+- im Anschluss werden nur noch Daten gesichert, welche seit der letzten Vollsicherung verändert oder neu erstellt wurden
+- zur Wiederherstellung werden die letzte Vollsicherung und das letzte differenzielle Backup benötigt
+
+Inkrementelle Datensicherung:
+- startet mit einer Vollsicherung
+- im Anschluss werden nur noch Daten gesichert, welche seit dem letzten Sicherungsdurchlauf (Vollsicherung oder inkrementell) verändert oder neu erstellt wurden
+- zur Wiederherstellung werden die letzte Vollsicherung und alle inkrementellen Sicherungen in der richtigen Reihenfolge benötigt
+
+Karte: 34
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Beschreiben Sie die Datensicherungsstrategie „Generationenprinzip“ (Großvater-Vater-Sohn-Prinzip).
+Lösung:
+Beim Generationenprinzip handelt es sich um eine Datensicherungsstrategie, bei welcher mehrere Sicherungen in verschiedenen zeitlichen Abstufungen vorliegen. Hierdurch kann z. B. ein kompletter Datenverlust durch die Beschädigung einer einzelnen Sicherung verhindert werden. Ein Konzept zum Überschreiben und Wiederverwenden der zur Sicherung genutzten Datenträger kann eingesetzt werden.
+
+Eine mögliche Umsetzung wäre die Durchführung von täglichen, wöchentlichen und monatlichen Sicherungen. Hierbei wäre die tägliche Sicherung der „Sohn“, die wöchentliche Sicherung der „Vater“ und die monatliche Sicherung der „Großvater“.
+
+Karte: 35
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was besagt die 3-2-1-Regel in Bezug auf die Datensicherung?
+Lösung:
+Die 3-2-1-Regel stellt sicher, dass die Daten sicher aufbewahrt werden. Sie besagt folgendes:
+- Es sollten mindestens drei Kopien der Daten aufbewahrt werden. Das schließt die ursprüngliche Datei und zwei Backup-Kopien ein.
+- Es sollten mindestens zwei verschiedene Speichermedien für die Backups verwenden werden.
+- Mindestens eine dieser Kopien sollte an einem anderen Ort aufbewahrt werden, um sich gegen lokale Katastrophen wie Feuer, Überschwemmungen oder Einbrüche zu schützen.
+
+Diese „Offsite“-Kopie kann entweder in einem physisch entfernten Ort oder in einem Cloud-Speicherdienst aufbewahrt werden.
+
+Karte: 36
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Worin liegt der Unterschied zwischen Datensicherung und Archivierung?
+Lösung:
+Datensicherung ist der Prozess, regelmäßige Kopien von Daten zu erstellen, um diese im Falle eines Datenverlustes wiederherstellen zu können. Backups werden in der Regel regelmäßig erstellt und auf einem sicheren Medium oder an einem sicheren Ort aufbewahrt.
+
+Archivierung ist der Prozess der langfristigen Aufbewahrung von Daten, die nicht mehr aktiv verwendet werden, aber aus rechtlichen oder geschäftlichen Gründen aufbewahrt werden müssen. Archivierte Daten werden oft auf ein kosteneffizientes Medium verschoben und an einem sicheren Ort aufbewahrt. Archive dienen dazu ältere Daten zugänglich zu machen, wenn sie benötigt werden.
+
+Karte: 37
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären Sie die WORM-Methode in der Datensicherung.
+Lösung:
+Die WORM-Methode (Write Once Read Many) ist eine Datensicherungsstrategie, bei der Daten nur einmal geschrieben und dann beliebig oft gelesen werden können, aber nicht mehr geändert oder gelöscht werden dürfen.
+
+Diese Methode dient der Archivierung von Daten, um gesetzliche Anforderungen zu erfüllen und die Datenintegrität sicherzustellen. Darüber hinaus bietet sie einen effektiven Schutz gegen Ransomware-Angriffe, da einmal geschriebene Daten immun gegen die typischen Manipulationsversuche von Ransomware sind.
+
+Karte: 38
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was bedeutet Disaster Recovery in der Informationstechnologie und warum ist es für Unternehmen wichtig?
+Lösung:
+Disaster Recovery (DR) bezieht sich auf Strategien und Maßnahmen, die Unternehmen zur Wiederherstellung und zum Schutz ihrer IT-Infrastruktur und -Daten im Falle eines „Desasters“ einsetzen. Ein Desaster kann eine Vielzahl von Ereignissen umfassen, wie zum Beispiel Naturkatastrophen, Cyberangriffe oder Hardwareausfälle.
+
+Die Disaster Recovery Strategie eines Unternehmens umfasst in der Regel einen Disaster Recovery Plan (DRP), der detaillierte Anweisungen und Verfahren für die Wiederherstellung von Systemen und Daten enthält. Dazu gehören in der Regel auch Vorkehrungen für redundante Systeme und Backups von Daten an sicheren Orten.
+
+Karte: 39
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erläutern Sie die Bedeutung von „Recovery Time Objective“ (RTO) und „Recovery Point Objective“ (RPO).
+Lösung:
+Recovery Time Objective (RTO) und Recovery Point Objective (RPO) sind zwei Schlüsselkonzepte im Bereich der Disaster Recovery Planung.
+
+Recovery Time Objective (RTO) ist die maximale tolerierbare Zeit, die ein System nach einem Ausfall oder einer Störung ausfallen darf, bevor es zu erheblichen Schäden kommt. In anderen Worten, es ist die Zeit, die benötigt wird, um die Funktionsfähigkeit wiederherzustellen.
+
+Die Recovery Point Objective (RPO) bezieht sich auf die maximale Menge an Daten, die ein Unternehmen sich leisten kann zu verlieren, bevor es zu erheblichen Schäden kommt. Dies wird oft in Zeiteinheiten gemessen.
+
+Karte: 40
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Worin liegt der Unterschied zwischen den Messgrößen „Mean Time Between Failures“ (MTBF) und „Mean Time to Failure“ (MTTF)?
+Lösung:
+MTBF steht für „Mean Time Between Failures“. Es ist die durchschnittliche Zeit zwischen reparierbaren Ausfällen. Eine hohe MTBF weist auf eine höhere Zuverlässigkeit und Langlebigkeit des Systems hin.
+
+MTTF steht für „Mean Time to Failure“. Es handelt sich dabei um die durchschnittliche Zeitspanne, die erwartungsgemäß vergeht, bevor ein Gerät oder System ausfällt. Im Gegensatz zu MTBF, das für Geräte verwendet wird, die repariert und wieder in Betrieb genommen werden können, wird MTTF normalerweise für Geräte verwendet, die nach einem Ausfall nicht repariert, sondern ersetzt werden müssen.
+
+Karte: 41
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Treffen Sie für die RAID-Systeme RAID 0, RAID 1, RAID 5, RAID 6 und RAID 10 jeweils eine Aussage zu:
+- Mindestanzahl Festplatten
+- Ausfallsicherheit
+- Berechnung der Nutzkapazität (Nettokapazität)
+Lösung:
+RAID 0:
+- mindestens 2 Festplatten
+- keine Ausfallsicherheit
+- Anzahl Festplatten * Kapazität
+
+RAID 1:
+- mindestens 2 Festplatten
+- eine Festplatte darf ausfallen
+- (Anzahl Festplatten / 2) * Kapazität
+
+RAID 5:
+- mindestens 3 Festplatten
+- eine Festplatte darf ausfallen
+- (Anzahl Festplatten – 1) * Kapazität
+
+RAID 6:
+- mindestens 4 Festplatten
+- zwei Festplatten dürfen ausfallen
+- (Anzahl Festplatten – 2) * Kapazität
+
+RAID 10:
+- mindestens 4 Festplatten
+- eine Festplatte pro Subraid darf ausfallen
+- (Anzahl Festplatten / 2) * Kapazität
+
+Karte: 42
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären Sie anhand eines Beispiels, warum ein RAID keine Datensicherung ersetzt.
+Lösung:
+Ein RAID schützt in den folgenden Fällen nicht vor einem Datenverlust:
+- Virenbefall eines Systems
+- versehentlich gelöschte oder veränderte Daten
+- physikalische Beschädigung durch Feuer, Wasser oder Vandalismus
+
+Karte: 43
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+In einem RAID-5-Verbund wurde eine zusätzliche Hot-Spare-Festplatte verbaut. Erklären Sie die Funktion einer Hot-Spare-Festplatte.
+Lösung:
+Eine Hot-Spare-Festplatte ist eine zusätzliche Festplatte, die in einem RAID-Verbund installiert wird, um als Ersatz für eine ausgefallene Festplatte zu dienen.
+
+Wenn eine Festplatte in dem RAID-Verbund ausfällt, übernimmt die Hot-Spare-Festplatte automatisch die Rolle der ausgefallenen Festplatte, ohne dass manuelle Eingriffe erforderlich sind. Die Hot-Spare-Festplatte wird sofort in das RAID-System integriert und beginnt mit der Wiederherstellung der Daten, um den ursprünglichen Redundanzgrad des Verbunds wiederherzustellen.
+
+Karte: 44
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist JBOD für eine Speicherlösung?
+Lösung:
+JBOD (Just a Bunch of Disks) ist eine einfache Speicherlösung, bei der mehrere Festplatten ohne spezielle Struktur zusammen genutzt werden. Bei JBOD wird die gesamte Kapazität aller Festplatten genutzt. Hieraus ergibt sich eine hohe Speichereffizienz Durch ein JBOD ergeben sich keine Vorteile bezüglich Datensicherheit oder Performance.
+
+Karte: 45
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären Sie den Unterschied zwischen einer Offline USV und einer Line Interactive USV. Gehen Sie hierbei auch auf die Bedeutung der Abkürzungen VFD und VI ein.
+Lösung:
+Die Offline USV (VFD - Voltage and Frequency Dependent) schaltet bei einem Stromausfall automatisch von der Hauptstromquelle auf die Batterieversorgung um. Die Umschaltung erfolgt in der Regel innerhalb weniger Millisekunden. Diese USVs bieten grundlegende Schutzfunktionen, jedoch kann es zu einer kurzen Unterbrechung in der Stromversorgung kommen. Line Interactive USVs (VI - Voltage Independent) sind ähnlich wie Offline USVs, bieten jedoch zusätzliche Spannungsregulierung und Filterung. Sie sind in der Lage, kleinere Schwankungen in der Stromversorgung zu korrigieren, ohne auf die Batterieversorgung umschalten zu müssen.
+
+Karte: 46
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Beschreiben Sie die Funktionsweise einer Voltage and Frequency Independent USV.
+Lösung:
+Online USV (VFI - Voltage and Frequency Independent) bieten den höchsten Schutz. Die angeschlossenen Verbraucher werden permanent über die Batterien versorgt und haben daher keine direkte Verbindung zum Stromnetz. Durch diesen Aufbau werden die angeschlossenen Verbraucher vor Stromschwankungen, Spannungsspitzen und -abfällen vollständig geschützt. Bei einem Stromausfall wird die Stromversorgung nahtlos von den Batterien fortgeführt, ohne dass es zu einer Unterbrechung kommt.
+
+Karte: 47
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Nennen Sie mögliche Gefährdungen für Server, die sich bei direktem Anschluss an das Stromnetz ergeben können.
+Lösung:
+Beim direkten Anschluss von Servern an das Stromnetz können z. B. die folgenden Gefährdungen auftreten:
+- Stromausfall
+- Spannungsspitzen
+- Spannungsschwankungen
+- Frequenzschwankungen
+- Spannungsverzerrungen
+- Frequenzstörungen
+- Störspannungen
+
+Karte: 48
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist der Unterschied zwischen symmetrischen und asymmetrischen Verschlüsselungsverfahren?
+Lösung:
+Symmetrische Verschlüsselung:
+- arbeitet nur mit einem einzigen Schlüssel
+- der Schlüssel muss dem Sender und Empfänger bekannt sein
+- Vorteil: funktioniert schnell und effizient
+- Nachteil: die Übergabe und Verwaltung des Schlüssels sind schwierig
+
+Asymmetrische Verschlüsselung:
+- arbeitet mit Schlüsselpaaren bestehend aus einem privaten (Private Key) und einem Öffentlichen Schlüssel (Public Key)
+- Nachrichten werden mit dem Public Key verschlüsselt
+- der Private Key dient zum Entschlüsseln von Nachrichten
+- Vorteil: löst das Problem der Schlüsselübergabe
+- Nachteil: sind erheblich langsamer als die symmetrischen Verschlüsselungsverfahren
+
+Karte: 49
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Wie ist die Funktionsweise von hybriden Verschlüsselungsverfahren?
+Lösung:
+Hybride Verschlüsselungsverfahren vereinen die Vorteile von symmetrischen und asymmetrischen Verschlüsselungsverfahren. Die eigentliche Nachricht wird zunächst mit einem symmetrischen Verfahren verschlüsselt. Der hierbei verwendete Schlüssel wird mit einem asymmetrischen Verfahren verschlüsselt und an den Empfänger übertragen. Hierdurch ist dieses Verfahren schneller als die asymmetrischen Verfahren.
+
+Karte: 50
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Welche Schutzmechanismen beinhaltet das TLS-Protokoll?
+Lösung:
+Transport Layer Security (TLS) ist ein Protokoll, das dazu dient, eine sichere Kommunikation über ein Netzwerk zu ermöglichen. TLS funktioniert, indem es eine verschlüsselte Verbindung zwischen zwei Parteien herstellt, über die Daten sicher übertragen werden können.
+
+Aufgaben von TLS sind:
+- Verschlüsselung: TLS verwendet das hybride Verschlüsselungsverfahren, um Verbindungen zu sichern.
+- Authentifizierung: TLS verwendet digitale Zertifikate, um die Identität der kommunizierenden Parteien zu überprüfen
+- Integrität: TLS beinhaltet Mechanismen zur Überprüfung der Integrität von Nachrichten
+
+Karte: 51
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Digitale Signaturen stützen sich auf Hashverfahren und basieren auf der asymmetrischen Kryptografie. Erklären Sie diesen Zusammenhang.
+Lösung:
+Bei digitalen Signaturen wird die asymmetrische Kryptografie umgekehrt angewandt. Die Signatur wird vom Sender einer Nachricht mit Hilfe seines privaten Schlüssels erzeugt. Vom Empfänger kann die Korrektheit einer Signatur über den öffentlichen Schlüssel des Senders überprüft werden.
+
+Um die Effizienz des Signaturverfahrens zu steigern, wird die digitale Signatur nur auf dem Hashwert einer Nachricht erzeugt.
+
+Karte: 52
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Nennen Sie drei Eigenschaften, die ein sicheres Hash-Verfahren aufweisen sollte.
+Lösung:
+Bei einem sicheren Hash-Verfahren ...
+
+- sollte sich der Hashwert bereits bei kleinsten Änderungen im Eingabetext stark ändern
+- darfes zu verschiedenen Eingabetexten nicht den gleichen Hashwert geben
+- darfeine Rückrechnung auf den Quelltext nicht möglich sein
+- sollte die Länge des Hashwertes immer konstant sein, unabhängig von der Länge des Eingabetextes
+
+Karte: 53
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist „Salting“ in der Kryptographie und wie verbessert es die Sicherheit von gespeicherten Passwörtern?
+Lösung:
+Salting ist eine Technik, die häufig bei der Speicherung von Passwörtern verwendet wird. Ein „Salt“ ist eine zufällige Zeichenfolge, die zu einem Passwort hinzugefügt wird, bevor das Passwort gehasht wird. Dies hat den Zweck, den Hash-Wert des Passworts zu verändern, sodass selbst wenn zwei Accounts das gleiche Passwort haben, ihre gehashten Passwörter (die in der Datenbank gespeichert werden) unterschiedlich sind. Salting erhöht die Sicherheit, da es den Nutzen von vorgefertigten Hash-Listen für Angreifer erheblich reduziert und es schwieriger macht, Passwörter durch Brute-Force-Angriffe zu entschlüsseln.
+
+Karte: 54
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist die Rolle einer Certificate Authority (CA) im Kontext der Netzwerksicherheit?
+Lösung:
+Eine Certificate Authority (CA), oder Zertifizierungsstelle, ist eine vertrauenswürdige Organisation, die digitale Zertifikate ausstellt und verwaltet. Diese Zertifikate sind entscheidend für die Sicherheit im Internet, da sie die Identität von Personen, Computern und Organisationen bestätigen.
+
+Wenn eine CA ein Zertifikat ausstellt, bestätigt sie die Identität des Inhabers und signiert das Zertifikat mit ihrem privaten Schlüssel. Dies ermöglicht es jedem, der das Zertifikat erhält, die Authentizität durch Überprüfung der CA-Signatur zu bestätigen.
+
+Karte: 55
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist eine Public Key Infrastructure (PKI)?
+Lösung:
+Eine Public Key Infrastructure (PKI) ist ein Set von Rollen, Richtlinien und Verfahren, die benötigt werden, um digitale Zertifikate sicher auszustellen und zu verwalten. Sie dient der sicheren Identitätsprüfung in digitalen Netzwerken und nutzt dafür asymmetrische Kryptographie, bestehend aus einem öffentlichen und privaten Schlüsselpaar. Die Zertifikate werden von einer Zertifizierungsstelle (CA) ausgestellt, die als vertrauenswürdige dritte Partei fungiert.
+
+PKis stellen die folgenden Funktionen bereit:
+- Zertifikatserstellung
+- Zertifikatsverteilung
+- Zertifikatsprüfung
+- Zertifikatswiderruf
+
+Karte: 56
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Welche Bestandteile beinhaltet ein digitales Zertifikat nach X.509?
+Lösung:
+Typische Inhalte eines Zertifikates sind:
+- Version
+- Name des Zertifikatsinhabers
+- Signaturverfahren
+- Aussteller des Zertifikats (CA)
+- Seriennummer die von der CA zur Identifizierung des Zertifikats vergeben wird
+- Gültigkeitsdauer
+- Signature Algorithmus
+- Öffentlicher Schlüssel des Zertifikatsinhabers
+
+Karte: 57
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären Sie die Bedeutung der folgenden Algorithmen:
+- DES
+- 3DES
+- AES-128
+- AES-256
+- SHA256
+- MD5
+Lösung:
+DES / 3DES:
+- Data Encryption Standard
+- symmetrisches Verschlüsselungsverfahren
+- DES gilt als nicht mehr sicher
+- durch die dreifache Anwendung des DES wird die Schlüssellänge und Sicherheit vergrößert
+
+AES-128 / AES-256:
+- Advanced Encryption Standard
+- symmetrisches Verschlüsselungsverfahren mit einer Schlüssellänge von 128 Bit, bzw. 256 Bit
+
+SHA256:
+- Secure Hash Algorithm
+- Hash-Verfahren mit 256 Bit Länge
+
+MD5:
+- Message-Digest Algorithm
+- Hash-Verfahren mit 128 Bit Länge
+- gilt als nicht mehr sicher
+
+Karte: 58
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was sind die grundlegenden Prinzipien und Anwendungen des RSA-Verschlüsselungsverfahrens?
+Lösung:
+RSA (Rivest-Shamir-Adleman) ist ein asymmetrisches Verschlüsselungsverfahren, das auf der Schwierigkeit beruht, große Primzahlen zu faktorisieren. Es verwendet einen öffentlichen Schlüssel zum Verschlüsseln und einen privaten Schlüssel zum Entschlüsseln von Daten.
+
+RSA wird für die sichere Übertragung von Daten sowie für digitale Signaturen verwendet.
+
+Karte: 59
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Beschreiben Sie Lastenheft und Pflichtenheft hinsichtlich Verfasser, Verwendung und Inhalt.
+Lösung:
+Lastenheft:
+- Verfasser: Auftraggeber
+- Verwendung: Grundlage beim Einholen von Angeboten
+- Inhalt: beinhaltet alle Anforderungen des Auftraggebers hinsichtlich des Liefer- und Leistungsumfanges
+
+Pflichtenheft:
+- Verfasser: Auftragnehmer
+- Verwendung: Basis für die vertraglich festgehaltenen Leistungen
+- Inhalt: beschreibt die Umsetzung aller Anforderungen aus dem Lastenheft
+
+Karte: 60
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was sind die Stakeholder eines Projektes?
+Lösung:
+Projekt-Stakeholder sind Personen oder Personengruppen, welche aktiv am Projekt beteiligt oder von der Durchführung, bzw. dem Ergebnis eines Projektes betroffen sind. Typische Stakeholder eines Projektes sind zum Beispiel:
+- Kundinnen und Kunden
+- Auftraggebende
+- Lieferanten
+- Mitarbeitende im Projekt
+- Projektleitung
+
+Karte: 61
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären Sie die vier Phasen der Teambildung Forming, Storming, Norming und Performing.
+Lösung:
+Forming:
+- Einstiegs- und Findungsphase
+- Ein neues Team beginnt die Zusammenarbeit.
+
+Storming:
+- Es kommt zu Konflikten im Team und zu Störungen in der Zusammenarbeit.
+
+Norming:
+- Die Teammitglieder entwickeln Strategien und Taktiken zur Zusammenarbeit.
+
+Performing:
+- Das Team hat gelernt als Team zusammen zu arbeiten und sich gemeinsam auf die Erreichung der Ziele zu fokussieren.
+
+Karte: 62
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist der Unterschied zwischen einem Projektstrukturplan und einem Netzplan?
+Lösung:
+Ein Projektstrukturplan zeigt ausschließlich die Arbeitspakete eines Projektes an. Diese werden hierarchisch in Form eines Baumdiagramms dargestellt. Er ist ohne Chronologie und lässt keine Abhängigkeiten erkennen.
+
+Ein Netzplan zeigt die Abhängigkeiten zwischen den einzelnen Vorgängen. In ihm können vorhandenen Zeitpuffer und die Projektdauer ermittelt werden.
+
+Karte: 63
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist bei einem Netzplan der Unterschied zwischen dem Gesamtpuffer und dem freien Puffer?
+Lösung:
+Der Gesamtpuffer bezeichnet die Zeitspanne, um die ein Vorgang gegenüber seinem frühesten Anfangszeitpunkt verschoben werden kann, ohne dass das Projektende verschoben werden muss.
+
+Der freie Puffer ist die Zeitspanne, um die ein Vorgang gegenüber seinem frühesten Anfangszeitpunkt verschoben werden kann, ohne dass der früheste Anfangszeitpunkt eines Nachfolgers verschoben werden muss.
+
+Karte: 64
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Welches Merkmal charakterisiert den kritischen Pfad?
+Lösung:
+Alle Vorgänge, welche auf dem kritischen Pfad liegen, haben einen Puffer von 0 Tagen. Die Verschiebung eines Vorganges, welcher sich auf dem kritischen Pfad befindet, führt automatisch zu einer Verschiebung des Projektendes.
+
+Karte: 65
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Nennen Sie zwei Merkmale, welche ein Gantt-Diagramm von einem Netzplan unterscheiden.
+Lösung:
+- Das Gantt-Diagramm nutzt eine tabellarische Darstellung der Vorgänge.
+- Im Gantt-Diagramm werden konkrete Termine angegeben. In einem Netzplan hingegen wird nur die Zeitdauer eines Vorgangs aufgezeigt.
+- Die unterschiedliche Dauer von Vorgängen wird im Gantt-Diagramm durch die Balkenlänge visualisiert.
+- Pufferzeiten können im Gantt-Diagramm nicht direkt abgelesen werden.
+
+Karte: 66
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erläutern Sie was unter klassischen und agilen Vorgehensmodellen zu verstehen ist.
+Lösung:
+Klassische Vorgehensmodelle sind sequenzielle und plangetriebene Modelle, die darauf abzielen, ein Projekt von der Konzeption bis zur Lieferung in einer klaren Abfolge von Phasen durchzuführen. Diese Modelle basieren auf einer umfassenden Planung, die im Vorfeld erstellt wird, und erfordern häufig eine umfangreiche Dokumentation.
+
+Agile Vorgehensmodelle hingegen sind iterativ und inkrementell, was bedeutet, dass sie sich auf die Zusammenarbeit und Flexibilität konzentrieren. Agile Modelle zielen darauf ab, schnell auf Änderungen und Anforderungen zu reagieren und arbeiten in kurzen Zeitrahmen, sogenannten Sprints.
+
+Karte: 67
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Nennen Sie jeweils ein Beispiel für ein klassisches und ein agiles Vorgehensmodell.
+Lösung:
+Klassische Vorgehensmodelle:
+- Wasserfallmodell
+- V-Modell
+- Spiralmodell
+
+Agile Vorgehensmodelle:
+- Scrum
+- Extreme Programming
+
+Karte: 68
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Beschreiben Sie den Unterschied zwischen statischen und dynamischen Testverfahren und nennen Sie jeweils zwei Beispiele.
+Lösung:
+Statische Testverfahren:
+
+Die Programmkomponenten werden nicht ausgeführt. Die Überprüfung und Fehlersuche erfolgt anhand des Quellcodes oder anderen Dokumenten.
+
+- Schreibtischtest
+- Review von Anforderungen, Architektur, Design und Quellcode
+
+Dynamische Testverfahren:
+
+Das Testen der Programmkomponenten erfolgt durch die Ausführung in einer Testumgebung.
+
+- Black-Box-Test
+- White-Box-Test
+- Extremwertetest
+
+Karte: 69
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist unter einem Extremwertetest zu verstehen?
+Lösung:
+Fehler treten häufig bei extremen Eingabewerten auf, Daher liegt beim Extremwertetest der Fokus auf dem Testen der Werte, welche Nahe an den Extremwerten liegen.
+
+Ziel dieses Tests ist es, das Systemverhalten an oder jenseits seiner Spezifikationsgrenzen zu beobachten und zu verstehen, ob das System unter diesen Bedingungen korrekt funktioniert oder wie und wann es versagt. Es hilft, Fehler, Schwachstellen oder Begrenzungen der Software aufzudecken, die nur unter extremen Bedingungen sichtbar werden.
+
+Karte: 70
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Wie können Äquivalenzklassen genutzt werden, um eine effiziente und repräsentative Auswahl von Testfällen für ein System oder eine Funktion zu definieren?
+Lösung:
+Äquivalenzklassen dienen der repräsentativen Auswahl von Testfällen. Dabei werden Eingabedaten in Gruppen aufgeteilt, die ähnliche Verhaltensweisen oder Eigenschaften aufweisen. Durch die Auswahl eines Testfalls aus jeder Äquivalenzklasse wird eine breite Abdeckung der verschiedenen Szenarien erreicht, ohne alle möglichen Kombinationen von Eingabewerten zu testen.
+
+Die Idee ist, dass, wenn ein Testfall aus einer Äquivalenzklasse erfolgreich besteht oder scheitert, die anderen Testfälle derselben Klasse wahrscheinlich ein ähnliches Ergebnis liefern.
+
+Karte: 71
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären Sie die Testverfahren Black-Box und White-Box-Test.
+Lösung:
+Beim Black-Box-Test kennen die Testpersonen die interne Funktionsweise der Software nicht. Stattdessen konzentrieren sie sich auf die Eingaben und Ausgaben der Software, um zu prüfen, ob sie wie erwartet funktioniert. Der Black-Box-Test wird durchgeführt, um die Funktionalität und Benutzerfreundlichkeit einer Software zu überprüfen.
+
+Der White-Box-Test ist ein Testverfahren, bei dem Testende Kenntnisse über die interne Funktionsweise der Software haben und die Struktur und das Design der Software untersuchen. Der White-Box-Test wird durchgeführt, um sicherzustellen, dass der Code einer Software den Anforderungen entspricht und effizient funktioniert.
+
+Karte: 72
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was versteht man unter einem Code Review?
+Lösung:
+Ein Code Review ist eine systematische Untersuchung von Programmcode und wird den statischen Testverfahren zugeordnet. Hierbei kann der Code unter anderem auf folgende Aspekte geprüft werden:
+- Funktionalität
+- Lesbarkeit und Verständlichkeit
+- Wartbarkeit
+- Best Practices und Standards
+
+Nachteile:
+- Code Reviews erfordern Zeit und Ressourcen
+- Code Reviews können subjektiv sein, da die Meinungen der Reviewer variieren können
+- der Programmcode wird nicht ausgeführt
+
+Karte: 73
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist der Unterschied zwischen einem Syntaxfehler und einem Semantikfehler.
+Lösung:
+Ein Syntaxfehler tritt auf, wenn ein Programm gegen die Regeln der Programmiersprache verstößt. Das Programm kann nicht ausgeführt werden, weil der Code nicht korrekt ist.
+
+Ein Semantikfehler liegt vor, wenn der Code formal korrekt ist, aber nicht das tut, was beabsichtigt war. Das Programm läuft ohne Fehlermeldung, liefert aber falsche oder unerwartete Ergebnisse.
+
+Karte: 74
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Warum ist Performance-Testing in der Softwareentwicklung wichtig?
+Lösung:
+Performance-Testing ist wichtig, um sicherzustellen, dass eine Anwendung unter verschiedenen Lastbedingungen effizient und zuverlässig funktioniert. Durch Performance-Testing können folgende Fragen beantwortet werden:
+- Wie reagiert die Anwendung unter normaler oder erwarteter Last?
+- Wie skaliert die Anwendung mit steigender Last?
+- Wie reagiert die Anwendung unter Spitzenlastbedingungen?
+- Wie verhält sich die Anwendung über einen längeren Zeitraum?
+- Gibt es Engpässe oder Flaschenhälse in der Anwendung?
+
+Karte: 75
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Nennen Sie sechs Kriterien zur Bewertung der Qualität von Software.
+Lösung:
+Kriterien für Softwarequalität:
+- Benutzbarkeit
+- Übertragbarkeit
+- Änderbarkeit
+- Effizienz
+- Zuverlässigkeit
+- Funktionalität
+- Sicherheit
+
+Karte: 76
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist der Unterschied zwischen funktionalen und nichtfunktionalen Anforderungen in der Systementwicklung?
+Lösung:
+Funktionale und nichtfunktionale Anforderungen sind zwei Kategorien von Spezifikationen, die dazu beitragen, die Erwartungen an ein System, eine Anwendung oder ein Produkt zu definieren.
+
+Funktionale Anforderungen beschreiben, was ein System tun soll. Sie beziehen sich auf bestimmte Funktionen oder Aufgaben, die das System ausführen kann.
+
+Nichtfunktionale Anforderungen beziehen sich auf Aspekte wie Leistung, Zuverlässigkeit, Sicherheit und andere Qualitätsmerkmale., Sie beschreiben, wie gut das System seine Aufgaben ausführen soll oder unter welchen Bedingungen es funktionieren soll.
+
+Karte: 77
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist der Zweck eines Mock-ups und wie kann es im Designprozess eingesetzt werden?
+Lösung:
+Ein Mock-up hat den Zweck, ein visuelles Modell eines Produkts, einer Webseite oder einer Anwendung zu erstellen. Es wird im Designprozess eingesetzt, um das endgültige Design, die Funktionalität und das Erscheinungsbild zu veranschaulichen. Mock-ups dienen dazu, Ideen zu präsentieren, Feedback zu sammeln und Designentscheidungen zu treffen, bevor die eigentliche Entwicklung beginnt. Sie ermöglichen es, das Konzept zu visualisieren, Benutzererfahrungen zu testen und potenzielle Probleme oder Verbesserungen frühzeitig zu erkennen.
+
+Karte: 78
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist das Staging-Testing in Bezug auf Softwareentwicklung und -bereitstellung?
+Lösung:
+Beim Staging-Testing werden Anwendungen in einer Staging-Umgebung getestet, bevor sie in der Produktionsumgebung bereitgestellt werden. Die Staging-Umgebung ist eine separate Umgebung, die der Produktionsumgebung ähnelt und oft als Zwischenschritt zwischen Entwicklung und Produktion fungiert.
+
+Zweck des Staging-Testings ist es, sicherzustellen, dass die Software ordnungsgemäß funktioniert, bevor sie für die tatsächlichen Benutzer in der Produktionsumgebung verfügbar gemacht wird. Dieser Test ermöglicht es, potenzielle Probleme oder Fehler zu identifizieren und zu beheben, bevor die Software in den Live-Betrieb geht.
+
+Karte: 79
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Wie unterscheiden sich Komponententests, Funktionstests und Integrationstests im Softwareentwicklungsprozess voneinander?
+Lösung:
+Komponententests überprüfen einzelne Softwarekompo- "? nenten, wie Funktionen, Klassen oder Module, isoliert voneinander. Sie sollen sicherzustellen, dass jede Komponente ordnungsgemäß funktioniert und die erwarteten Ergebnisse liefert.
+
+Funktionstests testen die Software auf die funktionalen Anforderungen. Sie überprüfen, ob das System als Ganzes die gewünschten Funktionen und Verhaltensweisen korrekt umsetzt.
+
+Integrationstests prüfen die Interaktion zwischen verschiedenen Komponenten und stellen sicher, dass sie zusammenarbeiten und korrekt integriert sind. Sie testen die Schnittstellen und Kommunikation zwischen den Komponenten.
+
+Karte: 80
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist ein End-to-End-Test (E2E-Test) und welches Ziel wird mit seiner Durchführung verfolgt?
+Lösung:
+End-to-End (E2E) Testing ist ein Softwaretest, um die gesamte Funktionalität einer Anwendung von Anfang bis Ende zu überprüfen.
+
+Ziel ist es, zu überprüfen, ob alle Systemkomponenten gemeinsam korrekt funktionieren, und sicherzustellen, dass der gesamte Ablauf fehlerfrei ist.
+
+Karte: 81
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erläutern Sie die Methode des Blue-Green Deployments.
+Lösung:
+Die Idee des Blue-Green Deployments besteht darin, zwei separate und identische Umgebungen („Blue“ und „Green“) bereitzustellen.
+
+- Die aktuelle Produktionsversion (Blue) ist live.
+- Eine neue Version der Anwendung (Green) wird in der separaten Umgebung bereitgestellt und getestet.
+- Sobald die Tests erfolgreich abgeschlossen sind, kann der Datenverkehr von Blue auf Green umgeleitet werden.
+- Der Datenverkehr wird schrittweise umgeleitet, um sicherzustellen, dass das System in der Green-Umgebung ordnungsgemäß funktioniert.
+- Falls Probleme in der Green-Umgebung auftreten, kann der Datenverkehr schnell auf die Blue-Umgebung zurückgeleitet werden.
+
+Karte: 82
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Wofür steht die Abkürzung KVP im Qualitätsmanagement?
+Lösung:
+KVP (kontinuierlicher Verbesserungsprozess) ist ein Ansatz zur permanenten Verbesserung in Organisationen. Das Ziel ist eine kontinuierliche Verbesserung in Prozessen, Produkten und Dienstleistungen, um die Effizienz und die Qualität im Unternehmen langfristig zu stärken. Der kontinuierliche Verbesserungsprozess wird niemals beendet.
+
+Karte: 83
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären Sie den Unterschied zwischen den Begriffen Qualitätssicherung und Qualitätskontrolle.
+Lösung:
+Qualitätssicherung ist ein proaktiver Prozess, der darauf abzielt, Fehler während der Produktion oder Bereitstellung von Dienstleistungen zu verhindern. Es handelt sich um systematische Maßnahmen, die dazu dienen, die Qualität eines Endprodukts von Beginn an zu gewährleisten.
+
+Qualitätskontrolle ist ein reaktiver Prozess, bei dem Produkte oder Dienstleistungen nach ihrer Herstellung oder Bereitstellung auf Fehler geprüft werden. Es umfasst Maßnahmen wie Tests und Inspektionen, um sicherzustellen, dass das Endprodukt den Qualitätsstandards entspricht.
+
+Karte: 84
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Nennen und erklären Sie die vier Phasen des PDCA-Zyklus.
+Lösung:
+Plan:
+- Festlegung von Zielen und Planung der Aktivitäten zur Zielerreichung
+- Entwicklung eines Plans mit klaren Maßnahmen
+
+Do:
+- Implementierung der definierten Maßnahmen und Aktivitäten
+- Erfassung von Daten und Informationen während der Umsetzung
+
+Check:
+- Überprüfung und Bewertung der Ergebnisse, die während der Umsetzung gesammelt wurden
+- Vergleich der tatsächlichen Ergebnisse mit den definierten Zielen
+- Analyse von Abweichungen und Ursachen von Problemen
+
+Act:
+- Basierend auf den Ergebnissen der Überprüfung werden geeignete Maßnahmen endgültig umgesetzt
+- Aktualisierung des Plans für den nächsten Zyklus, basierend auf den gewonnenen Erkenntnissen
+
+Karte: 85
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was bedeutet es, wenn eine Software als barrierefrei bezeichnet wird?
+Lösung:
+Barrierefreie Software bedeutet, dass die Software so gestaltet ist, dass sie von allen Menschen, einschließlich Menschen mit Behinderungen, genutzt werden kann. Dies beinhaltet Funktionen wie Bildschirmleseprogramme für Blinde, Untertitel und Transkriptionen für Gehörlose, und die Fähigkeit, die Software mit einer Tastatur oder Spracherkennung anstelle einer Maus zu bedienen.
+
+Karte: 86
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was versteht man unter Softwareergonomie und welche Prinzipien und Maßnahmen können angewendet werden, um die Benutzerfreundlichkeit von Softwareanwendungen zu verbessern?
+Lösung:
+Softwareergonomie bezieht sich auf die Gestaltung von Software, die auf die menschlichen Fähigkeiten abgestimmt ist, um Benutzerfreundlichkeit und Effizienz zu maximieren. Dazu gehören Prinzipien wie:
+- Nutzerzentrierung: Gestaltung mit Blick auf die Bedürfnisse und Fähigkeiten der Endnutzer
+- Einfachheit und Konsistenz: intuitive und konsistente Benutzeroberflächen
+- Rückmeldung: klare und zeitnahe Rückmeldung an die Benutzer über ihre Interaktionen
+- Anpassbarkeit: Flexibilität zur Anpassung an individuelle Bedürfnisse
+- Fehlervermeidung und -behandlung: Design, das die Fehleranfälligkeit minimiert und bei der Fehlerbehebung unterstützt
+
+Karte: 87
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Nennen Sie in Bezug auf Softwareergonomie die Grundsätze der Dialoggestaltung.
+Lösung:
+Die Grundsätze der Dialoggestaltung sind Richtlinien zur Verbesserung der Benutzer-Software-Interaktion:
+- Aufgabenangemessenheit: Software unterstützt Nutzer effektiv und stört nicht
+- Selbstbeschreibungsfähigkeit: jede Aktion sollte ohne zusätzliche Erklärung verständlich sein
+- Steuerbarkeit: Nutzer können Interaktionen steuern und beeinflussen
+- Erwartungskonformität: Software entspricht gängigen Standards und Erwartungen
+- Fehlertoleranz: Software verzeiht Fehler und unterstützt bei deren Behebung
+- Individualisierbarkeit: Nutzer können Software an ihre Bedürfnisse anpassen
+- Lernförderlichkeit: Software unterstützt den Lernprozess des Nutzers
+
+Karte: 88
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was sind relationale Datenbanken? Nennen Sie zwei Beispiele für nicht-relationale Datenbanktypen.
+Lösung:
+Relationale Datenbanken sind Datenbanken, die auf dem relationalen Datenbankmodell basieren. Sie speichern Daten in Tabellen, die aus Zeilen und Spalten bestehen. Die Beziehungen zwischen den Tabellen werden durch Primärschlüssel-Fremdschlüssel-Beziehungen hergestellt.
+
+Beispiele für nicht-relationale Datenbanktypen sind:
+- Dokumentenorientierte Datenbanken
+- Schlüssel-Wert-Datenbanken
+- Spaltenorientierte Datenbanken
+- Graphdatenbanken
+- Zeitreihendatenbanken
+- Objektorientierte Datenbanken
+
+Karte: 89
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Welche Datentypen werden in SQL verwendet und welchen Zweck erfüllen sie?
+Lösung:
+Zu den gängigen SQL-Datentypen gehören:
+- INTEGER (für Ganzzahlen)
+- FLOAT oder DECIMAL (für Gleitkommazahlen)
+- VARCHAR oder CHAR (für Zeichenketten)
+- DATE, Time oder TIMESTAMP (für Datum und Uhrzeit)
+- BOOLEAN (für boolesche Werte)
+- BINARY (Binär-String)
+
+Jeder Datentyp hat spezifische Eigenschaften, wie die Größe des Wertebereichs oder die maximale Anzahl von Zeichen, die er speichern kann. Durch die Auswahl des richtigen Datentyps kann die Datenintegrität gewährleistet und die Speichereffizienz optimiert werden.
+
+Karte: 90
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären Sie in Bezug auf Datenbanken die Begriffe Primärschlüssel und Fremdschlüssel.
+Lösung:
+In Bezug auf Datenbanken haben Primärschlüssel und Fremdschlüssel besondere Bedeutungen:
+
+Ein Primärschlüssel ist ein Feld oder eine Kombination von Feldern in einer Tabelle, das bzw. die jede Zeile eindeutig identifiziert. Jeder Primärschlüssel ist eindeutig innerhalb der Tabelle und es darf keine Duplikate oder Nullwerte geben.
+
+Ein Fremdschlüssel ist ein Feld oder eine Kombination von Feldern in einer Tabelle, das auf den Primärschlüssel einer anderen Tabelle verweist. Der Zweck eines Fremdschlüssels besteht darin, die Integrität der Daten zu gewährleisten und Beziehungen zwischen Tabellen herzustellen.
+
+Karte: 91
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist referenzielle Integrität in Bezug auf Datenbanken?
+Lösung:
+Referenzielle Integrität bezieht sich auf die Konsistenz von Beziehungen zwischen Tabellen. Die referenzielle Integrität soll sicherstellen, dass in einer Beziehung zwischen zwei Tabellen der Wert des Fremdschlüssels in der referenzierten Tabelle immer auf einen gültigen Wert verweist. Wenn eine Änderung oder Löschung in einer Tabelle vorgenommen wird, überprüft die referenzielle Integrität, ob dies Auswirkungen auf andere Tabellen hat und ob die Konsistenz der Beziehungen erhalten bleibt.
+
+Karte: 92
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was sind Datenbankanomalien und welche Arten von Anomalien können auftreten?
+Lösung:
+Datenbankanomalien sind Probleme, die in einer Datenbank auftreten und zu Inkonsistenzen oder unerwünschten Effekten führen können. Es gibt drei Arten von Datenbankanomalien:
+- Einfügeanomalie
+- Aktualisierungsanomalie
+- Löschanomalie
+
+Diese Anomalien können vermieden werden, indem man Normalisierungstechniken anwendet, wie beispielsweise das Aufteilen von Tabellen (Vermeiden von Redundanz) und die klare Definition von Beziehungen zwischen Tabellen.
+
+Karte: 93
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Beschreiben Sie die erste, zweite und dritte Normalform in relationalen Datenbanken.
+Lösung:
+Eine Relation ist in der ersten Normalform, wenn jeder Attributwert atomar ist. Attribute mit Attributwerten, welche nicht atomar sind, müssen in mehrere Attribute aufgeteilt werden Die zweite Normalform zielt darauf ab, Abhängigkeiten zwischen Nicht-Schlüsselattributen zu beseitigen. Datenfelder, die von einem Schlüsselkandidaten (Primärschlüssel) nicht vollständig funktional abhängig sind, müssen in weiteren Tabellen untergebracht werden.
+
+Die dritte Normalform beseitigt transitive Abhängigkeiten zwischen Nicht-Schlüsselattributen. Die transitiv abhängigen Datenfelder müssen in weitere Tabellen ausgelagert werden.
+
+Karte: 94
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Welche Schritte sind notwendig, um Datenstrukturen in einem ER-Diagramm zu modellieren?
+Lösung:
+Ein Entity-Relationship-Diagramm (ER-Diagramm) wird zur Modellierung von Datenbanken wie folgt verwendet:
+
+1. Identifizieren der Entitäten: Das sind die Hauptobjekte oder Konzepte in der Datenbank.
+
+2. Bestimmen der Attribute: Das sind die Eigenschaften oder Merkmale der Entitäten.
+
+3. Identifizieren der Beziehungen: Das sind die Verbindungen und Interaktionen zwischen Entitäten, 4. Bestimmen der Kardinalität: Das definiert, wie viele Instanzen einer Entität mit einer Instanz einer anderen Entität in Beziehung stehen können.
+
+Karte: 95
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Welche speziellen Anforderungen in Bezug auf die Beziehungen zwischen den einzelnen Entitätstypen sind bei der Ableitung von Datentabellen aus einem ER-Diagramm zu beachten?
+Lösung:
+Bei der Ableitung von Tabellen aus einem ER-Diagramm müssen Sie die Art der Beziehungen berücksichtigen:
+- 1:1: Eine Fremdschlüsselbeziehung in einer der beiden Tabellen erstellen.
+- A1:n: Der Primärschlüssel der „1“-Tabelle wird als Fremdschlüssel in der „n“-Tabelle verwendet.
+- nım: Diese Art von Beziehungen müssen über eine zusätzliche Tabelle mit Fremdschlüsseln zu beiden beteiligten Tabellen aufgelöst werden.
+
+Karte: 96
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Wofür steht die Abkürzung ODBC?
+Lösung:
+ODBC (Open Database Connectivity) ist eine standardisierte Schnittstelle für den Zugriff auf verschiedene Datenbankmanagementsysteme. Es ermöglicht Anwendungen, SQL-Abfragen unabhängig vom verwendeten Datenbanktyp auszuführen.
+
+Karte: 97
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist der Unterschied zwischen einem Compiler und einem Interpreter?
+Lösung:
+Ein Compiler ist ein Programm, das den gesamten Quellcode einer Programmiersprache analysiert und in einen ausführbaren Maschinencode übersetzt. Der übersetzte Code kann später unabhängig vom Compiler ausgeführt werden. Ein Interpreter ist ein Programm, das den Quellcode einer Programmiersprache Zeile für Zeile ausführt. Im Gegensatz zum Compiler, der den gesamten Code vor der Ausführung übersetzt, übersetzt der Interpreter den Code zur Laufzeit. Der Interpreter analysiert und führt jede Anweisung einzeln aus, wodurch eine direkte Interpretation des Codes ermöglicht wird.
+
+Karte: 98
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Nennen Sie je ein Beispiel für eine Compiler- und eine Interpretersprache.
+Lösung:
+Compilersprachen:
+- C
+- C++
+- Pascal
+
+Interpretersprachen:
+- Perl
+- Python
+- BASIC
+
+Karte: 99
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Welche Vorteile bietet die Verwendung einer Versionsverwaltung in der Softwareentwicklung?
+Lösung:
+Die Verwendung einer Versionsverwaltung in der Softwareentwicklung ...
+
+- ermöglicht die Nachverfolgung von Änderungen am Quellcode.
+- erlaubt das einfache Zurücksetzen auf frühere Versionen, falls Fehler auftreten oder unerwünschte Änderungen vorgenommen wurden.
+- ermöglicht die Zusammenarbeit mehrerer Entwickler an einem Projekt, da Änderungen nahtlos zusammengeführt werden können.
+- erleichtert das Testen neuer Funktionen oder Experimente, ohne die Integrität des Hauptprojekts zu gefährden.
+- trägt dazu bei, den Entwicklungsprozess transparenter zu gestalten.
+
+Karte: 100
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist JSON und wo wird es verwendet?
+Lösung:
+JSON (JavaScript Object Notation) ist ein Datenformat, das zur Speicherung und Übertragung strukturierter Daten verwendet wird. JSON speichert Daten in Form von Attribut-Wert-Paaren. Ein JSON-Dokument besteht aus geschweiften Klammern und enthält eine oder mehrere Eigenschaften. Jede Eigenschaft besteht aus einem Namen und einem Wert, die durch einen Doppelpunkt getrennt sind,
+
+{
+  „name“: „Andreas Müller“,
+  „age“: 30,
+  „city“: „Hamburg“
+}
+
+JSON wird häufig in Webanwendungen und APIs (Application Programming Interfaces) eingesetzt.
+
+Karte: 101
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was sind die Unterschiede zwischen den Datenformaten CSV und XML?
+Lösung:
+CSV (Comma-Separated Values) und XML (eXtensible 403:
+
+Markup Language) sind verschiedene Datenformate, die zur Speicherung und Übertragung von strukturierten Daten verwendet werden.
+
+CSV ist ein textbasiertes Format, bei dem Daten in Tabellenform organisiert sind. Jede Zeile repräsentiert einen Datensatz, und die einzelnen Werte innerhalb einer Zeile sind durch Trennzeichen voneinander getrennt. CSV enthält normalerweise keine Strukturinformationen oder Hierarchie, XML ist eine Markup-Sprache, die eine hierarchische Struktur verwendet. Daten werden in Tags eingebettet und können ineinander verschachtelt werden, um komplexe Hierarchien darzustellen.
+
+Karte: 102
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Der UML-Standard unterscheidet zwischen Strukturdiagrammen und Verhaltensdiagrammen. Nennen Sie jeweils zwei Beispiele aus diesen beiden Kategorien.
+Lösung:
+Strukturdiagramme:
+- Klassendiagramm
+- Objektdiagramm
+- Paketdiagramm
+- Komponentendiagramm
+- Profildiagramm
+- Verteilungsdiagramm
+- Kompositionsstrukturdiagramm
+
+Verhaltensdiagramme:
+- Anwendungsfalldiagramm
+- Zustandsdiagramm
+- Aktivitätsdiagramm
+- Sequenzdiagramm
+- Kommunikationsdiagramm
+- Zeitdiagramm
+- Interaktionsübersichtsdiagramm
+
+Karte: 103
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Wofür wird das UML-Aktivitätsdiagramm bei der Modellierung genutzt?
+Lösung:
+Ein UML-Aktivitätsdiagramm ist ein Verhaltensdiagramm, das die Reihenfolge und Bedingungen für die Ausführung verschiedener Aktivitäten in einem System darstellt. Es wird in der Modellierung verwendet, um Arbeitsabläufe zu visualisieren, das Verhalten von Systemteilen zu modellieren, Anforderungen zu analysieren und zu designen, sowie um parallele Abläufe darzustellen. Es besteht aus Elementen wie Start- und Endknoten, Aktionsknoten, Entscheidungsknoten und Synchronisationsstangen.
+
+Karte: 104
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was stellt ein Sequenzdiagramm in UML dar und in welchen Szenarien wird es typischerweise verwendet?
+Lösung:
+Ein Sequenzdiagramm in der Unified Modeling Language (UML) zeigt die Interaktionen zwischen Objekten in der Reihenfolge, in der sie auftreten. Ein Sequenzdiagramm besteht aus einer Reihe von vertikalen „Lebenslinien“, die Objekte oder Klassen repräsentieren, und horizontalen „Nachrichten“, die zwischen den Lebenslinien hin und her gehen. Die Nachrichten sind zeitlich von oben nach unten geordnet, sodass man sehen kann, in welcher Reihenfolge die Interaktionen stattfinden. Sequenzdiagramme helfen dabei, die dynamischen Interaktionen in einem System darzustellen und zu analysieren.
+
+Karte: 105
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Welche Informationen kann man aus dem Klassendiagramm ableiten?
+Lösung:
+Das Klassendiagramm zeigt Klassen, ihre Attribute und Methoden sowie Beziehungen zwischen den Klassen. Aus einem Klassendiagramm kann man folgende Informationen ableiten:
+- Klassen und Objekte: Welche Klassen gibt es und welche Objekte repräsentieren sie?
+- Attribute und Operationen: Welche Eigenschaften und Verhaltensweisen haben die Klassen?
+- Beziehungen: Wie sind die Klassen miteinander verknüpft (z. B. durch Assoziationen oder Vererbungen)?
+- Sichtbarkeit: Welche Attribute und Operationen sind Öffentlich, privat oder geschützt?
+- Kardinalität: Wie viele Instanzen einer Klasse können mit einer anderen in Beziehung stehen?
+
+Karte: 106
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist eine Klasse in der objektorientierten Programmierung?
+Lösung:
+Eine Klasse in der objektorientierten Programmierung ist ein Bauplan für die Erstellung von Objekten. Sie definiert Eigenschaften (Variablen, die den Zustand repräsentieren) und Methoden (Funktionen, die das Verhalten repräsentieren) eines Objekts. Eine Klasse ermöglicht die Erstellung mehrerer Objekte mit ähnlichen Merkmalen und Verhaltensweisen. Sie bildet die Grundlage für Vererbung und Polymorphie.
+
+Karte: 107
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist ein Objekt in der objektorientierten Programmierung?
+Lösung:
+Ein Objekt in der objektorientierten Programmierung ist eine konkrete Instanz einer Klasse. Es besitzt die Attribute und Methoden, die in seiner Klasse definiert sind. Jedes Objekt hat seinen eigenen Satz von Werten für die Attribute. Diese Attribute repräsentieren den Zustand des Objekts, während die Methoden das Verhalten definieren, das auf diesem Zustand operiert. Ein Objekt ist also eine Verkapselung von Daten (Zustand) und den dazu gehörenden Operationen (Verhalten).
+
+Karte: 108
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+In UML-Klassendiagrammen wird zwischen den Beziehungstypen Aggregation und Komposition unterschieden. Erläutern Sie den Unterschied zwischen diesen beiden Beziehungstypen.
+Lösung:
+Bei der Aggregation handelt es sich um eine lose Beziehung zwischen zwei Klassen, bei der eine Klasse (das Ganze) eine Sammlung oder eine Gruppe von Objekten einer anderen Klasse (die Teile) enthält. Die Beziehung zwischen dem Ganzen und den Teilen ist in der Regel optional, das heißt, das Ganze kann ohne die Teile existieren.
+
+Bei der Komposition handelt es sich um eine starke Beziehung zwischen zwei Klassen, bei der eine Klasse (das Ganze) aus einer anderen Klasse (dem Teil) besteht. Die Teile können nur als Teil des Ganzen existieren und haben keine eigenständige Existenz. Wenn das Ganze zerstört wird, werden auch die Teile zerstört.
+
+Karte: 109
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären Sie das Prinzip der Vererbung in der objektorientierten Programmierung.
+Lösung:
+In der objektorientierten Programmierung ist Vererbung ein Schlüsselprinzip, das es ermöglicht, neue Klassen aus bereits existierenden Klassen zu erzeugen. Die neu erstellte Klasse wird als „Unterklasse“ oder „abgeleitete Klasse“ bezeichnet, während die existierende Klasse, von der sie erbt, als „Oberklasse“ oder „Basisklasse“ bezeichnet wird. Die Vererbung ist nützlich für die Wiederverwendung von Code und die Reduzierung von Redundanz. Sie ermöglicht es, dass Eigenschaften (Attribute) und Verhaltensweisen (Methoden), die in der Oberklasse definiert sind, an die Unterklasse weitergegeben werden.
+
+Karte: 110
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+In welchem Zusammenhang steht das Konzept der Datenkapselung in der objektorientierten Programmierung mit den Prinzipien der Datenintegrität und der Code-Wartbarkeit?
+Lösung:
+Datenkapselung ist ein zentraler Grundsatz der objektorientierten Programmierung. Sie verbirgt die Daten (Variablen) und die Methoden einer Klasse und schützt Daten vor dem direkten Zugriff von außen. Nur die öffentlichen Methoden der Klasse können auf die internen Daten zugreifen Dies schafft ein hohes Maß an Datenintegrität, da die Daten nur auf sichere und kontrollierte Weise manipuliert werden können. Darüber hinaus verbessert es die Wartbarkeit und Verständlichkeit des Codes, da Änderungen an der internen Implementierung der Klasse nicht die Teile des Programms beeinflussen, die die Klasse verwenden.
+
+Karte: 111
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist der Unterschied zwischen Prozeduren und Funktionen in der Programmierung?
+Lösung:
+Eine Funktion ist Codeblock, der eine spezifische Aufgabe ausführt und in der Regel einen Wert zurückgibt.
+
+Eine Prozedur ist auch ein Codeblock, der eine spezifische Aufgabe ausführt. Der Hauptunterschied besteht jedoch darin, dass eine Prozedur normalerweise keinen Wert zurückgibt. Eine Prozedur führt eine Aufgabe aus und kehrt dann zur aufrufenden Stelle im Code zurück.
+
+Karte: 112
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Wie unterscheiden sich prozedurale und objektorientierte Programmierung voneinander?
+Lösung:
+Die prozedurale Programmierung ist auf den Gedanken aufgebaut, dass ein Programm eine Reihe von Aufgaben (Prozeduren) ausführt, die auf Daten operieren. Ein prozedurales Programm besteht i. d. R. aus einer Reihe von Prozeduren, die aufgerufen werden, um eine bestimmte Aufgabe zu erfüllen. Die Daten sind getrennt von den Prozeduren, und die Prozeduren bearbeiten diese Daten. In der objektorientierten Programmierung (00P) werden Daten und Funktionen zu Objekten zusammengefasst. Ein Objekt kann Attribute (Daten) und Methoden (Funktionen) enthalten. OOP fokussiert auf die drei Hauptprinzipien Vererbung, Kapselung und Polymorphie.
+
+Karte: 113
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist eine REST-API (Representational State Transfer)?
+Lösung:
+Eine REST-API (Representational State Transfer) ist ein Set von Regeln und Konventionen für den Aufbau von Webdiensten. Sie nutzt Standard-HTTP-Methoden (wie GET, POST, PUT und DELETE) zur Interaktion mit Ressourcen, die durch eindeutige URLs identifiziert werden.
+
+Sie ist zustandslos, d.h. jede Anfrage enthält alle Informationen, die benötigt werden, um sie zu bearbeiten, ohne sich auf frühere Anfragen zu beziehen.
+
+Karte: 114
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist Künstliche Intelligenz (Kl)?
+Lösung:
+Künstliche Intelligenz (Kl) bezieht sich auf die Entwicklung von Computern oder Systemen, die in der Lage sind, menschenähnliche Denk- und Entscheidungsprozesse nachzuahmen. KI ermöglicht es Maschinen, Informationen zu verstehen, zu lernen, Probleme zu lösen und intelligentes Verhalten zu zeigen.
+
+Karte: 115
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was versteht man unter cyber-physischen Systemen?
+Lösung:
+Cyber-physische Systeme sind Systeme, in denen physische Komponenten (z. B. Maschinen, Sensoren, Roboter) mit digitaler Steuerung und Kommunikation verbunden sind. Sie arbeiten in Echtzeit und reagieren auf ihre Umgebung.
+
+Karte: 116
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Nennen Sie drei Dienstleistungsmodelle im Cloud-Computing.
+Lösung:
+Dienstleistungsmodelle von Cloud-Computing:
+- „Software-as-a-Service“ (SaaS): Servicemodell, bei dem Anwendungen über das Internet bereitgestellt werden
+- „Infrastructure-as-a-Service“ (IaaS): Servicemodell, bei dem virtuelle Ressourcen, wie z. B. Server und Speicher über das Internet bereitgestellt werden
+- „Platform-as-a-Service“ (PaaS): Servicemodell, das eine Entwicklungsplattform über das Internet bereitstellt
+- „Desktop-as-a-Service“ (DaaS): ist ein Servicemodell, bei dem ein virtueller Desktop über das Internet bereitgestellt wird
+- „Everything-as-a-Service“ (XaaS): ist ein erweitertes Konzept, bei dem alle IT-Dienstleistungen über das Internet bereitgestellt werden
+
+Karte: 117
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Welche unterschiedlichen Bereitstellungsarten von Cloud-Diensten können unterschieden werden?
+Lösung:
+Die Public Cloud bezieht sich auf eine Cloud-Umgebung, die von einem Cloud-Dienstleister betrieben wird und für die breite Öffentlichkeit zugänglich ist.
+
+Die Private Cloud bezieht sich auf eine Cloud-Umgebung, die speziell für ein einzelnes Unternehmen oder eine Organisation bereitgestellt wird. Im Gegensatz zur Public Cloud wird die Private Cloud hinter einer Firewall betrieben und kann nur von internen Mitarbeitenden genutzt werden.
+
+Die Hybrid Cloud ist eine Kombination aus Public Cloud und Private Cloud. Unternehmen nutzen sowohl die Ressourcen und Dienste der Public Cloud als auch ihre eigenen Private Cloud-Ressourcen.
+
+Karte: 118
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was bedeutet On-Premises?
+Lösung:
+On-Premises (auch „On-Prem“) bedeutet, dass Software, Server oder IT-Systeme direkt im eigenen Unternehmen betrieben werden - also nicht in der Cloud.
+
+Karte: 119
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären Sie den Unterschied zwischen verlustfreier und verlustbehafteter Datenkompression.
+Lösung:
+Bei der verlustfreien Kompression werden Daten so komprimiert, dass alle ursprünglichen Informationen erhalten bleiben und bei der Dekompression vollständig wiederhergestellt werden können. Das bedeutet, dass die dekomprimierten Daten exakt den ursprünglichen Daten entsprechen. Bei der verlustbehafteten Kompression werden Daten so komprimiert, dass einige Informationen verloren gehen. Diese Methode erzielt in der Regel eine viel höhere Kompressionsrate als die verlustfreie Kompression, aber die Originaldaten können nicht vollständig wiederhergestellt werden.
+
+Karte: 120
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Beschreiben Sie den Unterschied zwischen einer Paketfilter-Firewall und einer Applikationsfilter-Firewall.
+Lösung:
+Eine Paketfilter-Firewall analysiert den Netzwerkverkehr auf der Ebene der Netzwerkpakete. Sie überprüft die Header-Informationen der Pakete, wie Quell- und Ziel-IP-Adressen, Portnummern und Protokolltypen, und entscheidet basierend auf vordefinierten Regeln, ob das Paket zugelassen oder blockiert wird.
+
+Eine Applikationsfilter-Firewall arbeitet auf der Anwendungsschicht. Sie kann den Inhalt des Datenverkehrs analysieren und spezifische Anwendungsprotokolle verstehen. Dies ermöglicht es der Firewall, spezifische Angriffsmuster oder verdächtige Aktivitäten in den Anwendungsdaten zu erkennen und zu blockieren.
+
+Karte: 121
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist eine Next-Generation Firewall (NGFW)?
+Lösung:
+Eine Next-Generation Firewall (NGFW) ist eine fortschrittliche Firewall, die über die Funktionen herkömmlicher Firewalls hinausgeht. Sie kombiniert Funktionen wie Intrusion Detection/ Prevention System (IDS/IPS), Content-Filtering, Anwendungssteuerung und mehr. Durch die Kombination dieser Funktionen ermöglicht eine Next-Generation Firewall eine effektive Sicherheitskontrolle und Bedrohungserkennung.
+
+Karte: 122
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist unter IDS in Bezug auf Netzwerksicherheit zu verstehen?
+Lösung:
+Ein Intrusion Detection System (IDS) überwacht den Netzwerkverkehr, um verdächtige Aktivitäten, Angriffsmuster oder potenzielle Sicherheitsverletzungen zu erkennen. Das IDS analysiert den Datenverkehr, vergleicht ihn mit bekannten Angriffsmustern oder definierten Regeln und generiert Warnmeldungen oder Alarme, wenn eine potenzielle Bedrohung erkannt wird. Das IDS dient dazu, Sicherheitsvorfälle zu erkennen und darauf aufmerksam zu machen, aber es ergreift keine aktiven Maßnahmen, um Angriffe zu stoppen oder zu blockieren.
+
+Karte: 123
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was bedeutet Deep Packet Inspection (DPI)?
+Lösung:
+Deep Packet Inspection (DPI) ist eine Technologie, bei der der Netzwerkverkehr auf tiefer Ebene analysiert wird, indem der Inhalt der Pakete untersucht wird. DPI geht über die herkömmliche Paketfilterung hinaus, indem es den gesamten Paketinhalt, einschließlich der Nutzdaten, inspiziert. Mithilfe von Algorithmen und Mustererkennungstechniken interpretiert DPI den Paketinhalt, erkennt Protokolle, Anwendungen, Dateitypen und spezifische Inhalte. Es ermöglicht eine umfassende Überwachung, Kontrolle und den Schutz des Netzwerkverkehrs, um Bedrohungen zu erkennen und Richtlinien durchzusetzen.
+
+Karte: 124
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Worin unterscheidet sich ein Intrusion Prevention System (IPS) von einem Intrusion Detection System (IDS)?
+Lösung:
+Im Gegensatz zum Intrusion Detection System (IDS) bietet ein Intrusion Prevention System (IPS) eine proaktive Verteidigungslinie. Es überwacht ebenfalls den Netzwerkverkehr, erkennt Anomalien oder verdächtige Aktivitäten und kann automatisch Maßnahmen ergreifen, um Bedrohungen abzuwehren. Das IPS kann den Datenverkehr blockieren, filtern oder umleiten, um unerwünschten oder schädlichen Verkehr zu stoppen. Es kann auch Benachrichtigungen an Administratoren senden oder automatisch Gegenmaßnahmen ergreifen, um Sicherheitsverletzungen zu verhindern.
+
+Karte: 125
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist Stateful Packet Inspection (SPI) und wie funktioniert es?
+Lösung:
+Stateful Packet Inspection (SP!) ist eine Technologie, die in Firewalls und Netzwerkgeräten verwendet wird. SPI verfolgt den Zustand von Netzwerkverbindungen.
+
+Im Gegensatz zu einfachen Paketfilter-Firewalls berücksichtigt SPI den Zustand der Netzwerkverbindung. Durch das Verfolgen des Verbindungszustands kann SPI den Netzwerkverkehr genauer filtern. Es kann den Datenverkehr zulassen, der zu einer etablierten und erlaubten Verbindung gehört, während es den Datenverkehr blockiert, der zu unerwünschten oder potenziell schädlichen Verbindungen gehört.
+
+Karte: 126
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was besagt das Zero-Trust-Prinzip?
+Lösung:
+Das Zero-Trust-Prinzip basiert auf der Annahme, dass niemandem und nichts innerhalb oder außerhalb eines Netzwerks automatisch vertraut wird. Jede Zugriffsanfrage wird stets überprüft und verifiziert, bevor Zugriff gewährt wird.
+
+Kernpunkte:
+- „Vertraue niemandem, überprüfe alles“
+- Strenge Authentifizierung und Autorisierung
+- Minimierung von Zugriffsrechten (Least Privilege)
+- Kontinuierliche Überwachung und Kontrolle
+
+Karte: 127
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist eine DMZ (Demilitarisierte Zone) in Bezug auf Netzwerksicherheit?
+Lösung:
+Eine Demilitarisierte Zone (DMZ) ist ein isolierter Netzwerkbereich, der zwischen dem internen Netzwerk und dem externen Netzwerk platziert wird. Die DMZ dient als zusätzliche Sicherheitsebene, um die Ressourcen im internen Netzwerk vor direktem Zugriff aus dem externen Netzwerk zu schützen. Die DMZ wird oft verwendet, um öffentlich zugängliche Dienste wie Webserver, E-Mail-Server oder FTP-Server zu hosten. Durch die Platzierung dieser Dienste in der DMZ wird eine Trennung zwischen dem öffentlichen Verkehr aus dem Internet und dem internen Netzwerkverkehr hergestellt.
+
+Karte: 128
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist ein Penetrationstest und wie wird er durchgeführt?
+Lösung:
+Ein Penetrationstest ist ein proaktiver Sicherheitstest, der durchgeführt wird, um die Schwachstellen und Sicherheitslücken eines Systems, Netzwerks oder einer Anwendung zu identifizieren. Das Hauptziel eines Penetrationstests besteht darin, die Sicherheit zu verbessern, indem potenzielle Angriffsszenarien simuliert und ausgewertet werden.
+
+Ein Penetrationstest wird in mehreren Phasen durchgeführt:
+- Informationsbeschaffung
+- Aufdeckung von Schwachstellen
+- Ausnutzung von Schwachstellen
+- Ergebnisanalyse
+- Berichterstattung
+
+Karte: 129
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Welche Aspekte werden bei einem Device Security Check überprüft?
+Lösung:
+Ein Device Security Check ist eine Überprüfung der Sicherheitsmaßnahmen und -einstellungen eines Geräts, um potenzielle Schwachstellen zu identifizieren und die Sicherheit des Geräts zu verbessern. Dabei werden in der Regel folgende Aspekte überprüft:
+- Betriebssystem und Firmware
+- Benutzerkonten und Zugriffsrechte
+- Netzwerkkonfiguration
+- Anwendungen und Dienste
+- Physische Sicherheit
+- Verschlüsselung
+
+Nach Abschluss des Device Security Checks werden Ergebnisse und Empfehlungen für die Verbesserung der Gerätesicherheit dokumentiert.
+
+Karte: 130
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Wofür steht die Abkürzung RADIUS in der Netzwerktechnik?
+Lösung:
+RADIUS (Remote Authentication Dial-In User Service) ist ein Protokoll zur Authentifizierung, Autorisierung und Abrechnung von Netzwerkzugriffen. Es wird häufig in drahtlosen Netzwerken wie WLANSs eingesetzt, um Benutzer zu verifizieren und den Zugriff auf das Netzwerk zu kontrollieren.
+
+Karte: 131
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+In Zusammenhang mit RADIUS wird auch oft von RADIUS (AAA) gesprochen. Wofür stehen die drei A in der Abkürzung? Erläutern Sie diese drei Komponenten.
+Lösung:
+Authentifizierung: RADIUS verifiziert die Identität von Benutzern, bevor sie Zugang zum Netzwerk erhalten. Dies wird oft durch Überprüfung eines Benutzernamens und Passworts erreicht.
+
+Autorisierung: Nachdem ein Benutzer authentifiziert wurde, steuert RADIUS, welchen Zugang der Benutzer zum Netzwerk hat. Dies kann beeinflussen, welche Dienste der Benutzer nutzen darf, und andere Zugriffsbeschränkungen beinhalten. Accounting: RADIUS protokolliert die Aktivitäten der Benutzer im Netzwerk. Dies kann beinhalten, wann der Benutzer auf das Netzwerk zugegriffen hat, wie lange sie verbunden waren, die Menge der übertragenen Daten und andere Informationen.
+
+Karte: 132
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Welche Bedeutung hat die Berechtigungsstruktur AGDLP (RBAC)?
+Lösung:
+Die Berechtigungsstruktur AGDLP steht für Account, Global, Domain Local, Permission. Sie ist eine Methode zur Verwaltung von Berechtigungen in einem Role Based Access Control (RBAC) System.
+
+Sie basiert auf der Zuweisung von Berechtigungen zu bestimmten Rollen, anstatt sie individuell Benutzern zuzuweisen. Die AGDLP-Struktur ermöglicht eine effiziente und skalierbare Verwaltung von Berechtigungen, da Berechtigungen auf höheren Ebenen an darunter liegende Ebenen vererbt werden können. Dies erleichtert die Konsistenz und Zentralisierung der Berechtigungsverwaltung in einer RBAC-Umgebung.
+
+Karte: 133
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären Sie die Umsetzung des AGDLP-Prinzips in Windows-Umgebungen.
+Lösung:
+Die Berechtigung auf Ressourcen erfolgt gemäß der AGDLP-Methode wie folgt:
+- ein Benutzer erhält Zugriff auf Ressourcen über die Mitgliedschaft in einer globalen Gruppe
+- globale Gruppen werden domänenlokalen Gruppen zugeordnet
+- Zugriffsberechtigungen (Permissions) auf Ressourcen werden dann über die domänenlokale Gruppe erteilt
+
+Karte: 134
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was versteht man unter dem Least-Privilege-Prinzip?
+Lösung:
+Das Least-Privilege-Prinzip besagt, dass jeder Benutzer, jedes Programm oder System nur die minimal notwendigen Zugriffsrechte erhält, die es für seine Aufgaben braucht.
+
+Ziele:
+- Kontrolle und Nachvollziehbarkeit von Zugriffen
+- Erhöhung der Systemsicherheit
+- Begrenzung von Schäden bei Fehlern oder Angriffen
+
+Karte: 135
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Welche Funktion erfüllt LDAP in einer Verzeichnisstruktur?
+Lösung:
+LDAP steht für Lightweight Directory Access Protocol. Es handelt sich um ein standardisiertes Protokoll, das in Netzwerken verwendet wird, um auf Verzeichnisdienste zuzugreifen und Informationen abzurufen.
+
+LDAP dient als Kommunikationsprotokoll zwischen einem LDAP-Client und einem LDAP-Server. Der LDAP-Server verwaltet ein hierarchisches Verzeichnis, das Informationen über Benutzer, Gruppen, Ressourcen und andere Objekte enthält. Das Protokoll ermöglicht es dem Client, auf das Verzeichnis zuzugreifen, Suchanfragen durchzuführen, Daten zu lesen, zu schreiben und zu aktualisieren.
+
+Karte: 136
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist das Domänenkonzept in der Netzwerkarchitektur?
+Lösung:
+Das Domänenkonzept ist ein grundlegendes Prinzip der Netzwerkarchitektur und -verwaltung. Es bezieht sich auf die Aufteilung eines Netzwerks in logische Gruppen oder Bereiche, in denen Benutzer, Computer, Ressourcen und Sicherheitseinstellungen organisiert und verwaltet werden.
+
+Eine Domäne ist eine logische Verwaltungseinheit, die eine Gruppe von Computern, Benutzern und Ressourcen umfasst. In einer Domäne werden die Benutzerkonten, Sicherheitseinstellungen und Ressourcen zentral verwaltet und authentifiziert. Das Domänenkonzept ermöglicht eine zentrale Verwaltung, Skalierbarkeit, Sicherheit und Zusammenarbeit in einem Netzwerk.
+
+Karte: 137
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was sind ACLs (Access Control Lists)?
+Lösung:
+ACLs (Access Control Lists) steuern den Zugriff auf Ressourcen in einem Computersystem. Eine ACL enthält eine Liste von Berechtigungen, die einem bestimmten Benutzer oder einer Gruppe zugeordnet sind.
+
+ACLs definieren, welche Aktionen ein Benutzer oder eine Gruppe auf eine Ressource ausführen darf. Jeder Eintrag in der ACL enthält eine Kombination aus dem Sicherheitsprinzipal (z. B. Benutzername oder Gruppenname) und den zugehörigen Zugriffsrechten. Das Betriebssystem oder die Anwendung überprüft die ACL, wenn ein Zugriffsversuch auf eine Ressource erfolgt, und gewährt oder verweigert den Zugriff basierend auf den definierten Berechtigungen.
+
+Karte: 138
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären Sie das Authentifizierungsverfahren „Single Sign-On“ (SSO).
+Lösung:
+Single Sign-On (SSO) ist ein Authentifizierungsverfahren, bei dem ein Benutzer mit nur einer Anmeldung Zugriff auf mehrere Anwendungen oder Systeme erhält.
+
+SSO basiert auf einer vertrauenswürdigen Identitätsquelle, oft einem Identity Provider (IdP) oder einem Verzeichnisdienst. Nach der Anmeldung beim IdP wird dem Benutzer ein Token oder ein spezieller Identitätsnachweis ausgestellt, der von den verschiedenen Anwendungen oder Diensten akzeptiert wird. Dieses Token wird während der Sitzung verwendet, um die Identität des Benutzers zu überprüfen und den Zugriff zu autorisieren, ohne dass erneute Anmeldedaten erforderlich sind.
+
+Karte: 139
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Welche Grundidee liegt der Multi-Faktor-Authentifizierung (MFA) zugrunde?
+Lösung:
+Die Grundidee der Multi-Faktor-Authentifizierung (MFA) beruht auf dem Prinzip, dass die Verwendung mehrerer Faktoren zur Überprüfung der Identität eines Benutzers die Sicherheit erhöht. Sie erfordert die Verwendung von mindestens zwei verschiedenen Faktoren aus den drei folgenden Kategorien:
+- Wissen: Etwas, das der Benutzer weiß, wie z. B. ein Passwort, eine PIN oder eine geheime Antwort auf eine Sicherheitsfrage.
+- Besitz: Etwas, das der Benutzer besitzt, wie z. B. ein Hardware-Token oder ein Mobiltelefon.
+- Inhärenz: Etwas, das dem Benutzer eigen ist, wie z. B. ein Fingerabdruck oder eine Gesichtserkennung.
+
+Karte: 140
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist ein Pre-Shared Key (PSK) und WO wird er verwendet?
+Lösung:
+Ein Pre-Shared Key (PSK) ist ein vorab vereinbarter Schlüssel, der in der Netzwerksicherheit verwendet wird, um die Authentifizierung und den sicheren Zugriff auf ein Netzwerk zu gewährleisten. Der PSK wird zwischen den Teilnehmern des Netzwerks im Voraus vereinbart und dient als gemeinsames Passwort.
+
+Der PSK wird z. B. in drahtlosen Netzwerken (WLANSs) und Virtual Private Networks (VPNs) eingesetzt. In WLANs wird der PSK als Passwort verwendet, um den Zugriff auf das drahtlose Netzwerk zu kontrollieren. In VPNs wird der PSK verwendet, um die Kommunikation zwischen einem Client und einem VPN-Server zu verschlüsseln und zu authentifizieren.
+
+Karte: 141
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Beschreiben Sie den Aufbau einer IPv4- und einer IPv6-Adresse.
+Lösung:
+Eine IPv4-Adresse besteht aus 32 Bits und wird in vier durch Punkte getrennten Oktetten dargestellt. Jedes Oktett repräsentiert einen Teil der Adresse und kann Werte von 0 bis 255 haben. IPv4-Adressen bestehen aus einem Netz- und einem Hostanteil.
+
+Eine IPv6-Adresse besteht aus 128 Bits und wird in acht durch Doppelpunkte getrennten Hexadezimalblöcken dargestellt. Jeder Block besteht aus vier Hexadezimalzahlen und kann Werte von 0 bis F haben. Bei IPv6 werden die Adressen in drei Hauptkomponenten unterteilt: Standortpräfix, Teilnetz-ID und Interface-ID.
+
+Karte: 142
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Welche IP-Adresse repräsentiert die Adresse „127.0.0.1“ und was ist ihre Bedeutung?
+Lösung:
+Die IP-Adresse 127.0.0.1 ist eine besondere IP-Adresse, die als „localhost“ bezeichnet wird. Diese IP-Adresse ist ein Standard-Adressraum für Loopback oder lokale Host-Kommunikation in einem Computer.
+
+In einem Netzwerkkontext bedeutet „Loopback“, dass der Computer eine Netzwerkverbindung zu sich selbst herstellt. Diese Adresse wird normalerweise zum Testen von Netzwerkkommunikation verwendet, ohne tatsächlich Netzwerkpakete über das physische Netzwerk zu senden. Es ist eine Möglichkeit, den Netzwerk-Stack eines Systems zu prüfen und sicherzustellen, dass er korrekt funktioniert.
+
+Karte: 143
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Nennen Sie die Ports für die folgenden Protokolle:
+- HTTP
+- HTTPS
+- SMTP
+- POP3
+- IMAP
+- FTP
+- SFTP
+Lösung:
+- HTTP: Port 80
+- HTTPS: Port 443
+- SMTP: Port 25
+- POP3: Port 110
+- IMAP: Port 143
+- FTP: Port 21
+- SFTP: Port 22
+
+Karte: 144
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erläutern Sie die Rückgabewerte, welche ein „ping“ auf eine IP-Adresse ohne weitere Parameter liefert.
+Lösung:
+Rückgabewerte „ping“:
+- gesendete Pakete: zeigt an, wie viele Ping-Anfragen gesendet wurden
+- empfangene Pakete: zeigt an, wie viele Ping-Antworten vom Ziel empfangen wurden
+- verlorene Pakete: gibt an, wie viele der gesendeten Pakete nicht erfolgreich an das Ziel geliefert wurden oder keine Antwort erhalten haben
+- Latenzzeit: die Zeit, die ein Datenpaket benötigt, um vom Ursprung zum Ziel und zurück zu reisen
+- minimale, maximale und durchschnittliche Latenzzeit
+- TTL (Time To Live): TTL ist ein Wert in IP-Paketen, der die maximale Anzahl von Netzwerk-Hops begrenzt, die das Paket passieren kann, bevor es verworfen wird
+
+Karte: 145
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären Sie die Bedeutung der Abkürzungen NAT und PAT.
+Lösung:
+Network Address Translation (NAT) ändert IP-Adressen von Paketen, wenn sie zwischen Netzwerken übertragen werden, oft um private IPs in öffentliche zu ändern. Port Address Translation (PAT) ist eine spezielle Form von NAT, bei der auch Portnummern geändert werden, um mehrere Geräte über dieselbe öffentliche IP und Portnummer zu verbinden.
+
+Karte: 146
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären Sie die Funktion des Standortpräfixes, der Teilnetz-ID und der Interface-ID einer IPv6 Adresse.
+Lösung:
+Der Standortpräfix, oder auch Netzwerkpräfix, identifiziert das Netzwerk oder den Subnetzbereich in einer IPv6-Adresse. Er wird normalerweise vom Internetdienstanbieter (ISP) zugewiesen, Die Teilnetz-ID wird verwendet, um innerhalb eines größeren Netzwerks oder Subnetzes spezifische Teilnetze zu identifizieren. Sie wird normalerweise von den Netzwerkadministratoren definiert, um ihre internen Netzwerksegmente zu segmentieren und zu verwalten.
+
+Die Interface-ID identifiziert ein bestimmtes Gerät oder eine Netzwerkschnittstelle innerhalb eines Subnetzes. Sie wird normalerweise automatisch generiert oder manuell zugewiesen.
+
+Karte: 147
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Nennen Sie drei Vorteile vom Protokoll IPv6 gegenüber dem Protokoll IPv4.
+Lösung:
+Vorteile des IPv6-Protokolls gegenüber dem IPv4-Protokoll:
+- Größerer Adressraum: IPv6 bietet einen erheblich größeren Adressraum im Vergleich zu IPv4
+- Automatische Adresskonfiguration: IPv6 enthält Mechanismen für die automatische Konfiguration von IP-Adressen
+- Verbesserte Sicherheit: IPv6 integriert IPsec (Internet Protocol Security) standardmäßig in das Protokoll
+- Unterstützung für Quality of Service (QoS): IPv6 enthält integrierte Mechanismen zur Unterstützung von Quality of Service
+- Vereinfachtes Routing: Durch die Vereinfachung der Header-Struktur und die Verwendung von Hierarchien in IPv6 wird das Routing effizienter
+
+Karte: 148
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist SLAAC und wie hilft es bei der automatischen IPv6-Adressvergabe?
+Lösung:
+SLAAC (Stateless Address Autoconfiguration) ist ein Verfahren im IPv6-Netz, bei dem Geräte ohne die Nutzung eines DHCP-Servers automatisch eine eigene IP-Adresse erhalten.
+
+Ein IPv6-Router sendet regelmäßig sogenannte Router Advertisements ins Netzwerk. Das Gerät empfängt diese und erzeugt daraus selbstständig seine vollständige IPv6-Adresse, meist durch Kombination des Netzwerkpräfixes mit seiner eigenen MAC-Adresse (bzw. Interface Identifier).
+
+Karte: 149
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist der Unterschied zwischen den Protokollen TCP (Transmission Control Protocol) und UDP (User Datagram Protocol)?
+Lösung:
+TCP und UDP sind beides Transportprotokolle, die in IP-Netzwerken verwendet werden, um Daten zu übertragen. TCP ist ein verbindungsorientiertes Protokoll, das eine zuverlässige Datenübertragung gewährleistet und Kontrollmechanismen wie Flusssteuerung und Überlastkontrolle bietet. UDP hingegen ist ein verbindungsloses Protokoll, bei dem keine Verbindung hergestellt wird und keine Garantie für die Zuverlässigkeit der Datenübertragung besteht. Es bietet keine eingebauten Kontrollmechanismen und eignet sich besser für Echtzeitkommunikation und Anwendungen, bei denen geringe Latenz wichtiger ist als die vollständige Übertragung aller Daten.
+
+Karte: 150
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was sind die Unterschiede und Gemeinsamkeiten zwischen Baum- und Sterntopologie in Computernetzwerken?
+Lösung:
+In einer Sterntopologie sind alle Knoten an einen zentralen Knotenpunkt angeschlossen. Dieser zentrale Knoten leitet die Kommunikation an den jeweils angeforderten Knoten weiter. Nachteilig ist, dass die gesamte Netzleistung stark von der Zuverlässigkeit des zentralen Knotens abhängig ist. Die Baumtopologie ist eine erweiterte Form der Sterntopologie. In einer Baumtopologie sind mehrere Sterntopologien miteinander verbunden, wobei ein zentraler Knoten als „Stamm“ dient, von dem aus weitere „Verzweigungen“ ausgehen. Sie ist gut skalierbar, da zusätzliche Knoten oder Subnetze hinzugefügt werden können, ohne das gesamte Netz neu zu konfigurieren.
+
+Karte: 151
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist eine vermaschte Netzwerktopologie und welche Vor- und Nachteile hat sie?
+Lösung:
+Bei der vermaschten Netzwerktopologie ist jeder Knoten mit einem oder mehreren anderen Knoten verbunden. Daher gibt es mehrere Wege zwischen jedem Paar von Knoten im Netzwerk.
+
+Die Vorteile sind Redundanz und hohe Leistung, da es mehrere Pfade für den Datenverkehr gibt. Dieses macht das Netzwerk zuverlässig und robust gegen Ausfälle. Die Nachteile sind die Komplexität und die Kosten. Mit zunehmender Anzahl der Knoten steigt die Anzahl der Verbindungen stark an, was die Netzwerkverwaltung kompliziert und teuer macht.
+
+Karte: 152
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erläutern Sie, wofür das Spanning Tree Protocol (STP) in einem Netzwerk eingesetzt wird.
+Lösung:
+Das Spanning Tree Protocol (STP) wird in Netzwerken mit redundanten Verbindungen eingesetzt, um eine stabile und fehlerfreie Kommunikation sicherzustellen. Durch die Bereitstellung von redundanten Verbindungen kann das Netzwerk eine höhere Ausfallsicherheit erreichen. STP identifiziert und blockiert automatisch redundante Pfade, um Loops zu verhindern.
+
+STP wählt den optimalen Pfad für den Datenverkehr aus. Der Hauptpfad wird als aktiver Pfad ausgewählt, während die übrigen Pfade blockiert werden.
+
+Bei Veränderungen im Netzwerk passt sich das STP automatisch an, indem es den Algorithmus erneut ausführt und den besten Pfad zum Ziel ermittelt.
+
+Karte: 153
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Anstelle des Spanning Tree Protocols kann in Netzwerken mit redundanten Verbindungen auch Link-Aggregation eingesetzt werden. Erklären Sie das Grundprinzip von Link-Aggregation.
+Lösung:
+Link-Aggregation, auch bekannt als Link-Bündelung, ist eine Technologie, die in Netzwerken eingesetzt wird, um mehrere physische Netzwerkverbindungen zu einem logischen Hochgeschwindigkeits-Link zusammenzufassen.
+
+Durch die Bündelung mehrerer Links kann die Gesamtbandbreite erhöht werden, was zu einer verbesserten Leistung und Datenübertragungsgeschwindigkeit führt.
+
+Bei Ausfällen eines einzelnen Links innerhalb der Aggregationsgruppe kann der Datenverkehr automatisch auf die verbleibenden funktionierenden Links umgeleitet werden. Dadurch wird die Ausfallsicherheit des Netzwerks verbessert.
+
+Karte: 154
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Wofür stehen die Abkürzungen UTP, FTP und S-FTP im Zusammenhang mit Twisted-Pair-Kabeln?
+Lösung:
+Diese Abkürzungen beschreiben unterschiedliche Abschirmungseigenschaften von Twisted-Pair-Kabeln.
+
+UTP steht für Unshielded Twisted Pair. Es handelt sich um eine Art von Twisted-Pair-Kabel, das keine äußere Abschirmung besitzt.
+
+FTP steht für Foiled Twisted Pair. Es handelt sich um eine Art von Twisted-Pair-Kabel, bei dem jedes Adernpaar mit einer Metallfolie abgeschirmt ist.
+
+S-FTP steht für Screened Foiled Twisted Pair. Es handelt sich um eine weiterentwickelte Form von FTP, bei der zusätzlich zu den individuellen Adernpaarabschirmungen eine Gesamtabschirmung um alle Adernpaare herum besteht.
+
+Karte: 155
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Nennen Sie jeweils zwei Vor- und Nachteile von Lichtwellenleitern.
+Lösung:
+Vorteile von Lichtwellenleitern:
+- hohe Übertragungsraten
+- sehr große Reichweite
+- keine Beeinflussung durch äußere elektrische oder elektromagnetische Störfelder
+- keine Funkenbildung und Brandauslösung
+- hohe Abhörsicherheit
+
+Nachteile von Lichtwellenleitern:
+- Installation von Lichtwellenleitern erfordert spezielle Fachkenntnisse und Ausrüstung
+- Steckertechnik ist empfindlich gegen Verschmutzung
+- Hohe Empfindlichkeit gegenüber mechanischer Belastung
+- Lichtwellenleiter sind in der Regel teurer als Kupferkabel
+- beistarker Krümmung kann die Faser im Kabel brechen
+- Power over Ethernet ist nicht möglich
+
+Karte: 156
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Worin liegt der Unterschied zwischen der Multimode- und der Singlemode-Technologie bei Lichtwellenleitungen?
+Lösung:
+Multimode-Lichtwellenleiter haben einen größeren Kerndurchmesser, was bedeutet, dass mehrere Lichtstrahlen gleichzeitig im Inneren des Kabels übertragen werden können. Multimode-Fasern haben typischerweise eine kürzere Übertragungsreichweite als Singlemode-Fasern.
+
+Singlemode-Lichtwellenleiter haben einen kleineren Kerndurchmesser, was bedeutet, dass nur ein einzelner Lichtstrahl durch das Kabel übertragen wird. Singlemode-Fasern haben eine deutlich größere Übertragungsreichweite als Multimode-Fasern.
+
+Karte: 157
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erläutern Sie in Bezug auf Übertragungsmedien die Kenngröße Dämpfung.
+Lösung:
+Die Kenngröße Dämpfung bezieht sich auf den Verlust von Signalstärke oder Leistung während der Übertragung von elektrischen oder optischen Signalen. Die Dämpfung gibt an, wie stark das Signal abgeschwächt wird, wenn es durch das Übertragungsmedium geht.
+
+Die Dämpfung in Übertragungsmedien wirkt sich direkt auf die Signalqualität und die Übertragungsdistanz aus. Eine zu hohe Dämpfung kann zu einem unzureichenden Signal führen, das möglicherweise nicht über die gewünschte Strecke oder mit ausreichender Qualität übertragen werden kann.
+
+Karte: 158
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+WLAN können im Infrastrukturmodus oder im Ad-hoc-Modus betrieben werden. Erklären Sie beide Betriebsmodi.
+Lösung:
+Im Infrastrukturmodus wird ein drahtloses Netzwerk (WLAN) über einen zentralen Zugriffspunkt (Accesspoint) verwaltet. Ein Accesspoint fungiert als zentrale Steuerungsstelle, über die die Kommunikation zwischen drahtlosen Endgeräten und dem Netzwerk erfolgt.
+
+Im Ad-hoc-Modus (auch Peer-to-Peer-Modus genannt) können drahtlose Geräte direkt miteinander kommunizieren, ohne dass ein zentraler Accesspoint erforderlich ist. In diesem Modus können Geräte untereinander ein drahtloses Netzwerk aufbauen. Im Ad-hoc-Modus gibt es keine zentrale Kontrollinstanz, und alle Geräte fungieren als gleichberechtigte Teilnehmer.
+
+Karte: 159
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erläutern Sie die beiden Varianten „WPA2 (Personal)” und „WPA2 (Enterprise)” zur Absicherung eines WLANs.
+Lösung:
+WPAZ2 (Personal), ist eine Sicherheitsvariante für WLANs, die für den Einsatz in kleineren Umgebungen geeignet ist. In diesem Modus wird ein gemeinsamer Pre-Shared Key (PSK) verwendet, um das WLAN zu sichern. Alle Geräte, die auf das Netzwerk zugreifen möchten, müssen den gleichen Pre-Shared Key eingeben, um eine Verbindung herstellen zu können. WPAZ2 (Enterprise) ist eine erweiterte Sicherheitsvariante, die für größere Netzwerke geeignet ist. WPA2 (Enterprise) verwendet einen Authentifizierungsserver, wie beispielsweise einen RADIUS-Server. Jeder Benutzer erhält einen eindeutigen Anmeldenamen und ein Passwort, um sich am WLAN anzumelden.
+
+Karte: 160
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Accesspoints und moderne Betriebssysteme unterstützen die „WPS-Funktion“ (Wi-Fi Protected Setup). Erklären Sie diese Funktion.
+Lösung:
+Die „Wi-Fi Protected Setup“ (WPS)-Funktion ist eine Methode, um die Einrichtung und Konfiguration einer drahtlosen Netzwerkverbindung zu vereinfachen und zu beschleunigen. Sie ist dafür gedacht, die manuelle Eingabe von komplexen Passphrasen oder Netzwerkschlüsseln zu umgehen und die Sicherheit gleichzeitig zu gewährleisten.
+
+Die Aufgaben von WPS sind:
+- Authentifizierung des WLAN-Clients gegenüber dem WLAN-AP
+- Authentifizierung des WLAN-AP gegenüber dem WLAN-Client
+- Automatische Konfiguration des WLAN-Clients mit dem WLAN-Passwort
+
+Karte: 161
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären Sie die Begriffe Routing und Switching.
+Lösung:
+Routing bezieht sich auf den Prozess des Weiterleitens von Datenpaketen zwischen verschiedenen Netzwerken. Ein Router analysiert die IP-Adresse jedes Pakets und entscheidet, welchen Weg das Paket nehmen soll, um sein Zielnetzwerk zu erreichen. Routen werden normalerweise anhand verschiedener Faktoren wie der Netzwerkentfernung, Qualität des Netzwerks, Priorität usw. ausgewählt.
+
+Switching bezieht sich auf den Prozess des Weiterleitens von Datenpaketen innerhalb desselben Netzwerks. Ein Switch analysiert die MAC-Adresse jedes Pakets und verwendet eine Switching-Tabelle, um das Paket an das richtige Ziel weiterzuleiten.
+
+Karte: 162
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Für dynamisches Routing können Distance-Vector-Protokollen verwendet werden. Beschreiben Sie die Arbeitsweise von Distance-Vector-Protokollen.
+Lösung:
+Distance-Vector-Protokolle verwenden den Ansatz der Distanzvektoren, um Routing-Informationen zu berechnen und weiterzugeben.
+
+Jeder Router sendet periodisch seine gesamte Routing-Tabelle an seine Nachbarrouter. Die Routing-Tabelle enthält Informationen über die Anzahl der Hops (Sprünge) zu Zielen und die geschätzte Entfernung (Metrik) zu diesen Zielen. Die Nachbarn kombinieren die erhaltenen Informationen mit ihren eigenen Routing-Tabellen und aktualisieren diese entsprechend.
+
+Karte: 163
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Link-State-Protokolle sind eine Alternative zu den Distance-Vector-Protokollen. Erklären Sie die grundlegende Funktion von Link-State-Protokollen.
+Lösung:
+Link-State-Protokolle verwenden den Ansatz des Link-Zustands, um Routing-Informationen zu berechnen und zu verteilen.
+
+Jeder Router erstellt eine detaillierte Karte oder einen Graphen der gesamten Netzwerktopologie. Diese Karte wird als „Link-State-Datenbank“ bezeichnet und enthält Informationen über den Zustand aller Router und Links im Netzwerk. Jeder Router verteilt seine Link-State-Informationen an alle anderen Router im Netzwerk. Jeder Router erstellt dann eine Kopie der Link-State-Datenbank und berechnet unabhängig den kürzesten Pfad zum Ziel. Link-State-Protokolle haben in der Regel eine schnellere Konvergenzzeit.
+
+Karte: 164
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was sind die Unterschiede und Funktionen von Core Switch, Distribution Switch und Access Switch in einem hierarchischen Netzwerkdesign?
+Lösung:
+In einem hierarchischen Netzwerkdesign gibt es drei Haupttypen von Switches:
+- Ein Core Switch fungiert als zentraler Knotenpunkt. Core Switches sind in der Regel leistungsfähiger und schneller als andere Switches, da sie eine große Menge an Netzwerkverkehr bewältigen müssen.
+- Distribution Switches dienen als Schnittstelle zwischen den Core Switches und den Access Switches. Sie steuern den Datenverkehr zwischen den verschiedenen Subnetzen.
+- Access Switches verwalten den Verkehr zwischen Endgeräten und können auch Funktionen wie Port-Sicherheit und Quality of Service (QoS) unterstützen.
+
+Karte: 165
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist eine MAC-Adresse?
+Lösung:
+Eine MAC-Adresse (Media Access Control Address) ist eine eindeutige Kennung, die Netzwerkgeräten zugewiesen ist. Sie wird von Netzwerkkarten und anderen netzwerkfähigen Geräten verwendet, um sie eindeutig zu identifizieren und zu adressieren.
+
+Die MAC-Adresse besteht aus einer 48-Bit-Zahl, die in der Regel in hexadezimaler Notation dargestellt wird, Sie ist in zwei Teile unterteilt: die OUI (Organizationally Unique Identifier), die den Hersteller des Geräts identifiziert, und die NIC (Network Interface Controller) ID, die eine eindeutige Nummer für das Gerät darstellt.
+
+Karte: 166
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Wofür steht die Abkürzung ARP im Bereich der Netzwerktechnik?
+Lösung:
+ARP steht für Address Resolution Protocol. Es ist ein Netzwerkprotokoll, das verwendet wird, um die IP-Adressen von Geräten in einem lokalen Netzwerk (LAN) in deren MAC-Adressen aufzulösen.
+
+ARP wird hauptsächlich in IPv4-Netzwerken eingesetzt. Wenn ein Gerät in einem Netzwerk Daten an ein anderes Gerät senden möchte, benötigt es die MAC-Adresse des Zielgeräts, um das Datenpaket an den richtigen Empfänger weiterzuleiten. Das ARP-Protokoll ermöglicht es einem Gerät, die MAC-Adresse eines bestimmten Ziels anhand seiner IP-Adresse zu ermitteln.
+
+Karte: 167
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erläutern Sie die Aufgabe des Simple Network Management Protocol (SNMP). Gehen Sie hierbei auch kurz auf die Begriffe Management Information Base (MIB), Community-String und GetRequest ein.
+Lösung:
+SNMP ermöglicht die Kommunikation zwischen Netzwerkgeräten und einem zentralen Management-System. SNMP ermöglicht die Überwachung, Konfiguration und Fehlerbehebung von Netzwerkgeräten, indem es Informationen über den Status und die Leistung der Geräte sammelt und an das Netzwerkmanagement-System sendet.
+
+Jedes SNMP-fähige Gerät speichert lokal wichtige Informationen über seinen Betriebszustand in der „Management Information Base (MIB)“.
+
+Der Community-String ist ein Kennwort oder eine Zeichenfolge, die zur Authentifizierung in SNMP verwendet wird, Ein GetRequest ist ein SNMP-Nachrichtentyp, um Informationen aus der MIB abzurufen.
+
+Karte: 168
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Beschreiben Sie den Begriff der Latenz.
+Lösung:
+Latenz bezieht sich auf die Verzögerungszeit, die beim Senden von Daten von einem Punkt zum anderen auftritt. Es handelt sich um die Zeit, die benötigt wird, um eine Nachricht, ein Signal oder ein Datenpaket von der Quelle zum Ziel zu übertragen. Eine hohe Latenz kann zu Verzögerungen und Unterbrechungen in der Datenübertragung führen.
+
+Karte: 169
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären Sie die Bedeutung der Abkürzung MTU und ihre Bedeutung für die Übertragung von Daten in einem Netzwerk.
+Lösung:
+Die Abkürzung MTU steht für „Maximum Transmission Unit“ und bezieht sich auf die maximale Größe eines Datenpakets, das über ein Netzwerk gesendet werden kann.
+
+Die MTU hat eine wichtige Auswirkung auf die Netzwerkleistung. Wenn Datenpakete gesendet werden, die größer sind als die MTU, werden sie in kleinere Pakete aufgeteilt. Das ist ein Prozess, der als Fragmentierung bezeichnet wird. Obwohl Fragmentierung dafür sorgt, dass die Daten erfolgreich übertragen werden können, kann sie auch die Netzwerkleistung beeinträchtigen, da es zusätzliche Rechenleistung und Zeit erfordert, die Pakete zu zerlegen und wieder zusammenzusetzen.
+
+Karte: 170
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Beschreiben Sie die Aufgabe des DHCP-Protokolls und nennen Sie drei Informationen, welche mittels DHCP übertragen werden können.
+Lösung:
+DHCP steht für Dynamic Host Configuration Protocol. Die Aufgabe des DHCP-Protokolls besteht darin, die automatische Zuweisung von Netzwerkkonfigurationen an Geräte in einem Netzwerk zu ermöglichen.
+
+Es erleichtert die Konfiguration von IP-Adressen und anderen Netzwerkeinstellungen, indem es einen zentralen DHCP-Server verwendet, der diese Informationen an die Geräte verteilt.
+
+Mittels DHCP können u. a. folgende Informationen übertragen werden:
+- IP-Adresse
+- Subnetzmaske
+- Lease-Dauer
+- Standardgateway
+- DNS-Server
+- NTP-Server
+
+Karte: 171
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären den Ablauf der DHCP-Kommunikation nach dem DORA-Prinzip.
+Lösung:
+DHCP-Discover: Ein Gerät, das eine Netzwerkverbindung MM herstellt, sendet eine Broadcast-Nachricht, um DHCP-Server im Netzwerk zu suchen.
+
+DHCP-Offer: Der DHCP-Server antwortet mit einer Broadcast-Nachricht, in der er dem Gerät eine IP-Adresse und andere Konfigurationsinformationen anbietet.
+
+DHCP-Request: Das Gerät wählt eine der angebotenen IP-Adressen aus und sendet eine Broadcast-Nachricht, um den ausgewählten DHCP-Server über seine Wahl zu informieren. DHCP-Acknowledgement: Der DHCP-Server antwortet mit einer Broadcast-Nachricht, in der er dem Gerät die zugewiesene IP-Adresse und andere Konfigurationsoptionen bestätigt.
+
+Karte: 172
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist der Zweck des DHCP-Relay und der „ip helper-address“ Konfiguration in Netzwerkgeräten?
+Lösung:
+Das DHCP-Relay wird verwendet, wenn der DHCP-Server und der Client nicht im selben physischen oder logischen Netzwerk sind. Es nimmt DHCP-Anfragen von Clients in einem Subnetz entgegen und leitet sie an einen DHCP-Server in einem anderen Subnetz weiter.
+
+Der Befehl „ip helper-address“ ermöglicht es, UDP-Broadcasts, einschließlich DHCP-Pakete, an eine bestimmte Adresse oder mehrere Adressen weiterzuleiten. Dies ist nützlich in Netzen, in denen sich DHCP-Clients und DHCP-Server in unterschiedlichen Subnetzen befinden. Durch die Angabe der „ip helper-address“ auf dem Router können DHCP-Anforderungen der Clients zum Server weitergeleitet werden.
+
+Karte: 173
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Geben Sie für die Abkürzung DNS die vollständige Schreibweise an und erklären Sie die Hauptaufgabe von DNS.
+Lösung:
+DNS steht für Domain Name System. Es handelt sich um ein dezentrales System zur Auflösung von Domainnamen in IP-Adressen und umgekehrt.
+
+Das DNS funktioniert hierarchisch, wobei die oberste Ebene die Root-DNS-Server sind, die die Informationen für die Top-Level-Domains (TLDs) wie .com, .org, .net usw. enthalten. Unterhalb der Root-DNS-Server gibt es weitere DNS-Server, die für spezifische Domänen zuständig sind. Jede Domäne kann ihre eigenen DNS-Server haben, die als Autoritative DNS-Server bezeichnet werden und die DNS-Datensätze für die Domäne verwalten.
+
+Karte: 174
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist ein Proxy-Server und wozu wird er verwendet?
+Lösung:
+Ein Proxy-Server agiert als Vermittler zwischen einem Client und dem Zielserver. Wenn ein Client eine Anfrage stellt, leitet der Proxy-Server diese Anfrage im Namen des Clients weiter und empfängt die Antwort vom Zielserver. Dadurch kann der Proxy-Server den Datenverkehr überwachen, filtern, umleiten oder anonymisieren, um die Sicherheit und Effizienz der Verbindung zu verbessern.
+
+Karte: 175
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Für welche Aufgaben wird ein Reverse-Proxy-Server eingesetzt?
+Lösung:
+Ein Reverse-Proxy-Server ist ein Server, der als Vermittler zwischen Clients und einem oder mehreren Back-End-Servern fungiert. Er nimmt Anfragen von Clients entgegen und leitet diese an die entsprechenden Server weiter. Nachdem der Server die Anfrage bearbeitet hat, sendet der Reverse-Proxy die Antwort zurück an den Client.
+
+Er kann u. a. die folgenden Funktionen übernehmen:
+- Lastverteilung (Load Balancing)
+- Caching
+- Verschlüsselung
+- Schutz der Identität der Back-End-Server
+- Kompression eingehender und ausgehender Daten
+
+Karte: 176
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist die Datenübertragungsrate und wie wird sie berechnet?
+Lösung:
+Die Datenübertragungsrate bezieht sich auf die Menge an Daten, die innerhalb einer bestimmten Zeitspanne übertragen werden können. Sie gibt an, wie schnell Daten von einem Punkt zum anderen übertragen werden. Je höher die Datenübertragungsrate ist, desto schneller können Daten übertragen werden und desto weniger Zeit wird für die Übertragung großer Datenmengen benötigt.
+
+Datenübertragungsrate = Datenmenge / Zeitintervall
+
+Karte: 177
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was sind die Unterschiede zwischen LAN, MAN, WAN und GAN?
+Lösung:
+LAN (Local Area Network): Lokales Netzwerk, das in MT einem begrenzten geografischen Bereich eingerichtet ist. MAN (Metropolitan Area Network): Netzwerk, das sich über eine Stadt oder eine Metropolregion erstreckt. Es bietet eine größere Reichweite als ein LAN, aber eine kleinere als ein WAN. WAN (Wide Area Network): Weitläufiges Netzwerk, das über große Entfernungen verteilt ist. Es ermöglicht die Kommunikation zwischen entfernten Standorten.
+
+GAN (Global Area Network): Netzwerk, das sich über den gesamten Globus erstreckt. Es verbindet verschiedene WANs und ermöglicht die globale Kommunikation zwischen Standorten weltweit.
+
+Karte: 178
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+PAN (Personal Area Network) und WLAN (Wireless Local Area Network) sind zwei verschiedene Arten von Netzwerken mit unterschiedlichen Anwendungsbereichen und Funktionalitäten.
+
+Erklären Sie diese.
+Lösung:
+Ein PAN ist ein Netzwerk, das sich auf den persönlichen oder lokalen Bereich einer Person beschränkt. Es ermöglicht die Verbindung zwischen Geräten in unmittelbarer Nähe zueinander. PANs werden häufig für den Austausch von Daten zwischen persönlichen Geräten, wie z. B. Smartphones, Tablets, Laptops oder Druckern, verwendet.
+
+Ein WLAN ist ein drahtloses lokales Netzwerk, das eine größere Reichweite als ein PAN hat. Es ermöglicht die drahtlose Verbindung und Kommunikation zwischen Geräten über eine größere Fläche. WLANs basieren auf dem Wi-Fi-Standard und ermöglichen den drahtlosen Austausch von Daten zwischen Geräten im Netzwerk.
+
+Karte: 179
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Nennen Sie zwei Vorteile, die für den Einsatz von VLANs sprechen.
+Lösung:
+Vorteile des Einsatzes von VLANs:
+- VLANs ermöglichen die logische Segmentierung eines physischen Netzwerks in mehrere virtuelle Netzwerke
+- In VLANs kann der Datenverkehr priorisiert und optimiert werden
+- es können unterschiedliche Sicherheitsrichtlinien auf verschiedene VLANs angewendet werden
+- kleinere Broadcastdomänen
+- bessere Verwaltung und Konfiguration des Netzwerks
+
+Karte: 180
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist der Unterschied zwischen statischen und dynamischen VLANs?
+Lösung:
+Statische VLANs werden manuell konfiguriert. Jeder Port am Switch wird einem bestimmten VLAN zugeordnet. Diese Zuordnung bleibt unverändert.
+
+Dynamische VLANs verwenden eine dynamische Zuordnung von Ports zu VLANs. Die Zuordnung basiert auf bestimmten Merkmalen der Netzwerkgeräte, wie z. B. MAC-Adresse, Protokoll oder anderen Attributen. Wenn ein Gerät an den Switch angeschlossen wird, identifiziert der Switch automatisch das VLAN, dem der Port zugeordnet werden soll.
+
+Karte: 181
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was sind tagged Ports?
+Lösung:
+Tagged Ports sind Netzwerkports, die den Datenverkehr von mehreren VLANSs verarbeiten können. Im Gegensatz zu ungetaggten (untagged) Ports, die nur den Datenverkehr eines einzigen VLANs übertragen können, können tagged Ports Datenpakete aus verschiedenen VLANs empfangen und weiterleiten.
+
+Wenn ein Switch-Port als tagged konfiguriert ist, werden den Datenpaketen VLAN-Tags hinzugefügt, die anzeigen, zu welchem VLAN sie gehören. Dies ermöglicht es dem Switch, den Datenverkehr zwischen den VLANs zu steuern. Der Switch verwendet die VLAN-Tags, um sicherzustellen, dass Datenpakete in den richtigen VLANs zugestellt werden.
+
+Karte: 182
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erläutern Sie, warum Quality of Service (QoS) bei der Übertragung von Telefonie- und Videodaten eine wichtige Rolle spielt.
+Lösung:
+Quality of Service (QoS) bezieht sich auf die Fähigkeit eines Netzwerks, unterschiedlichen Anwendungen, Nutzern oder Datentypen unterschiedliche Prioritäten zu gewähren. Das Ziel von QoS ist es, eine bessere und vorhersehbarere Netzwerkleistung zu liefern, indem bestimmte Arten von Netzwerkverkehr bevorzugt werden.
+
+Bei der Übertragung von Telefonie- und Videodaten spielt QoS eine besonders wichtige Rolle. Diese Arten von Daten erfordern eine Echtzeit-Kommunikation und sind empfindlich gegenüber Verzögerungen (Latenz), Paketverlusten und Jitter.
+
+Karte: 183
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Welche verschiedenen VPN-Modelle gibt es?
+Lösung:
+End-to-Site-VPN: Auch als Remote Access VPN bezeichnet. Ermöglicht es einem einzelnen Benutzer oder einer entfernten Einheit, eine sichere Verbindung zu einem privaten Netzwerk herzustellen.
+
+Site-to-Site-VPN: Auch LAN-to-LAN-VPN genannt. Verbindet zwei oder mehr physische Netzwerke miteinander. Der Fokus liegt hierbei auf der Verbindung von Netzwerken oder Standorten.
+
+End-to-End-VPN: Der Begriff „End-to-End-VPN“ wird verwendet, um eine VPN-Lösung zu beschreiben, die von einem Endpunkt zum anderen Endpunkt einer Kommunikation verwendet wird.
+
+Karte: 184
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist der Unterschied zwischen Tunnelmodus und Transportmodus bei VPNs?
+Lösung:
+Im Tunnelmodus wird der gesamte IP-Datenverkehr eines Netzwerkpakets verschlüsselt und in ein neues IP-Paket eingekapselt. Dieses neue IP-Paket enthält sowohl den verschlüsselten ursprünglichen IP-Datenverkehr als auch den VPN-Header. Der VPN-Header enthält Informationen über die Verschlüsselung, Authentifizierung und andere VPN-spezifische Parameter.
+
+Im Transportmodus wird nur der Nutzlastteil eines IP-Pakets verschlüsselt. Der IP-Header des ursprünglichen Pakets bleibt unverschlüsselt, während die Nutzlast verschlüsselt wird.
+
+Karte: 185
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären Sie die beiden Betriebsarten Routing und Bridging in einer VPN-Konfiguration.
+Lösung:
+Beim Routing wird der Netzwerkverkehr von einem Netzwerk zum anderen geleitet. Es ist eine Methode zur Bestimmung des Pfades, den Datenpakete nehmen müssen, um von ihrer Quelle zu ihrem Ziel zu gelangen. In einem VPN bedeutet dies, dass nur der für das entfernte Netzwerk bestimmte Verkehr über das VPN geleitet wird.
+
+Bridging verbindet zwei separate Netzwerke so, dass sie wie ein einziges Netzwerk aussehen. Bei der Verwendung in einem VPN bedeutet dies, dass alle Daten, einschließlich Broadcast, über das VPN gesendet werden, was zu mehr Netzwerkverkehr führen kann. Ein Bridge-Gerät arbeitet auf der Schicht 2 des OSI-Modells.
+
+Karte: 186
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Beschreiben Sie die zusätzlichen Sicherheitsvorteile die Zero Trust Network Access (ZTNA) im Vergleich zu traditionellen VPN-Verbindungen bietet.
+Lösung:
+Zero Trust Network Access (ZTNA) verbessert die Sicherheit gegenüber VPNs durch Mikrosegmentierung und begrenzt so den Netzwerkzugriff auf genau die benötigten Ressourcen. ZTNA verwendet identitäts- und kontextbasierte Richtlinien, die mehr Informationen berücksichtigen als nur den Standort. ZTNA reduziert die Angriffsfläche, da keine direkte Netzwerkverbindung benötigt wird, und bietet eine Always-On-Sicherheit, die konsistente Schutzmaßnahmen gewährleistet. Durch Echtzeitüberwachung und adaptive Reaktionen auf mögliche Vorfälle erhöht ZTNA die Sicherheit erheblich.
+
+Karte: 187
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären Sie die Aufgaben des IPsec Protokolls.
+Lösung:
+IPsec (Internet Protocol Security): IPsec ist eine Protokollsuite, die auf der Netzwerkschicht des TCP/IP-Protokollstapels arbeitet. Sie bietet Mechanismen zur Sicherung des IP-Datenverkehrs, insbesondere in VPN-Umgebungen. IPsec ermöglicht die Verschlüsselung, Authentifizierung und Integritätssicherung von IP-Paketen, um eine sichere Übertragung über unsichere Netzwerke wie das Internet zu gewährleisten.
+
+Karte: 188
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Nennen Sie die 7 Schichten des OSI-Modells in aufsteigender Reihenfolge.
+Lösung:
+Die 7 Schichten des OSI-Modells (Open Systems Interconnection Model) sind:
+- Bitübertragungsschicht (Physical Layer)
+- Sicherungsschicht (Data Link Layer)
+- Vermittlungsschicht (Network Layer)
+- Transportschicht (Transport Layer)
+- Sitzungsschicht (Session Layer)
+- Darstellungsschicht (Presentation Layer)
+- Anwendungsschicht (Application Layer)
+
+Karte: 189
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Welche Schichten des OSI-Modells gehören zu den transportorientierten Schichten? Erklären Sie auch kurz die Aufgaben dieser Schichten.
+Lösung:
+Transportorientierte Schichten:
+
+Die Bitübertragungsschicht beschäftigt sich mit der physischen Übertragung von Datenbits über das Übertragungsmedium. Die Sicherungsschicht kümmert sich um die fehlerfreie Übertragung von Datenframes zwischen benachbarten Netzwerkgeräten. Sie bietet Mechanismen zur Fehlererkennung und Fehlerkorrektur.
+
+Die Vermittlungsschicht ist für die Adressierung, das Routing und die Weiterleitung von Datenpaketen im Netzwerk verantwortlich. Die Transportschicht regelt die Zuordnung der Datenpakete zu einer Anwendung. Sie stellt sicher, dass Datenpakete in der richtigen Reihenfolge ankommen, überwacht die Datenintegrität und regelt den Datenfluss.
+
+Karte: 190
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Welche Schichten des OSI-Modells gehören zu den anwendungsorientierten Schichten? Erklären Sie auch kurz die Aufgaben dieser Schichten.
+Lösung:
+Anwendungsorientierte Schichten: MO Die Sitzungsschicht etabliert, verwaltet und beendet Sitzungen zwischen Anwendungen. Sie ermöglicht die Synchronisierung von Datenübertragungen und bietet Mechanismen für den Aufbau und das Beenden von Verbindungen.
+
+Die Darstellungsschicht kümmert sich um die Datenrepräsentation und den Austausch von Datenformaten zwischen Anwendungen. Sie ist für die Datenkompression, Verschlüsselung sowie für die Datenkonvertierung zuständig. Die Anwendungsschicht ist die oberste Schicht des OSI-Modells und enthält Anwendungen und Dienste für Endbenutzer. Sie ermöglicht die Interaktion zwischen Benutzern und dem Netzwerk.
+
+Karte: 191
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Nennen Sie Beispiele für Protokolle, welche auf der Vermittlungsschicht und der Transportschicht der OSI-Modells arbeiten.
+Lösung:
+Vermittlungsschicht:
+- IP
+- IPSec
+- ICMP
+
+Transportschicht:
+- TCP
+- UDP
+
+Karte: 192
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Ordnen Sie Hub, Bridge, Router, Switch und Repeater den entsprechenden Schichten des OSI-Modells zu.
+Lösung:
+Bitübertragungsschicht:
+- Hub
+- Repeater
+
+Sicherungsschicht:
+- Layer-2-Switch
+- Bridge
+
+Vermittlungsschicht:
+- Router
+- Layer-3-Switch
+
+Karte: 193
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Welche Aufgaben übernehmen Switch, Bridge und Router im Netzwerk und worin unterscheiden sie sich?
+
+Gehen Sie hierbei auch auf die Einordnung der richtigen Schicht des OSI-Modells ein.
+Lösung:
+Switch:
+- Verbindet mehrere Geräte in einem lokalen Netzwerk (LAN)
+- Arbeitet auf Schicht 2 (Sicherungsschicht) des OSI-Modells
+- Leitet Daten gezielt an die richtige MAC-Adresse weiter
+
+Bridge:
+- Verbindet zwei oder mehr Netzwerksegmente miteinander
+- Arbeitet ebenfalls auf der OSI-Schicht 2 (Sicherungsschicht)
+- Filtert und leitet Daten basierend auf MAC-Adressen weiter
+
+Router:
+- Verbindet verschiedene Netzwerke miteinander
+- Arbeitet auf Schicht 3 (Vermittlungsschicht)
+- Leitet Daten basierend auf IP-Adressen weiter
+
+Karte: 194
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Wofür wird das Network File System (NFS) verwendet?
+Lösung:
+NFS ist ein Protokoll, das hauptsächlich in Unix- und Linux-Umgebungen eingesetzt wird. Es ermöglicht den transparenten Zugriff auf entfernte Dateisysteme und erleichtert die gemeinsame Nutzung von Dateien zwischen verschiedenen Betriebssystemen.
+
+NFS basiert auf dem Client-Server-Modell und ermöglicht es einem Computer, über ein Netzwerk auf Dateien zuzugreifen, als wären sie lokal gespeichert.
+
+Karte: 195
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist die Aufgabe des SMB-Protokolls?
+Lösung:
+SMB (Server Message Block) ist ein Protokoll, das ursprünglich von Microsoft entwickelt wurde und hauptsächlich in Windows-Umgebungen verwendet wird. Es ermöglicht die gemeinsame Nutzung von Dateien, Druckern und anderen Ressourcen in einem Netzwerk.
+
+SMB unterstützt Funktionen wie Authentifizierung, Datei- und Druckerdienste sowie den Zugriff auf Netzwerkfreigaben. Es ist das Standardprotokoll für die Dateifreigabe in Windows-Netzwerken.
+
+Karte: 196
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erläutern Sie die Aufgabe eines Hypervisors / Virtual Machine Monitor
+Lösung:
+Die Hauptaufgabe eines Hypervisors besteht darin, virtuelle Maschinen (VMs) auf einem physischen Computer zu erstellen und auszuführen, wodurch mehrere unabhängige Betriebssysteme und Anwendungen auf einem einzigen physischen Server laufen können.
+
+Der Hypervisor erstellt eine Abstraktionsschicht zwischen der physischen Hardware und den virtuellen Maschinen. Er ermöglicht es, Ressourcen wie Prozessoren, Arbeitsspeicher, Festplatten und Netzwerkschnittstellen zwischen den VMs zu teilen und diese Ressourcen effizient zu verwalten. Dies ermöglicht eine höhere Auslastung der Hardware-Ressourcen und eine bessere Nutzung der vorhandenen Ressourcen.
+
+Karte: 197
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erläutern Sie den Unterschied zwischen einem Hypervisor Typ 1 und einem Hypervisor Typ 2.
+Lösung:
+Ein Hypervisor vom Typ 1 wird auch als „Bare-Metal-Hypervisor“ bezeichnet. Er wird direkt auf der physischen Hardware eines Computers installiert. Er läuft direkt auf der Hardware, ohne dass ein separates Betriebssystem erforderlich ist. Dies ermöglicht eine direkte Verwaltung der Hardware-Ressourcen und eine bessere Leistung.
+
+Ein Hypervisor vom Typ 2 wird als „Hosted-Hypervisor“ bezeichnet, da er als Anwendung auf einem Host-Betriebssystem ausgeführt wird. Dies bedeutet, dass zuerst ein vollständiges Betriebssystem auf der physischen Hardware installiert wird. Dort wird dann der Typ-2-Hypervisor als Anwendung ausgeführt.
+
+Karte: 198
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Wie kann ein bestehender physischer Server mit Betriebssystem in eine virtuelle Maschine konvertiert werden?
+Lösung:
+Um einen bestehenden physischen Server in eine virtuelle Maschine (VM) zu übertragen gibt es verschiedene Möglichkeiten, wie z. B.:
+- Neuinstallation und Konfiguration des Betriebssystems und der Anwendungen in einer neuen VM
+- Wiederherstellung der Image-Sicherung eines bestehenden Systems in eine virtuelle Maschine
+- Konvertierung eines physikalischen Servers in eine virtuelle Maschine mittels spezieller Konvertierungstools
+
+Karte: 199
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist unter dem Funktionsprinzip der Containerisierung zu verstehen?
+Lösung:
+Containerisierung ist eine Form der Virtualisierung von Anwendungen, bei der Anwendungen in isolierten Containern ausgeführt werden, die alle notwendigen Ressourcen und Abhängigkeiten enthalten und dennoch auf demselben Betriebssystem laufen.
+
+Vorteile:
+- Portabilität: Sie laufen auf jedem unterstützten System, unabhängig von der Infrastruktur
+- Isolation: Jeder Container ist von anderen und vom Host-System isoliert, um Konflikte zu vermeiden
+- Effizienz: Durch gemeinsame Ressourcennutzung sind sie ressourcenschonender und schneller als VMs
+- Skalierbarkeit: Einfache Duplizierung und Skalierung ermöglichen eine flexible Anpassung der Anwendungen
+
+Karte: 200
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Beschreiben Sie die Methoden der horizontalen und der vertikalen Skalierung von IT-Infrastruktur.
+Lösung:
+Horizontale Skalierung bezieht sich auf die Erweiterung eines Systems, indem zusätzliche Ressourcen hinzugefügt werden, um die Kapazität zu erhöhen. Dies geschieht in der Regel durch Hinzufügen weiterer Server, Computer oder Knotenpunkte in einem Netzwerk. Bei der horizontalen Skalierung werden die Lasten auf mehrere Ressourcen verteilt, um die Gesamtleistung zu steigern.
+
+Vertikale Skalierung bezieht sich auf die Verbesserung der Leistung eines Systems, indem die vorhandenen Ressourcen verbessert oder aufgerüstet werden. Dies kann beispielsweise durch den Austausch von Hardwarekomponenten wie Prozessoren oder Speicher erfolgen.
+
+Karte: 201
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären Sie die Unterschiede zwischen den Speichersystemen DAS und NAS.
+Lösung:
+Direct Attached Storage (DAS): Ein DAS ist ein Speichersystem, das direkt an einen Computer oder Server angeschlossen ist. Da es direkt angeschlossen ist, ist die Datenübertragungsrate in der Regel sehr hoch.
+
+Network Attached Storage (NAS): Ein NAS-Gerät ist ein eigenständiger Speicher, der an ein Netzwerk angeschlossen ist. Dies ermöglicht es mehreren Nutzern oder Geräten im Netzwerk, auf die gespeicherten Daten zuzugreifen. NAS-Geräte haben in der Regel ihre eigene IP-Adresse und können so von jedem Gerät im Netzwerk aus erreicht werden. Sie haben in der Regel eine geringere Datenübertragungsrate als DAS.
+
+Karte: 202
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Beschreiben Sie die Vorteile, die der Einsatz eines SAN (Storage Area Network) gegenüber einem NAS bietet.
+Lösung:
+Ein SAN ist ein eigenes Netzwerk von Speichergeräten, die von Servern als angebundene Laufwerke wahrgenommen werden. Dieses bietet verschiedene Vorteile:
+- ein SAN bietet in der Regel eine höhere Leistung als ein NAS
+- ein SAN arbeitet blockorientiert
+- SANS sind in der Regel skalierbarer als NAS-Lösungen
+- die Daten-Volumes können online erweitert werden
+- SANSs bieten oft erweiterte Funktionen für Redundanz und Fehlertoleranz
+
+Karte: 203
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erläutern Sie den Unterschied zwischen blockorientierten und dateiorientierten Speichertechniken.
+Lösung:
+Blockorientierte Speichertechniken arbeiten mit Daten in festgelegten Blockgrößen, die direkt vom Speichermedium gelesen oder darauf geschrieben werden. Diese Methode ist häufig in SAN (Storage Area Networks) zu finden. Das Dateisystem wird vom lokalen Rechner bzw. vom SAN-Controller verwaltet.
+
+Dateiorientierte Speicherung hingegen arbeitet auf Datei-Ebene. Sie lesen und schreiben ganze Dateien anstelle von einzelnen Datenblöcken. Das ist die grundlegende Methode, die in NAS (Network Attached Storage) Geräten verwendet wird. Das Dateisystem wird vom externen Speichermedium verwaltet.
+
+Karte: 204
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was bedeutet der Begriff „Clustergröße“ im Kontext von Laufwerken und welchen Einfluss hat die Wahl der Clustergröße auf die Speicherleistung?
+Lösung:
+Die Clustergröße bezeichnet die kleinste Menge an Speicherplatz, die ein Dateisystem auf einem Laufwerk oder einer Partition zuordnen kann. Jede Datei auf dem Laufwerk nimmt mindestens einen Cluster an Speicherplatz ein, unabhängig von ihrer tatsächlichen Größe.
+
+Eine kleine Clustergröße kann den Speicherplatz effizienter nutzen, da weniger Speicherplatz verschwendet wird, wenn die Dateien kleiner als die Clustergröße sind. Eine größere Clustergröße kann die Leistung verbessern, insbesondere bei großen Dateien, da weniger Cluster gelesen und geschrieben werden müssen. Allerdings kann dies dazu führen, dass Speicherplatz verschwendet wird.
+
+Karte: 205
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was ist Deduplizierung in der Datenverarbeitung und wie wirkt sie sich auf Speichereffizienz und Performance aus?
+Lösung:
+Deduplizierung ist ein Verfahren in der Datenverwaltung, bei dem redundante Datenkopien eliminiert werden, um den Speicherbedarf zu reduzieren, Bei der Deduplizierung werden mehrere Kopien derselben Daten nur einmal gespeichert. Wenn diese Daten erneut benötigt werden, wird auf die bereits gespeicherte Kopie verwiesen, anstatt eine neue Kopie zu erstellen.
+
+Deduplizierung wird häufig in Speichersystemen und in der Datensicherung eingesetzt, um die Menge der zu speichernden Daten zu verringern und die Effizienz zu erhöhen.
+
+Karte: 206
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was versteht man unter Datenkomprimierung und welche Auswirkungen hat sie auf den Speicherbedarf und die Datenübertragung?
+Lösung:
+Datenkomprimierung ist der Prozess der Reduzierung der Größe von Daten. Komprimierung kann verlustfrei sein (Originaldaten können vollständig wiederhergestellt werden), oder verlustbehaftet (einige Daten werden dauerhaft entfernt). Die Komprimierung kann den Speicherbedarf erheblich reduzieren und gleichzeitig die Übertragungszeit der Daten verringern, da weniger Daten übertragen werden müssen.
+
+Karte: 207
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Es soll eine Vielzahl von Bildern gespeichert werden.
+
+Wie wird die Dateigröße eines Bildes in Byte berechnet?
+Lösung:
+Die Dateigröße in Bytes eines unkomprimierten Bildes kann mittels der folgenden Formel berechnet werden:
+
+Dateigröße = Breite (Pixel) x Höhe (Pixel) x Farbtiefe (Bytes)
+
+Karte: 208
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Beschreiben Sie kurz die Lizenzmodelle kommerzielle Lizenz, Open Source und Freeware.
+Lösung:
+Kommerzielle Lizenzen erfordern in der Regel eine Zahlung oder den Erwerb einer Lizenz, um die Software nutzen zu können. Die Bedingungen und Einschränkungen variieren je nach Lizenzvereinbarung des Anbieters.
+
+Open-Source-Lizenzen ermöglichen die Einsichtnahme, Nutzung, Weitergabe und Modifizierung des Quellcodes einer Software durch die Öffentlichkeit. Open-Source-Software steht in der Regel kostenlos zur Verfügung und die Lizenzbedingungen regeln, wie der Quellcode weiterverbreitet und modifiziert werden kann.
+
+Freeware bezeichnet Software, die kostenlos genutzt werden kann, jedoch dennoch urheberrechtlich geschützt ist.
+
+Karte: 209
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was besagt die GNU General Public License?
+Lösung:
+Die GNU General Public License (GPL) ist eine weit verbreitete Open-Source-Lizenz, die von der Free Software Foundation (FSF) entwickelt wurde. Die GPL erlaubt die freie Nutzung, Verteilung und Modifizierung der Software, erfordert jedoch, dass alle abgeleiteten Werke unter derselben Lizenz veröffentlicht werden. Dies stellt sicher, dass der Quellcode von abgeleiteten Versionen ebenfalls offen zugänglich bleibt.
+
+Karte: 210
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Wie unterscheiden sich die beiden Lizenztypen User CAL und Device CAL?
+Lösung:
+Ein User CAL ist eine Lizenz für einen Benutzer, der von beliebigen Geräten auf ein System zugreifen darf. Dieser Lizenztyp ist vorteilhaft, wenn Nutzer oft mehrere verschiedene Geräte verwenden.
+
+Ein Device CAL ist eine Lizenz für ein Gerät, auf dem beliebig viele Benutzer ein System nutzen können. Dieser Lizenztyp ist vorteilhaft, wenn mehrere Nutzer ein gemeinsames Gerät benutzen.
+
+(CAL = Client Access License)
+
+Karte: 211
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären Sie den Unterschied zwischen Individualsoftware und Standardsoftware.
+Lösung:
+Individualsoftware wird nach den spezifischen Anforderungen des Auftraggebers entwickelt. Dies bedeutet, dass die Software genau auf die Geschäftsprozesse und Anforderungen abgestimmt ist und höchste Effizienz und Produktivität ermöglicht.
+
+Standardsoftware ist eine vorgefertigte Softwarelösung, die für einen breiten Markt von Benutzern entwickelt wurde, mit Funktionen, die für viele verschiedene Unternehmen und Anwender geeignet sind. Die Vorteile der Standardsoftware sind die niedrigeren Kosten und die sofortige Verfügbarkeit. Sie wird oft von großen Softwareunternehmen entwickelt, die regelmäßige Updates und Kundensupport bieten.
+
+Karte: 212
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erläutern Sie den Begriff Service Level Agreement (SLA).
+Lösung:
+Ein Service Level Agreement (SLA) ist eine schriftliche Vereinbarung zwischen einem Dienstleister und einem Kunden, die die vereinbarten Leistungsparameter und -ziele für eine bestimmte Dienstleistung oder ein Produkt festlegt. Ein SLA definiert die Erwartungen hinsichtlich Qualität, Reaktionszeiten, Verfügbarkeit, Support und anderen relevanten Aspekten des Services. Es dient als Grundlage für die Bewertung der Servicequalität.
+
+Karte: 213
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Was sind die Aufgaben des First-Level-Supports?
+Lösung:
+Der First-Level-Support ist der erste Kontakt für Kunden bei Supportanfragen. Die Aufgaben des 1st-Level Supports umfassen:
+- Entgegennahme von Supportanfragen
+- Klassifizierung und Priorisierung von Supportanfragen
+- grundlegende Unterstützung, um häufig auftretende Probleme zu lösen
+- Weiterleitung von Anfragen, wenn das Problem über den Bereich des 1st-Level Supports hinausgeht
+- Dokumentation der Supportanfragen in einem Ticketsystem oder einer Wissensdatenbank
+- professionelle und freundliche Kommunikation mit den Kunden
+
+Karte: 214
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Erklären Sie den Unterschied zwischen dem 2nd-Level- und 3rd-Level-Support.
+Lösung:
+Der Second-Level-Support ist die erste Eskalationsstufe, wenn eine Anfrage nicht vom First-Level-Support gelöst werden kann. Er besteht aus erfahrenen Technikern oder Spezialisten. Sie können komplexere Anfragen bearbeiten, Fehlerdiagnosen durchführen und spezifischere Lösungen bereitstellen. Der Third-Level-Support ist die höchste Eskalationsstufe im Supportprozess. Er umfasst hochspezialisierte Fachleute, die über umfangreiches technisches Wissen und Expertise verfügen. Sie sind in der Lage, komplexe Probleme zu analysieren und umfassende Fehlerbehebung durchzuführen, die über die Möglichkeiten des Second-Level-Supports hinausgehen.
+
+Karte: 215
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Welchem Zweck dienen Standard Operating Procedures (SOP)?
+Lösung:
+Standard Operating Procedures (SOP) sind schriftliche Anweisungen oder Leitfäden, die die spezifischen Schritte und Verfahren beschreiben, die in einer Organisation oder einem Unternehmen bei bestimmten Aufgaben oder Prozessen befolgt werden sollen.
+
+Sie dienen dazu, eine klare Struktur, Einheitlichkeit und Effizienz in organisatorischen Abläufen zu gewährleisten, die Qualität zu kontrollieren und die Einhaltung von Standards sicherzustellen.
+
+Karte: 216
+Thema: Konzeption und Administration – Analyse und Entwicklung
+Frage: 
+Beschreiben Sie, was unter dem ITIL-Framework zu verstehen ist.
+Lösung:
+ITIL (Information Technology Infrastructure Library) ist ein Framework für das IT-Service-Management (ITSM), das bewährte Praktiken und Standards für die effektive Bereitstellung und Verwaltung von IT-Services bietet. Es wurde entwickelt, um die Qualität von IT-Services zu verbessern, die Kundenzufriedenheit zu steigern und die Effizienz der IT-Organisationen zu maximieren.
+
+ITIL besteht aus einer Sammlung von Best Practices, die in verschiedene Prozesse und Funktionen unterteilt sind. Es wird weltweit von Organisationen verschiedener Größen und Branchen eingesetzt und ist zu einem Industriestandard für das IT-Service-Management geworden.
