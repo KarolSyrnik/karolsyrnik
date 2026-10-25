@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Minecraft Server-Bild aus Spielerköpfen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#e9ece4; --panel:#ffffff; --ink:#22281f; --muted:#5f6b58;
+  --line:#c9d0c0; --accent:#4f8a2b; --accent-ink:#ffffff; --err:#b3361f;
+  --checker1:#dfe3d8; --checker2:#cfd5c6;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#1c1f1a; --panel:#272b24; --ink:#e7eadf; --muted:#9aa58f;
+    --line:#3c4237; --accent:#6db33f; --accent-ink:#13180f; --err:#ff8a6e;
+    --checker1:#2f342b; --checker2:#262a22;
+    color-scheme:dark;
+  }
+}
+*{box-sizing:border-box}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Rubik,system-ui,sans-serif}
+main{max-width:1100px;margin:0 auto;padding:24px 18px 48px}
+h1{font-family:"Pixelify Sans",monospace;font-weight:700;font-size:clamp(28px,5vw,44px);line-height:1.05;margin:0 0 6px}
+.lead{color:var(--muted);margin:0 0 24px;max-width:60ch}
+.grid{display:grid;grid-template-columns:340px minmax(0,1fr);gap:20px;align-items:stretch}
+.rightcol{display:flex;flex-direction:column;min-width:0}
+.rightcol .intro{flex:1}
+@media (max-width:820px){.grid{grid-template-columns:minmax(0,1fr)}}
+.panel{background:var(--panel);border:2px solid var(--line);border-radius:6px;padding:18px}
+label{display:block;font-weight:500;margin:14px 0 6px}
+label:first-child{margin-top:0}
+textarea,input[type=number],select,input[type=text],input[type=search]{width:100%;font:inherit;color:var(--ink);background:var(--bg);border:2px solid var(--line);border-radius:4px;padding:8px 10px}
+textarea{min-height:150px;resize:vertical;font-family:"Pixelify Sans",monospace}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.check{display:flex;gap:8px;align-items:center;font-weight:400;margin:10px 0 0}
+input[type=color]{width:100%;height:40px;border:2px solid var(--line);border-radius:4px;background:var(--bg);padding:2px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+button{font:700 18px "Pixelify Sans",monospace;cursor:pointer;border:none;border-radius:4px;padding:12px 16px;width:100%;margin-top:18px;background:var(--accent);color:var(--accent-ink);box-shadow:inset 0 -4px 0 rgba(0,0,0,.25)}
+button:active{box-shadow:inset 0 2px 0 rgba(0,0,0,.25);transform:translateY(1px)}
+button:disabled{opacity:.5;cursor:not-allowed}
+button.secondary{margin-top:8px;font-size:16px;padding:9px 14px;background:var(--bg);color:var(--ink);border:2px solid var(--line);box-shadow:none}
+#sets{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:6px}
+#sets li{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:6px;align-items:stretch}
+#sets button{margin:0;width:auto;font:500 15px Rubik,system-ui,sans-serif;padding:7px 10px;border-radius:4px;box-shadow:none;background:var(--bg);color:var(--ink);border:2px solid var(--line)}
+#sets .load{min-width:0;text-align:left;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#sets .load small{color:var(--muted);margin-left:6px}
+#sets .del{color:var(--err)}
+.intro{background:var(--panel);border:2px solid var(--line);border-radius:6px;padding:14px 18px;margin:20px 0 0}
+.intro summary{cursor:pointer;font:700 18px "Pixelify Sans",monospace}
+.intro ol{margin:10px 0 0;padding-left:22px}
+.intro li{margin:6px 0}
+.intro code{background:var(--bg);border:1px solid var(--line);border-radius:3px;padding:1px 5px;font-size:14px;word-break:break-all}
+.intro table{border-collapse:collapse;margin:6px 0;font-size:14px}
+.intro td{padding:3px 10px 3px 0;vertical-align:top}
+#serverMsg{font-size:14px;color:var(--muted);margin:6px 0 0;min-height:1.4em}
+#serverMsg.bad{color:var(--err)}
+.ipline{display:grid;gap:8px}
+.ipline button{width:100%;margin:0}
+#saveMsg{font-size:14px;color:var(--accent);margin:4px 0 0;min-height:1.4em}
+.hint{font-size:14px;color:var(--muted);margin:6px 0 0}
+.stage{display:flex;justify-content:center}
+#out{cursor:pointer}
+#out.drag{outline:3px dashed var(--accent);outline-offset:3px}
+.blocks-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:18px 0 6px}
+.blocks-head b{font-weight:500}
+.blocks-head button{width:auto;margin:0;font-size:14px;padding:6px 10px}
+#palette{display:grid;grid-template-columns:repeat(auto-fill,minmax(40px,1fr));gap:6px;max-height:280px;overflow-y:auto;padding:2px}
+#blockSearch{margin:0 0 8px}
+#bgZone{display:flex;align-items:center;gap:10px;margin-top:10px;padding:8px 10px;border:2px dashed var(--line);border-radius:4px;color:var(--muted);font-size:14px}
+#bgZone.drag{border-color:var(--accent);color:var(--ink)}
+#bgPrev{width:32px;height:32px;image-rendering:pixelated;border:1px solid var(--line);background:var(--bg);flex:none}
+#bgText{flex:1}
+#bgZone button{width:auto;margin:0;font-size:14px;padding:6px 10px}
+#palette .blk{cursor:grab;aspect-ratio:1;border:2px solid var(--line);border-radius:4px;overflow:hidden;display:block;background:var(--bg)}
+#palette .blk:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+#palette .blk.sel{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+#palette canvas{width:100%;height:100%;image-rendering:pixelated;display:block;pointer-events:none}
+canvas{image-rendering:pixelated;display:block;width:100%;height:auto}
+.icon-mode canvas{width:min(100%,384px);height:auto}
+.icon-mode #bgPrev{width:32px;height:32px}
+#status{margin:12px 0 0;font-size:14px;color:var(--muted);min-height:1.5em}
+#status .bad{color:var(--err)}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+<main>
+  <h1>Server-Bild aus Spielerköpfen</h1>
+  <p class="lead" data-version="2">Spielernamen eintragen, Layout anpassen und das Bild (64×64 oder 128×128) als PNG speichern. <small style="opacity:.6">(Version 33)</small></p>
+
+  <div class="grid">
+    <section class="panel" aria-label="Einstellungen">
+      <label for="serverIp">Server-IP</label>
+      <div class="ipline">
+        <input id="serverIp" type="text" placeholder="z.B. play.meinserver.de" spellcheck="false" autocomplete="off">
+        <button id="fetchPlayers" class="secondary" type="button">Online-Spieler abrufen</button>
+      </div>
+      <p id="serverMsg" role="status"></p>
+
+      <label for="names">Spielernamen (einer pro Zeile, „-“ = Platzhalter-Spieler)</label>
+      <textarea id="names" spellcheck="false">Notch
+jeb_
+Dinnerbone
+Grumm</textarea>
+      <div class="row">
+        <button id="saveNames" class="secondary" type="button">Namen speichern</button>
+        <button id="resetNames" class="secondary" type="button">Löschen</button>
+      </div>
+      <button id="addPlaceholder" class="secondary" type="button">Platzhalter hinzufügen</button>
+      <p id="saveMsg" role="status"></p>
+      <label id="setsLabel" hidden>Gespeicherte Listen</label>
+      <ul id="sets"></ul>
+
+      <input type="hidden" id="mode" value="icon">
+
+      <label for="outSize">Bildgröße</label>
+      <select id="outSize">
+        <option value="128" selected>128 × 128 Pixel</option>
+        <option value="64">64 × 64 Pixel (Server-Icon)</option>
+      </select>
+      <input type="hidden" id="cols" value="grid">
+      <input type="hidden" id="size" value="64">
+      <div class="row">
+        <div>
+          <label for="gap">Abstand (px)</label>
+          <input id="gap" type="number" min="0" max="8" value="0">
+        </div>
+        <div>
+          <label for="pad">Rand (px)</label>
+          <input id="pad" type="number" min="0" max="8" value="0">
+        </div>
+      </div>
+
+      <label for="bg">Hintergrundfarbe</label>
+      <input id="bg" type="color" value="#3b5d29">
+      <input type="hidden" id="square">
+      <label class="check"><input id="transparent" type="checkbox"> Transparenter Hintergrund</label>
+      <label class="check"><input id="helm" type="checkbox" checked> Hut-/Helm-Ebene anzeigen</label>
+      <input type="hidden" id="labels">
+      <input type="hidden" id="center">
+      <input type="checkbox" id="crisp" hidden>
+
+      <button id="download">PNG herunterladen</button>
+      <p class="hint">Server-Icon: Datei als <b>server-icon.png</b> in den Server-Ordner legen und Server neu starten.</p>
+    </section>
+
+    <div class="rightcol">
+      <section class="panel" aria-label="Vorschau">
+      <div class="stage" id="stage"><canvas id="out" width="64" height="64"></canvas></div>
+      <p id="status" role="status"></p>
+      <div class="blocks-head">
+        <b>Blöcke</b>
+        <button id="clearBlocks" class="secondary" type="button">Alle Blöcke entfernen</button>
+      </div>
+      <input id="blockSearch" type="search" placeholder="Block suchen, z.B. diamond, glas, wool …" autocomplete="off" hidden>
+      <div id="palette" aria-label="Minecraft-Blöcke"></div>
+      <div id="bgZone" tabindex="0" role="button" aria-label="Rand-Textur: Block hierher ziehen">
+        <canvas id="bgPrev" width="16" height="16"></canvas>
+        <span id="bgText">Rand-Textur: Block hierher ziehen</span>
+        <button id="bgClear" class="secondary" type="button" hidden>Entfernen</button>
+      </div>
+      <div class="row" style="margin-top:10px">
+        <button id="loadTex" class="secondary" type="button">Original-Texturen laden</button>
+        <button id="resetTex" class="secondary" type="button">Texturen entfernen</button>
+      </div>
+      <input id="texFile" type="file" accept=".jar,.zip" hidden>
+      <p class="hint" id="texMsg">Anleitung siehe unten: „So holst du dir die Original-Minecraft-Texturen“.</p>
+      <p class="hint">Block auf ein Feld im Bild ziehen (auch auf Köpfe) – oder Block antippen und dann aufs Feld tippen. Klick auf einen gesetzten Block entfernt ihn.</p>
+    </section>
+      <details class="intro" open>
+    <summary>So holst du dir die Original-Minecraft-Texturen</summary>
+    <ol>
+      <li>Starte Minecraft einmal in der Version, deren Texturen du willst, z.B. 1.21.4. Dadurch wird die Spieldatei heruntergeladen.</li>
+      <li>Klick unten bei den Blöcken auf <b>„Original-Texturen laden“</b>.</li>
+      <li>Geh im Dateidialog zum Minecraft-Ordner. Er ist versteckt, unter Linux zeigst du ihn mit <b>Strg+H</b> an:
+        <table>
+          <tr><td>Windows</td><td><code>%appdata%\.minecraft\versions\</code> (in die Adresszeile eintippen)</td></tr>
+          <tr><td>macOS</td><td><code>~/Library/Application Support/minecraft/versions/</code></td></tr>
+          <tr><td>Linux</td><td><code>~/.minecraft/versions/</code></td></tr>
+        </table>
+      </li>
+      <li>Öffne den Ordner deiner Version und wähle die <b>.jar</b>-Datei, z.B. <code>1.21.4/1.21.4.jar</code>.</li>
+      <li>Fertig. Die Blöcke erscheinen und bleiben im Browser gespeichert.</li>
+    </ol>
+    <p style="margin:14px 0 4px"><b>Windows: Texturen entpacken und ansehen</b> (optional, mit <a href="https://www.7-zip.org/" target="_blank" rel="noopener">7-Zip</a>)</p>
+    <ol>
+      <li>Rechtsklick auf die <b>.jar</b>-Datei und <b>„Weitere Optionen anzeigen“</b> wählen.</li>
+      <li><b>7-Zip</b> → <b>„Entpacken nach "&lt;Version&gt;\"“</b> klicken, z.B. „Entpacken nach "26.3\"“.</li>
+      <li>Im neuen Ordner findest du die Block-Texturen als PNG unter <code>assets\minecraft\textures\block</code>.</li>
+    </ol>
+    <p class="hint">Für diese Seite musst du nichts entpacken – die .jar kann direkt geladen werden.</p>
+    <p class="hint">Alternativ geht auch ein Ressourcenpaket (.zip). Die Datei wird nur lokal im Browser gelesen und nirgendwo hochgeladen. Die Texturen gehören Mojang und sind deshalb nicht in dieser Seite enthalten.</p>
+  </details>
+    </div>
+  </div>
+</main>
+
+<script>
+const $ = id => document.getElementById(id);
+const canvas = $('out'), mainCtx = canvas.getContext('2d');
+let ctx = mainCtx;   // wird beim Rendern auf ein 4×-Zwischenbild umgeschaltet
+const cache = new Map(); // key: name|helm -> Promise<Image|null>
+
+const PLACEHOLDER = '-';   // Zeile mit "-" = leeres Feld
+function parseNames(){
+  return $('names').value.split(/[\n,;]+/).map(s=>s.trim()).filter(Boolean)
+    .filter((n,i,a)=>n === PLACEHOLDER || a.findIndex(x=>x.toLowerCase()===n.toLowerCase())===i);
+}
+
+function loadImg(url){
+  return new Promise(res=>{
+    const img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = ()=>res(img);
+    img.onerror = ()=>res(null);
+    img.src = url;
+  });
+}
+
+// Kopfbild auf ein exaktes 8×8-Raster bringen: liefert ein Dienst ein größeres/weich gerechnetes Bild,
+// wird je Skin-Pixel der Mittelpunkt abgetastet -> keine Mischfarben, keine schmalen Streifen
+function to8(img){
+  const w = img.naturalWidth || img.width, h = img.naturalHeight || img.height;
+  if(w === 8 && h === 8) return img;
+  try{
+    const t = document.createElement('canvas'); t.width = w; t.height = h;
+    const tg = t.getContext('2d', {willReadFrequently:true}); tg.drawImage(img, 0, 0);
+    const out = document.createElement('canvas'); out.width = out.height = 8;
+    const og = out.getContext('2d'), id = og.createImageData(8, 8);
+    for(let y=0;y<8;y++) for(let x=0;x<8;x++){
+      const sx = Math.min(w-1, Math.floor((x+.5)*w/8)), sy = Math.min(h-1, Math.floor((y+.5)*h/8));
+      const d = tg.getImageData(sx, sy, 1, 1).data, o = (y*8+x)*4;
+      id.data[o]=d[0]; id.data[o+1]=d[1]; id.data[o+2]=d[2]; id.data[o+3]=d[3];
+    }
+    og.putImageData(id, 0, 0);
+    return out;
+  }catch(e){ return img; }
+}
+
+// Kopf direkt aus dem Skin schneiden (Gesicht 8,8 / Hut-Ebene 40,8) -> funktioniert auch ohne Hut-Ebene zuverlässig
+function skinToHead(skin, helm){
+  const f = (skin.naturalWidth || skin.width) / 64;          // 1 bei normalen Skins, 2+ bei HD-Skins
+  const sk = document.createElement('canvas'); sk.width = skin.naturalWidth || skin.width; sk.height = skin.naturalHeight || skin.height;
+  const sg = sk.getContext('2d', {willReadFrequently:true}); sg.drawImage(skin, 0, 0);
+  const out = document.createElement('canvas'); out.width = out.height = 8;
+  const og = out.getContext('2d');
+  const part = (ox, base)=>{
+    const id = og.createImageData(8, 8);
+    for(let y=0;y<8;y++) for(let x=0;x<8;x++){
+      const d = sg.getImageData(Math.floor((ox+x+.5)*f), Math.floor((8+y+.5)*f), 1, 1).data, o = (y*8+x)*4;
+      id.data[o]=d[0]; id.data[o+1]=d[1]; id.data[o+2]=d[2]; id.data[o+3]= base ? 255 : d[3];
+    }
+    const c = document.createElement('canvas'); c.width = c.height = 8; c.getContext('2d').putImageData(id, 0, 0);
+    og.drawImage(c, 0, 0);
+  };
+  part(8, true);                 // Gesicht (immer deckend)
+  if(helm) part(40, false);      // Hut-/Helm-Ebene
+  return out;
+}
+
+function getHead(name, helm){
+  const key = name.toLowerCase()+'|'+helm;
+  if(!cache.has(key)){
+    const n = encodeURIComponent(name);
+    const urls = helm
+      ? [`https://mc-heads.net/avatar/${n}/8`, `https://minotar.net/helm/${n}/8.png`, `https://crafthead.net/helm/${n}/8`]
+      : [`https://mc-heads.net/avatar/${n}/8/nohelm`, `https://minotar.net/avatar/${n}/8.png`, `https://crafthead.net/avatar/${n}/8`];
+    cache.set(key, (async()=>{
+      if(!helm){                                              // ohne Hut: Skin laden und selbst zuschneiden
+        const skinUrls = [`https://mc-heads.net/skin/${n}`, `https://crafthead.net/skin/${n}`, `https://minotar.net/skin/${n}`];
+        for(const u of skinUrls){
+          const sk = await loadImg(u);
+          if(sk && (sk.naturalWidth||sk.width) >= 64){ try{ return skinToHead(sk, false); }catch(e){} }
+        }
+      }
+      for(const u of urls){ const img = await loadImg(u); if(img) return to8(img); }
+      cache.delete(key); // beim nächsten Rendern erneut versuchen
+      return null;
+    })());
+  }
+  return cache.get(key);
+}
+
+function num(id, min, max){
+  const v = parseInt($(id).value,10);
+  return Math.min(max, Math.max(min, isNaN(v)?min:v));
+}
+
+let renderToken = 0;
+let cells = [];   // aktuelle Felder für Klick/Drop: {key,x,y,w,h,head}
+let placed = {};  // "r,c" -> Block-ID
+try{ placed = JSON.parse(localStorage.getItem('mc-koepfe-bloecke') || '{}'); }catch(e){}
+function savePlaced(){ try{ localStorage.setItem('mc-koepfe-bloecke', JSON.stringify(placed)); }catch(e){} }
+
+// Größe auf ganze Vielfache von 8 abrunden -> jeder Skin-Pixel gleich groß, keine halben Pixel
+function snap8(v, unit){ unit = unit || 8; return v >= unit ? Math.floor(v/unit)*unit : v >= 8 ? 8 : Math.max(1, Math.floor(v)); }
+
+// Automatisch: Reihen unterschiedlich groß, damit das Bild möglichst voll ist (z.B. 5 = 2 oben + 3 unten)
+function layoutFill(n, S, pad, gap){
+  const inner = S - 2*pad;
+  let best = null;
+  for(let k=1;k<=n;k++){
+    const base = Math.floor(n/k), extra = n%k;
+    const counts = [...Array(k-extra).fill(base), ...Array(extra).fill(base+1)];  // kleinere Reihen oben
+    const g = Math.round(gap);
+    const sz8 = counts.map(c=>snap8((inner-(c-1)*g)/c));   // max. Größe je Reihe
+    const height = ()=>sz8.reduce((a,b)=>a+b,0) + (k-1)*g;
+    while(height() > inner){                                   // größte Reihe schrittweise verkleinern
+      const m = sz8.indexOf(Math.max(...sz8));
+      if(sz8[m] <= 8){ sz8[m] = Math.max(1, sz8[m]-1); if(sz8[m] <= 1) break; } else sz8[m] -= 8;
+    }
+    const H8 = height();
+    const cover = counts.reduce((a,c,i)=>a+c*sz8[i]*sz8[i],0);
+    if(!best || cover > best.cover + 1e-6) best = {counts, sz8, g, H:H8, cover};
+  }
+  const {counts, sz8, g, H} = best;
+  const slots = []; let i = 0;
+  let y = Math.floor(pad + (inner - H)/2);
+  counts.forEach((c,r)=>{
+    const sz = sz8[r];
+    const rowW = c*sz + (c-1)*g;
+    let x = Math.floor(pad + (inner - rowW)/2);
+    for(let j=0;j<c;j++){ slots.push({key:`a${r},${j}`, fx:x, fy:y, size:sz, hi:i++}); x += sz + g; }
+    y += sz + g;
+  });
+  return slots;
+}
+
+// Feldraster (Nebeneinander / Untereinander): quadratisches Raster mit freien Feldern
+function layoutCells(n, S, pad, gap, layout){
+  // Raster: alle Köpfe gleich groß, von links oben aufgefüllt (5 Spieler = 3×3 mit 4 freien Feldern)
+  let cols = layout === 'row' ? n : layout === 'col' ? 1 : Math.ceil(Math.sqrt(n));
+  cols = Math.min(cols, n);
+  const rows = Math.ceil(n/cols);
+  const span = Math.max(cols, rows);
+  gap = Math.round(gap);
+  let size = (S - 2*pad - (span-1)*gap) / span;
+  if(size < 2){ pad = 0; gap = 0; size = S/span; }
+  // Immer pixelgenau: Kopfgröße = ganzes Vielfaches von 8 (Skin hat 8×8 px), bei gesetzten Blöcken von 16 (Textur 16×16)
+  // -> jeder Quellpixel wird exakt gleich groß, keine doppelt/halb so breiten Pixelreihen
+  const unit = Object.values(placed).some(id=>texFor(id)) ? 16 : 8;
+  size = snap8(size, unit);
+  const total = span*size + (span-1)*gap, off = Math.floor((S-total)/2);
+  const r0 = Math.floor((span-rows)/2), c0 = Math.floor((span-cols)/2);
+  const headAt = new Map();
+  for(let i=0;i<n;i++) headAt.set(`${r0+Math.floor(i/cols)},${c0+i%cols}`, i);
+  const slots = [];
+  for(let r=0;r<span;r++) for(let c=0;c<span;c++)
+    slots.push({key:`${r},${c}`, fx:off + c*(size+gap), fy:off + r*(size+gap), size, hi:headAt.get(`${r},${c}`)});
+  return slots;
+}
+
+// Anzeige nur in ganzzahligen Vielfachen der Geräte-Pixel skalieren -> keine ungleich breiten Pixel in der Vorschau
+function fitCanvas(){
+  const dpr = window.devicePixelRatio || 1;
+  const avail = Math.min($('stage').clientWidth || 384, 640);
+  const k = Math.max(1, Math.floor(avail*dpr / canvas.width));
+  canvas.style.width = (canvas.width*k/dpr) + 'px';
+}
+window.addEventListener('resize', ()=>{ if(canvas.width) fitCanvas(); });
+
+async function render(){
+  const token = ++renderToken;
+  const empty = !parseNames().length;
+  const names = empty ? ['?'] : parseNames();
+  const helm = $('helm').checked;
+  const status = $('status');
+  status.textContent = 'Lade Köpfe …';
+  const heads = empty ? [null] : await Promise.all(names.map(n=> n === PLACEHOLDER ? null : getHead(n,helm)));
+  if(token !== renderToken) return;
+  document.body.classList.add('icon-mode');
+
+  const n = names.length;
+  const layout = $('cols').value;
+  let gap = num('gap',0,8), pad = num('pad',0,8);
+  const OUT = parseInt($('outSize').value,10) || 64;
+  const F = 1;   // kein Verkleinern mit Weichzeichnen – Pixel bleiben scharf
+  const S = OUT * F;
+  pad = pad*S/64; gap = gap*S/64;
+  const slots = layoutCells(n, S, pad, gap, layout);
+
+  const off = document.createElement('canvas'); off.width = off.height = S;
+  ctx = off.getContext('2d');
+  ctx.clearRect(0,0,S,S);
+  if(bgBlock && texFor(bgBlock)){                       // Rand/Hintergrund als Block-Textur (gekachelt)
+    // Textur nur in ganzen Vielfachen vergrößern (64 px Bild: 1×, 128 px: 2×) – nie verkleinern, sonst verzerren die Pixel
+    const t = texFor(bgBlock);
+    const scale = Math.max(1, Math.floor(S/64));
+    const tile = t.width * scale;
+    const pc = document.createElement('canvas'); pc.width = pc.height = tile;
+    const pg = pc.getContext('2d');
+    pg.imageSmoothingEnabled = false;
+    pg.drawImage(t, 0, 0, tile, tile);
+    ctx.imageSmoothingEnabled = false;
+    const pat = ctx.createPattern(pc, 'repeat');
+    const shift = Math.floor(((S - tile) / 2) % tile);                 // Blöcke mittig ausrichten -> Rand ringsum gleich
+    pat.setTransform(new DOMMatrix([1,0,0,1,shift,shift]));
+    ctx.fillStyle = pat; ctx.fillRect(0,0,S,S);
+  } else if(!$('transparent').checked){ ctx.fillStyle = $('bg').value; ctx.fillRect(0,0,S,S); }
+  ctx.imageSmoothingEnabled = false;
+
+  cells = [];
+  const missing = [];
+  for(const sl of slots){
+    const x = Math.round(sl.fx), y = Math.round(sl.fy);
+    const w = Math.round(sl.fx+sl.size) - x, h = Math.round(sl.fy+sl.size) - y;
+    const isHead = sl.hi !== undefined;   // Platzhalter zählt wie ein Spieler
+    cells.push({key: sl.key, x: x/F, y: y/F, w: w/F, h: h/F, head: isHead});
+    if(placed[sl.key] && texFor(placed[sl.key])){
+      ctx.drawImage(texFor(placed[sl.key]), x, y, w, h);   // Block überdeckt auch Köpfe
+    } else if(isHead){
+      const img = heads[sl.hi];
+      if(img) ctx.drawImage(img, x, y, w, h);
+      else { if(names[sl.hi] !== PLACEHOLDER) missing.push(names[sl.hi]); drawUnknown(x, y, w); }
+    }
+  }
+
+  // Zwischenbild auf Endgröße verkleinern
+  ctx = mainCtx;
+  canvas.width = canvas.height = OUT;
+  ctx.clearRect(0,0,OUT,OUT);
+  ctx.imageSmoothingEnabled = F > 1; ctx.imageSmoothingQuality = 'high';
+  ctx.drawImage(off, 0, 0, OUT, OUT);
+
+  fitCanvas();
+  $('download').disabled = false;
+  const free = cells.filter(c=>!c.head).length;
+  const nHeads = empty ? 0 : n;
+  status.innerHTML = `${nHeads} Kopf/Köpfe · ${free} freie Felder · ${OUT}×${OUT} px` +
+    (empty ? '<br>Noch keine Namen eingetragen.' : missing.length ? `<br><span class="bad">Nicht gefunden: ${missing.map(esc).join(', ')} – Schreibweise prüfen.</span>` : '');
+}
+
+// Pixel-Fragezeichen (16×16-Raster) auf grünem Feld
+const QMARK = [
+  '................',
+  '................',
+  '.....######.....',
+  '....########....',
+  '...###....###...',
+  '...###....###...',
+  '..........###...',
+  '.........###....',
+  '........###.....',
+  '.......###......',
+  '.......###......',
+  '................',
+  '.......###......',
+  '.......###......',
+  '................',
+  '................'];
+function shade(hex, f){
+  const v = parseInt(hex.slice(1),16);
+  const c = [v>>16, (v>>8)&255, v&255].map(x=>Math.round(x*f));
+  return `rgb(${c.join(',')})`;
+}
+function drawUnknown(x, y, size){
+  const green = $('transparent').checked ? '#3b5d29' : $('bg').value;
+  ctx.fillStyle = shade(green, 0.8); ctx.fillRect(x, y, size, size);
+  const p = size/16;
+  const px = (c,r,col)=>{ ctx.fillStyle = col;
+    ctx.fillRect(Math.round(x+c*p), Math.round(y+r*p), Math.max(1,Math.round(x+(c+1)*p)-Math.round(x+c*p)), Math.max(1,Math.round(y+(r+1)*p)-Math.round(y+r*p))); };
+  QMARK.forEach((row,r)=>[...row].forEach((ch,c)=>{ if(ch==='#') px(c+1, r+1, 'rgba(0,0,0,.35)'); }));
+  QMARK.forEach((row,r)=>[...row].forEach((ch,c)=>{ if(ch==='#') px(c, r, '#ffffff'); }));
+}
+
+function textColorFor(hex){
+  const v = parseInt(hex.slice(1),16), r=v>>16, g=(v>>8)&255, b=v&255;
+  return (r*299+g*587+b*114)/1000 > 140 ? '#1a1a1a' : '#ffffff';
+}
+function esc(s){ return s.replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+let t;
+function schedule(delay){ clearTimeout(t); t = setTimeout(render, delay); }
+$('names').addEventListener('input', ()=>schedule(600));
+['mode','crisp','outSize','cols','size','gap','pad','bg','square','transparent','helm','labels','center'].forEach(id=>{
+  $(id).addEventListener('input', ()=>schedule(80));
+  $(id).addEventListener('change', ()=>schedule(0));
+});
+
+$('download').addEventListener('click', ()=>{
+  try{
+    const a = document.createElement('a');
+    a.download = canvas.width === 64 ? 'server-icon.png' : `server-bild-${canvas.width}.png`;
+    a.href = canvas.toDataURL('image/png');
+    a.click();
+  }catch(e){
+    $('status').innerHTML = '<span class="bad">Export blockiert (CORS). Seite über einen Webserver öffnen, z.B. GitHub Pages.</span>';
+  }
+});
+
+// Gespeicherte Namenslisten
+const SETS_KEY = 'mc-koepfe-listen';
+function loadSets(){
+  try{
+    const sets = JSON.parse(localStorage.getItem(SETS_KEY) || '[]');
+    const old = localStorage.getItem('mc-koepfe-namen'); // alte Einzel-Speicherung übernehmen
+    if(old){ sets.push({id:Date.now(), title:'Gespeichert', names:old}); localStorage.removeItem('mc-koepfe-namen'); saveSets(sets); }
+    return sets;
+  }catch(e){ return []; }
+}
+function saveSets(sets){
+  try{ localStorage.setItem(SETS_KEY, JSON.stringify(sets)); return true; }
+  catch(e){ flash('Speichern nicht möglich (Browser blockiert lokalen Speicher).'); return false; }
+}
+function flash(msg){
+  $('saveMsg').textContent = msg;
+  clearTimeout(window._msgT);
+  window._msgT = setTimeout(()=>$('saveMsg').textContent='', 2500);
+}
+function countNames(txt){ return txt.split(/[\n,;]+/).map(x=>x.trim()).filter(Boolean).length; }
+
+function showSets(){
+  const sets = loadSets(), ul = $('sets');
+  ul.innerHTML = '';
+  $('setsLabel').hidden = !sets.length;
+  sets.forEach(set=>{
+    const li = document.createElement('li');
+    const load = document.createElement('button');
+    load.className = 'load'; load.type = 'button'; load.title = 'Laden';
+    load.textContent = set.title;
+    const small = document.createElement('small'); small.textContent = `(${countNames(set.names)})`;
+    load.appendChild(small);
+    load.onclick = ()=>{ $('names').value = set.names; render(); flash(`„${set.title}“ geladen.`); };
+
+    const ren = document.createElement('button');
+    ren.type = 'button'; ren.textContent = '✎'; ren.title = 'Umbenennen'; ren.setAttribute('aria-label', `„${set.title}“ umbenennen`);
+    ren.onclick = ()=>{
+      const t = prompt('Neuer Name für die Liste:', set.title);
+      if(t === null || !t.trim()) return;
+      const all = loadSets(); const s2 = all.find(x=>x.id===set.id);
+      if(s2){ s2.title = t.trim(); if(saveSets(all)){ showSets(); flash('Umbenannt.'); } }
+    };
+
+    const del = document.createElement('button');
+    del.type = 'button'; del.className = 'del'; del.textContent = '✕'; del.title = 'Löschen';
+    del.setAttribute('aria-label', `„${set.title}“ löschen`);
+    del.onclick = ()=>{
+      if(!confirm(`„${set.title}“ löschen?`)) return;
+      if(saveSets(loadSets().filter(x=>x.id!==set.id))){ showSets(); flash('Liste gelöscht.'); }
+    };
+    li.append(load, ren, del);
+    ul.appendChild(li);
+  });
+}
+
+$('saveNames').addEventListener('click', ()=>{
+  const names = $('names').value.trim();
+  if(!names){ flash('Erst Namen eintragen.'); return; }
+  const sets = loadSets();
+  const t = prompt('Name für die Liste:', `Liste ${sets.length+1}`);
+  if(t === null) return;
+  sets.push({id:Date.now(), title:(t.trim() || `Liste ${sets.length+1}`), names});
+  if(saveSets(sets)){ showSets(); flash('Namen gespeichert.'); }
+});
+
+$('resetNames').addEventListener('click', ()=>{
+  $('names').value = '';
+  render();
+  flash('Namensfeld geleert.');
+});
+
+showSets();
+// Online-Spieler vom Server abrufen
+const IP_KEY = 'mc-koepfe-ip';
+try{ $('serverIp').value = localStorage.getItem(IP_KEY) || ''; }catch(e){}
+
+function serverMsg(text, bad){ const el = $('serverMsg'); el.textContent = text; el.classList.toggle('bad', !!bad); }
+
+async function fetchStatus(ip){
+  // 1. mcsrvstat.us
+  try{
+    const r = await fetch(`https://api.mcsrvstat.us/3/${encodeURIComponent(ip)}`);
+    if(r.ok){
+      const d = await r.json();
+      return { online: !!d.online, count: d.players?.online ?? 0, max: d.players?.max ?? 0,
+               names: (d.players?.list || []).map(p=>p.name).filter(Boolean) };
+    }
+  }catch(e){}
+  // 2. mcstatus.io als Ausweich
+  const r = await fetch(`https://api.mcstatus.io/v2/status/java/${encodeURIComponent(ip)}`);
+  if(!r.ok) throw new Error('HTTP '+r.status);
+  const d = await r.json();
+  return { online: !!d.online, count: d.players?.online ?? 0, max: d.players?.max ?? 0,
+           names: (d.players?.list || []).map(p=>p.name_clean || p.name_raw).filter(Boolean) };
+}
+
+$('fetchPlayers').addEventListener('click', async ()=>{
+  const ip = $('serverIp').value.trim();
+  if(!ip){ serverMsg('Erst eine Server-IP eintragen.', true); return; }
+  try{ localStorage.setItem(IP_KEY, ip); }catch(e){}
+  const btn = $('fetchPlayers'); btn.disabled = true;
+  serverMsg('Frage Server ab …');
+  try{
+    const st = await fetchStatus(ip);
+    if(!st.online){ serverMsg('Server ist offline oder nicht erreichbar.', true); return; }
+    if(st.count === 0){ serverMsg(`Server online, aber gerade 0/${st.max} Spieler.`); return; }
+    if(!st.names.length){
+      serverMsg(`${st.count}/${st.max} online, aber der Server zeigt keine Spielernamen an.`, true); return;
+    }
+    $('names').value = st.names.join('\n');
+    render();
+    // Live-Spieler als eigene Liste speichern (wird bei jedem Abruf aktualisiert)
+    const sets = loadSets(), liveId = 'live:' + ip.toLowerCase();
+    let live = sets.find(x=>x.id===liveId);
+    if(!live){ live = {id:liveId, title:`Live – ${ip}`}; sets.unshift(live); }
+    live.names = st.names.join('\n');
+    if(saveSets(sets)) showSets();
+    const more = st.count > st.names.length ? ` (Server zeigt nur ${st.names.length} davon)` : '';
+    serverMsg(`${st.count}/${st.max} Spieler online${more}.`);
+  }catch(e){
+    serverMsg('Abruf fehlgeschlagen. IP prüfen oder später erneut versuchen.', true);
+  }finally{ btn.disabled = false; }
+});
+$('serverIp').addEventListener('keydown', e=>{ if(e.key==='Enter') $('fetchPlayers').click(); });
+
+// ===== Minecraft-Blöcke (selbst gezeichnete 16×16-Texturen) =====
+function rng(seed){ return ()=>{ seed|=0; seed=seed+0x6D2B79F5|0; let t=Math.imul(seed^seed>>>15,1|seed); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
+function makeTex(seed, draw){
+  const c = document.createElement('canvas'); c.width = c.height = 16;
+  const g = c.getContext('2d'), R = rng(seed);
+  const px = (x,y,col)=>{ g.fillStyle = col; g.fillRect(x,y,1,1); };
+  const pick = a => a[Math.floor(R()*a.length)];
+  const noise = pal => { for(let y=0;y<16;y++) for(let x=0;x<16;x++) px(x,y,pick(pal)); };
+  draw({g,R,px,pick,noise});
+  return c;
+}
+const STONE = ['#7f7f7f','#747474','#888888','#6d6d6d','#7a7a7a'];
+const DIRT  = ['#866043','#79553a','#966c4a','#6b4a30'];
+function ore(t, cols){
+  t.noise(STONE);
+  for(let k=0;k<4;k++){
+    const cx = 2+Math.floor(t.R()*11), cy = 2+Math.floor(t.R()*11);
+    [[0,0],[1,0],[0,1],[1,1],[-1,0],[0,-1]].forEach(([dx,dy],j)=>{ if(j<3 || t.R()<.5) t.px(cx+dx, cy+dy, t.pick(cols)); });
+  }
+}
+function bevel(t, base, light, dark){
+  t.noise(base);
+  for(let i=0;i<16;i++){ t.px(i,0,light); t.px(0,i,light); t.px(i,15,dark); t.px(15,i,dark); }
+  for(let i=1;i<15;i++){ t.px(i,1,base[0]); t.px(1,i,base[0]); t.px(i,14,base[base.length-1]); t.px(14,i,base[base.length-1]); }
+}
+const BLOCKS = {
+  grass:    ['Grasblock', t=>{ t.noise(DIRT); const G=['#5f9f35','#6aaa3c','#4f8a2b','#74b444'];
+              for(let x=0;x<16;x++){ for(let y=0;y<3;y++) t.px(x,y,t.pick(G)); if(t.R()<.6) t.px(x,3,t.pick(G)); if(t.R()<.25) t.px(x,4,t.pick(G)); } }],
+  dirt:     ['Erde', t=>t.noise(DIRT)],
+  stone:    ['Stein', t=>t.noise(STONE)],
+  cobble:   ['Bruchstein', t=>{ const pts=[...Array(8)].map(()=>[t.R()*16,t.R()*16,t.pick(['#8a8a8a','#7a7a7a','#6e6e6e','#959595'])]);
+              for(let y=0;y<16;y++) for(let x=0;x<16;x++){ const d=pts.map(p=>[Math.hypot(p[0]-x,p[1]-y),p]).sort((a,b)=>a[0]-b[0]);
+                t.px(x,y, d[1][0]-d[0][0] < 1.1 ? '#4c4c4c' : (t.R()<.2 ? '#a0a0a0' : d[0][1][2])); } }],
+  planks:   ['Eichenbretter', t=>{ t.noise(['#a2824e','#9c7f4e','#b8945f','#af8f55']);
+              for(let b=0;b<4;b++){ for(let x=0;x<16;x++) t.px(x,b*4+3,'#6b5232'); const sx=b%2?3:11; for(let y=b*4;y<b*4+3;y++) t.px(sx,y,'#6b5232'); } }],
+  log:      ['Eichenstamm', t=>{ const C=['#6b5232','#5a4428','#7a5f3a','#4e3a22'];
+              const col=[...Array(16)].map(()=>t.pick(C)); for(let y=0;y<16;y++) for(let x=0;x<16;x++) t.px(x,y, t.R()<.15 ? t.pick(C) : col[x]); }],
+  sand:     ['Sand', t=>t.noise(['#dbd3a0','#e3dbb0','#d1c690','#cfc28a'])],
+  glass:    ['Glas', t=>{ t.g.fillStyle='rgba(200,235,245,.25)'; t.g.fillRect(0,0,16,16);
+              for(let i=0;i<16;i++){ t.px(i,0,'#d8f0f5'); t.px(0,i,'#d8f0f5'); t.px(i,15,'#a9d6e0'); t.px(15,i,'#a9d6e0'); }
+              [[3,5],[4,4],[5,3],[4,6],[5,5],[6,4],[10,12],[11,11]].forEach(([x,y])=>t.px(x,y,'#ffffff')); }],
+  diamondOre:['Diamanterz', t=>ore(t,['#5decf5','#2bc7ac','#a1fbe8'])],
+  goldOre:  ['Golderz', t=>ore(t,['#fcee4b','#e0a91a','#fff6a8'])],
+  diamond:  ['Diamantblock', t=>bevel(t,['#4de0d5','#5ae6dc','#3fcfc4','#38c2b8'],'#a1fbe8','#2a9e94')],
+  gold:     ['Goldblock', t=>bevel(t,['#f8d93a','#fbe158','#efc92c','#e5bb22'],'#fff6a8','#c09017')],
+  emerald:  ['Smaragdblock', t=>bevel(t,['#2ad15a','#3ad968','#20c04d','#1bb345'],'#8af5a6','#15853a')],
+  redstone: ['Redstoneblock', t=>bevel(t,['#b0170c','#c22216','#9e1208','#a8150a'],'#e84a3a','#6e0d06')],
+  obsidian: ['Obsidian', t=>{ t.noise(['#14121d','#1c1829','#110f18','#1a1626']); for(let k=0;k<14;k++) t.px(Math.floor(t.R()*16),Math.floor(t.R()*16),t.pick(['#3b2a5c','#2a2140'])); }],
+  netherrack:['Netherrack', t=>t.noise(['#6f2b2b','#5b2222','#8a3a3a','#4a1a1a'])],
+  tnt:      ['TNT', t=>{ for(let y=0;y<16;y++) for(let x=0;x<16;x++) t.px(x,y, (x>>1)%2 ? '#b8352a' : '#db4a3a');
+              for(let y=5;y<11;y++) for(let x=0;x<16;x++) t.px(x,y,'#e8e8e8');
+              const L={T:['###','.#.','.#.','.#.'],N:['#..#','##.#','#.##','#..#']};
+              [['T',1],['N',6],['T',12]].forEach(([ch,ox])=>L[ch].forEach((row,ry)=>[...row].forEach((v,rx)=>{ if(v==='#') t.px(ox+rx,6+ry,'#1a1a1a'); }))); }],
+  bookshelf:['Bücherregal', t=>{ t.noise(['#a2824e','#9c7f4e','#b8945f']);
+              const B=['#8b2a1f','#2f4f8f','#3f7a2f','#a8822a','#6b3a7a','#c9c0a8'];
+              [[2,6],[9,13]].forEach(([a,b])=>{ let x=1; while(x<15){ const w=1+Math.floor(t.R()*2), col=t.pick(B), top=a+Math.floor(t.R()*2);
+                for(let xx=x;xx<Math.min(15,x+w);xx++) for(let y=top;y<=b;y++) t.px(xx,y,col); x+=w; } });
+              for(let x=0;x<16;x++){ t.px(x,7,'#6b5232'); t.px(x,15,'#6b5232'); } }],
+  lava:     ['Lava', t=>t.noise(['#d96415','#f08a1a','#fcb437','#e8751a','#c4410e'])],
+  water:    ['Wasser', t=>t.noise(['#2f5fd1','#3a6be0','#2850b8','#4a7ff0'])],
+  ice:      ['Eis', t=>{ t.noise(['#9cc3f5','#a8ccf7','#8ab6f0','#b9d6fa']); [[2,3],[3,4],[4,5],[9,9],[10,10],[11,11],[12,12]].forEach(([x,y])=>t.px(x,y,'#e6f1ff')); }],
+};
+const texCache = {};
+function blockTex(id){
+  if(realTex[id]) return realTex[id];
+  if(!texCache[id]){ let seed=0; for(const ch of id) seed = seed*31 + ch.charCodeAt(0); texCache[id] = makeTex(seed, BLOCKS[id][1]); }
+  return texCache[id];
+}
+
+// ===== Original-Texturen (alle Blöcke) aus der eigenen Minecraft-.jar / einem Ressourcenpaket =====
+const realTex = {};          // Dateiname (z.B. "oak_planks") -> Canvas
+const LEGACY = { grass:'grass_block_side', dirt:'dirt', stone:'stone', cobble:'cobblestone', planks:'oak_planks', log:'oak_log',
+  sand:'sand', glass:'glass', diamondOre:'diamond_ore', goldOre:'gold_ore', diamond:'diamond_block', gold:'gold_block',
+  emerald:'emerald_block', redstone:'redstone_block', obsidian:'obsidian', netherrack:'netherrack', tnt:'tnt_side',
+  bookshelf:'bookshelf', lava:'lava_still', water:'water_still', ice:'ice' };
+function texFor(id){ return realTex[id] || realTex[LEGACY[id]] || null; }
+
+// Deutsche Suchbegriffe für bekannte Blöcke
+const DE = { grass_block_side:'Grasblock', dirt:'Erde', stone:'Stein', cobblestone:'Bruchstein', oak_planks:'Eichenbretter',
+  oak_log:'Eichenstamm', sand:'Sand', glass:'Glas', diamond_ore:'Diamanterz', gold_ore:'Golderz', iron_ore:'Eisenerz',
+  diamond_block:'Diamantblock', gold_block:'Goldblock', iron_block:'Eisenblock', emerald_block:'Smaragdblock',
+  redstone_block:'Redstoneblock', obsidian:'Obsidian', netherrack:'Netherrack', tnt_side:'TNT', bookshelf:'Bücherregal',
+  lava_still:'Lava', water_still:'Wasser', ice:'Eis', crafting_table_front:'Werkbank', furnace_front:'Ofen',
+  pumpkin_side:'Kürbis', melon_side:'Melone', glowstone:'Leuchtstein', bricks:'Ziegel', end_stone:'Endstein',
+  netherite_block:'Netheritblock', lapis_block:'Lapislazuliblock', coal_ore:'Kohleerz', snow:'Schnee', clay:'Ton',
+  gravel:'Kies', bedrock:'Grundgestein', sponge:'Schwamm', beacon:'Leuchtfeuer', chest:'Truhe', barrel_side:'Fass',
+  hay_block_side:'Heuballen', slime_block:'Schleimblock', honey_block_side:'Honigblock', amethyst_block:'Amethystblock',
+  copper_block:'Kupferblock', deepslate:'Tiefenschiefer', mossy_cobblestone:'Bemooster Bruchstein', jack_o_lantern:'Kürbislaterne' };
+const POPULAR = ['grass_block_side','dirt','stone','cobblestone','oak_planks','oak_log','sand','glass','diamond_ore','gold_ore',
+  'diamond_block','gold_block','emerald_block','redstone_block','netherite_block','obsidian','netherrack','tnt_side',
+  'bookshelf','crafting_table_front','furnace_front','jack_o_lantern','glowstone','lava_still','water_still','ice'];
+
+// Im Spiel grau und per Biom eingefärbt
+function tintFor(n){
+  if(/^water_/.test(n)) return '#3f76e4';
+  if(n === 'birch_leaves') return '#80a755';
+  if(n === 'spruce_leaves') return '#619961';
+  if(/^(oak|jungle|acacia|dark_oak|mangrove)_leaves$/.test(n) || n === 'vine') return '#48b518';
+  if(/^(grass_block_top|short_grass|grass|fern|tall_grass_(top|bottom)|large_fern_(top|bottom)|lily_pad)$/.test(n)) return '#79c05a';
+  return null;
+}
+function imgToTex(id, img){
+  const w = img.width;                     // animierte Texturen: nur erstes Bild
+  const c = document.createElement('canvas'); c.width = c.height = w;
+  const g = c.getContext('2d');
+  g.drawImage(img, 0, 0, w, w, 0, 0, w, w);
+  const tint = tintFor(id);
+  if(tint){
+    g.globalCompositeOperation = 'multiply'; g.fillStyle = tint; g.fillRect(0,0,w,w);
+    g.globalCompositeOperation = 'destination-in'; g.drawImage(img, 0, 0, w, w, 0, 0, w, w);
+  }
+  return c;
+}
+function loadImage(src){ return new Promise((res,rej)=>{ const i = new Image(); i.onload=()=>res(i); i.onerror=rej; i.src = src; }); }
+
+// Speicher: IndexedDB (genug Platz für alle Texturen)
+function idb(){ return new Promise((res,rej)=>{ const r = indexedDB.open('mc-koepfe',1);
+  r.onupgradeneeded = ()=>r.result.createObjectStore('kv'); r.onsuccess = ()=>res(r.result); r.onerror = ()=>rej(r.error); }); }
+async function idbSet(k,v){ const db = await idb(); return new Promise((res,rej)=>{ const t = db.transaction('kv','readwrite'); t.objectStore('kv').put(v,k); t.oncomplete=res; t.onerror=()=>rej(t.error); }); }
+async function idbGet(k){ const db = await idb(); return new Promise((res,rej)=>{ const r = db.transaction('kv').objectStore('kv').get(k); r.onsuccess=()=>res(r.result); r.onerror=()=>rej(r.error); }); }
+async function idbDel(k){ const db = await idb(); return new Promise(res=>{ const t = db.transaction('kv','readwrite'); t.objectStore('kv').delete(k); t.oncomplete=res; }); }
+
+async function applyTextures(map){   // map: Dateiname -> PNG-Blob
+  await Promise.all(Object.entries(map).map(async ([id,blob])=>{
+    const url = URL.createObjectURL(blob);
+    try{ realTex[id] = imgToTex(id, await loadImage(url)); }catch(e){}
+    URL.revokeObjectURL(url);
+  }));
+  buildPalette(); render(); if(typeof showBg === 'function') showBg();
+}
+
+// Palette mit Suche
+let selectedBlock = null;
+const pal = $('palette');
+function label(id){ return DE[id] ? `${DE[id]} (${id})` : id.replace(/_/g,' '); }
+function buildPalette(){
+  pal.innerHTML = '';
+  const all = Object.keys(realTex);
+  $('resetTex').hidden = !all.length;
+  $('blockSearch').hidden = !all.length;
+  if(!all.length){
+    pal.innerHTML = '<p class="hint" style="grid-column:1/-1;margin:0">Noch keine Blöcke – lade zuerst die Original-Texturen.</p>';
+    return;
+  }
+  const q = $('blockSearch').value.trim().toLowerCase();
+  let list = all.filter(id=>!q || id.includes(q.replace(/\s+/g,'_')) || (DE[id]||'').toLowerCase().includes(q));
+  const rank = id => { const i = POPULAR.indexOf(id); return i < 0 ? 999 : i; };
+  list.sort((a,b)=> rank(a)-rank(b) || a.localeCompare(b));
+  if(!list.length){ pal.innerHTML = '<p class="hint" style="grid-column:1/-1;margin:0">Kein Block gefunden.</p>'; return; }
+  list.forEach(id=>{
+    const b = document.createElement('div');   // div statt button: Buttons lassen sich nicht ziehen
+    b.className = 'blk'; b.tabIndex = 0; b.setAttribute('role','button');
+    b.title = label(id); b.setAttribute('aria-label', label(id));
+    b.draggable = true;
+    if(selectedBlock === id) b.classList.add('sel');
+    const t = realTex[id];
+    const c = document.createElement('canvas'); c.width = t.width; c.height = t.height;
+    c.getContext('2d').drawImage(t,0,0);
+    b.appendChild(c);
+    b.addEventListener('dragstart', e=>{ e.dataTransfer.setData('text/plain', id); e.dataTransfer.effectAllowed='copy'; });
+    b.addEventListener('click', ()=>{
+      selectedBlock = selectedBlock === id ? null : id;
+      pal.querySelectorAll('.blk').forEach(x=>x.classList.toggle('sel', x===b && selectedBlock===id));
+    });
+    b.addEventListener('keydown', e=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); b.click(); } });
+    pal.appendChild(b);
+  });
+}
+let searchT;
+$('blockSearch').addEventListener('input', ()=>{ clearTimeout(searchT); searchT = setTimeout(buildPalette, 120); });
+buildPalette();
+
+// Minecraft-Pfad je nach Betriebssystem
+function mcPath(){
+  const ua = navigator.userAgent;
+  if(/Windows/i.test(ua)) return { path:'%appdata%\\.minecraft\\versions', how:'Im Dateidialog ins Feld „Dateiname“ klicken, Strg+V und Enter drücken.' };
+  if(/Mac/i.test(ua))     return { path:'~/Library/Application Support/minecraft/versions', how:'Im Dateidialog Cmd+Shift+G, dann Cmd+V und Enter drücken.' };
+  return { path:'~/.minecraft/versions/', how:'Im Dateidialog Strg+L, dann Strg+V und Enter drücken.' };
+}
+$('loadTex').addEventListener('click', ()=>{
+  const {path, how} = mcPath();
+  let copied = false;
+  try{ navigator.clipboard.writeText(path).catch(()=>{}); copied = !!navigator.clipboard; }catch(e){}
+  $('texMsg').textContent = copied ? `Pfad kopiert: ${path} – ${how}` : `Pfad: ${path}`;
+  $('texFile').click();   // klassischer Dialog, darf auch in AppData öffnen
+});
+$('texFile').addEventListener('change', e=>{
+  const file = e.target.files[0]; e.target.value = '';
+  if(file) handleTexFile(file);
+});
+async function handleTexFile(file){
+  const msg = $('texMsg');
+  if(typeof JSZip === 'undefined'){ msg.textContent = 'Zip-Bibliothek nicht geladen – Internetverbindung prüfen.'; return; }
+  msg.textContent = 'Lese Datei …';
+  try{
+    const zip = await JSZip.loadAsync(file);
+    const files = zip.file(/^assets\/minecraft\/textures\/blocks?\/[^/]+\.png$/);
+    if(!files.length){ msg.textContent = 'Keine Block-Texturen gefunden. Ist das die Minecraft-.jar oder ein Ressourcenpaket?'; return; }
+    msg.textContent = `Entpacke ${files.length} Texturen …`;
+    const found = {};
+    await Promise.all(files.map(async f=>{
+      const id = f.name.split('/').pop().replace(/\.png$/,'');
+      found[id] = await f.async('blob');
+    }));
+    for(const k in realTex) delete realTex[k];
+    await applyTextures(found);
+    try{ await idbSet('texturen', found); localStorage.removeItem('mc-koepfe-texturen'); }catch(err){}
+    const inFolder = zip.file(/^assets\/minecraft\/textures\/blocks?\/[^/]+$/);
+    const meta = inFolder.filter(f=>f.name.endsWith('.mcmeta')).length;
+    const other = inFolder.length - files.length - meta;
+    const loaded = Object.keys(realTex).length, failed = files.length - loaded;
+    msg.textContent = `${loaded} Block-Texturen geladen und gespeichert. ` +
+      `(Ordner: ${inFolder.length} Dateien = ${files.length} Bilder + ${meta} .mcmeta-Animationsdateien` +
+      (other ? ` + ${other} sonstige` : '') + `${failed ? `; ${failed} Bilder fehlerhaft` : ''})`;
+  }catch(err){
+    msg.textContent = 'Datei konnte nicht gelesen werden.';
+  }
+}
+$('resetTex').addEventListener('click', async ()=>{
+  for(const k in realTex) delete realTex[k];
+  try{ await idbDel('texturen'); localStorage.removeItem('mc-koepfe-texturen'); }catch(e){}
+  $('blockSearch').value = '';
+  buildPalette(); render();
+  $('texMsg').textContent = 'Texturen entfernt.';
+});
+// Gespeicherte Texturen beim Start laden
+(async()=>{
+  try{
+    const saved = await idbGet('texturen');
+    if(saved) return applyTextures(saved);
+    const old = JSON.parse(localStorage.getItem('mc-koepfe-texturen') || 'null');   // alte Version: nur 21 Blöcke
+    if(old){
+      const map = {};
+      for(const [id,url] of Object.entries(old)) map[LEGACY[id]||id] = await (await fetch(url)).blob();
+      applyTextures(map);
+    }
+  }catch(e){}
+})();
+
+// Feld unter Mauszeiger finden
+function cellAt(e){
+  const r = canvas.getBoundingClientRect();
+  const x = (e.clientX - r.left) / r.width * canvas.width, y = (e.clientY - r.top) / r.height * canvas.height;
+  return cells.find(c=> x>=c.x && x<c.x+c.w && y>=c.y && y<c.y+c.h);
+}
+function placeBlock(cell, id){
+  if(!cell) return false;
+  if(id) placed[cell.key] = id; else delete placed[cell.key];
+  savePlaced(); render(); return true;
+}
+canvas.addEventListener('dragover', e=>{ { e.preventDefault(); e.dataTransfer.dropEffect='copy'; canvas.classList.add('drag'); } });
+canvas.addEventListener('dragleave', ()=>canvas.classList.remove('drag'));
+canvas.addEventListener('drop', e=>{
+  e.preventDefault(); canvas.classList.remove('drag');
+  const id = e.dataTransfer.getData('text/plain');
+  if(!texFor(id)) return;
+  const c = cellAt(e);
+  if(c) placeBlock(c, id); else setBg(id);   // auf den Rand gezogen -> Rand-Textur
+});
+canvas.addEventListener('click', e=>{
+  const c = cellAt(e);
+  if(!c){ if(selectedBlock) setBg(selectedBlock); return; }
+  if(selectedBlock) placeBlock(c, selectedBlock);
+  else if(placed[c.key]) placeBlock(c, null);
+});
+canvas.addEventListener('contextmenu', e=>{ const c = cellAt(e); if(c && placed[c.key]){ e.preventDefault(); placeBlock(c, null); } });
+$('clearBlocks').addEventListener('click', ()=>{ placed = {}; savePlaced(); render(); });
+
+$('addPlaceholder').addEventListener('click', ()=>{
+  const t = $('names');
+  t.value = t.value.replace(/\s*$/,'') + (t.value.trim() ? '\n' : '') + PLACEHOLDER;
+  render();
+  flash('Platzhalter-Spieler hinzugefügt („-“ in der Namensliste).');
+});
+
+// ===== Rand-/Hintergrund-Textur =====
+let bgBlock = null;
+try{ bgBlock = localStorage.getItem('mc-koepfe-rand') || null; }catch(e){}
+function showBg(){
+  const g = $('bgPrev').getContext('2d'); g.clearRect(0,0,16,16);
+  const t = bgBlock && texFor(bgBlock);
+  if(t){ g.imageSmoothingEnabled = false; g.drawImage(t,0,0,16,16); }
+  $('bgText').textContent = t ? `Rand-Textur: ${label(bgBlock)}` : 'Rand-Textur: Block hierher ziehen (oder auf den Rand im Bild)';
+  $('bgClear').hidden = !t;
+}
+function setBg(id){
+  bgBlock = id;
+  try{ id ? localStorage.setItem('mc-koepfe-rand', id) : localStorage.removeItem('mc-koepfe-rand'); }catch(e){}
+  showBg(); render();
+}
+const zone = $('bgZone');
+zone.addEventListener('dragover', e=>{ e.preventDefault(); zone.classList.add('drag'); });
+zone.addEventListener('dragleave', ()=>zone.classList.remove('drag'));
+zone.addEventListener('drop', e=>{ e.preventDefault(); zone.classList.remove('drag'); const id = e.dataTransfer.getData('text/plain'); if(texFor(id)) setBg(id); });
+zone.addEventListener('click', e=>{ if(e.target.id !== 'bgClear' && selectedBlock) setBg(selectedBlock); });
+$('bgClear').addEventListener('click', ()=>setBg(null));
+showBg();
+
+document.fonts.ready.then(render);
+</script>
+</body>
+</html>
