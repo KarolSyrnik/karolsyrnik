@@ -2716,10 +2716,9 @@ function renderSummary(){
   if(!entries.length){
     strips.innerHTML = '<div class="strip"><div class="strip-empty">Trag deine erste Ausgabe ein</div></div>';
   } else {
-    makeRow("Ausgaben", shown, aboParts, `Keine Ausgaben ${label}`);
     const pkey = (yy, mm) => yy + "-" + String(mm + 1).padStart(2, "0");
     const bookedVal = e => { const pk = e.paid || {}; return yearView ? [...Array(12).keys()].reduce((t, mm) => t + (pk[pkey(y, mm)] ? amountInMonth(e, y, mm) : 0), 0) : (pk[pkey(y, mo)] ? val(e) : 0); };
-    // alle Ausgaben zeigen, abgebuchte durchgestrichen; rechts steht, was noch zu zahlen ist
+    // eine Leiste: alle Ausgaben, abgebuchte durchgestrichen; rechts steht, was noch zu zahlen ist
     const bookedParts = aboParts.flatMap(({e, v}) => {
       const bv = Math.min(bookedVal(e), v), out = [];
       if(bv > 0.005) out.push({e, v: bv, done: true});
@@ -2727,7 +2726,7 @@ function renderSummary(){
       return out;
     });
     const bookedSum = bookedParts.filter(x => x.done).reduce((t, x) => t + x.v, 0);
-    makeRow("Abgebucht", shown, bookedParts, `Keine Ausgaben ${label}`, "", `Noch zu zahlen: ${fmt(Math.max(shown - bookedSum, 0))}`);
+    makeRow("Ausgaben", shown, bookedParts, `Keine Ausgaben ${label}`, "", bookedSum > 0.005 ? `${fmt(shown)} · noch zu zahlen: ${fmt(Math.max(shown - bookedSum, 0))}` : "");
     if(false){
       const paid = entries.reduce((s,e) => s + paidInPeriod(e, y, mo), 0);
       const noDate = entries.filter(e => !hasDue(e) && e.interval !== "once").reduce((s,e) => s + monthly(e), 0);
