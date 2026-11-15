@@ -1491,7 +1491,7 @@ function render(){
       <div><div class="name"></div><div class="sub"><span class="desc"></span> <span class="due"></span></div></div>
       <div class="amt">${fmt(e.amount)}<div class="sub"></div></div>
       <div class="li-actions">
-        <button data-act="booked" class="booked-btn${isBooked(e)?' on':''}" aria-pressed="${isBooked(e)}" aria-label="Als abgebucht markieren" title="${isBooked(e)?'Diesen Monat abgebucht (klicken zum Zurücksetzen)':'Diesen Monat als abgebucht markieren'}">${isBooked(e)?'✅':'☐'}</button>
+        <button data-act="booked" class="booked-btn${isBooked(e)?' on':''}" aria-pressed="${isBooked(e)}" aria-label="Als abgebucht markieren" title="${isBooked(e)?'Im ausgewählten Monat abgebucht (klicken zum Zurücksetzen)':'Im ausgewählten Monat als abgebucht markieren'}">${isBooked(e)?'✅':'☐'}</button>
         <button data-act="edit" aria-label="Bearbeiten">✏️</button>
         <button data-act="del" aria-label="Löschen">🗑</button>
       </div>`;
@@ -1598,15 +1598,9 @@ function paidKeys(e){
   if(e.paidOn){ e.paid[String(e.paidOn).slice(0,7)] = true; delete e.paidOn; }
   return e.paid;
 }
-// Zeitraum (Monat bzw. „Mein Monat“), auf den sich der Haken bezieht; im nächsten Zeitraum ist er automatisch wieder aus
+// Ausgewählter Zeitraum (Monat bzw. „Mein Monat“), auf den sich der Haken bezieht; jeder Monat hat seinen eigenen Haken
 function bookKey(e){
-  const t = today0(), cur = periodOf(t);
-  if(hasDue(e)){
-    const end = periodEnd(cur.y, cur.m);
-    for(const dt = periodStart(cur.y, cur.m); dt <= end; dt.setDate(dt.getDate() + 1)) if(matchesDay(e, dt)) return mkey(dt);
-    const nd = nextDue(e); if(nd) return mkey(nd);
-  }
-  return mkey(t);
+  return mkey(periodStart(cal.y, cal.m));
 }
 function isBooked(e){ return !!(e && paidKeys(e)[bookKey(e)]); }
 function toggleBooked(e, key){ const pk = paidKeys(e); if(pk[key]) delete pk[key]; else pk[key] = true; return !!pk[key]; }
@@ -1614,7 +1608,7 @@ function act(a, id){
   const e = state.entries.find(x => x.id === id); if(!e) return;
   if(a === "booked"){
     const on = toggleBooked(e, bookKey(e));
-    persist(); render(); renderCalendars(); toast(on ? "Für diesen Monat abgebucht" : "Markierung entfernt");
+    persist(); render(); renderCalendars(); toast(on ? `Abgebucht für ${mStart() === 1 ? MONTHS[cal.m] + " " + cal.y : periodLabel(cal.y, cal.m, true)}` : "Markierung entfernt");
   }
   if(a === "del"){
     askConfirm(`„${e.name}“ löschen?`).then(ok => { if(ok){ state.entries = state.entries.filter(x => x.id !== id); cleanGroups(); if(editId===id) resetForm(); render(); toast("Gelöscht"); } });
