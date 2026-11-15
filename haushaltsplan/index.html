@@ -2619,7 +2619,7 @@ function renderSummary(){
   const t = new Date(), tp = periodOf(today0());
   if(!yearView){
     const bk = entries.reduce((s,e) => s + bookedIn(e, y, mo), 0), dm = entries.reduce((s,e) => s + openIn(e, y, mo), 0);
-    if(bk > 0) facts.push(`<span class="pos">Abgebucht: <b>${fmt(bk)}</b></span>`);
+    if(bk > 0) facts.unshift(`<span class="pos">Abgebucht: <b>${fmt(bk)}</b></span>`);
     if(dm > 0) facts.push(`<span>Davon noch fällig: <b>${fmt(dm)}</b></span>`);
   }
   facts.push(`<span>Ø pro Monat: <b>${fmt(perMonth)}</b></span>`);
