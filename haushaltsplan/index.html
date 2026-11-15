@@ -441,6 +441,7 @@ img.ico{width:1.25em;height:1.25em;object-fit:cover;border-radius:22%;vertical-a
 .strips{display:grid;gap:10px;margin-top:14px}
 .srow .slab{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:.88rem;margin-bottom:4px}
 .srow .slab span{color:var(--muted);font-weight:500}
+.srow .slab span b{color:var(--fg)}
 .srow .slab b{font-variant-numeric:tabular-nums}
 .srow .slab-values{display:flex;align-items:baseline;gap:10px;white-space:nowrap;margin-left:auto}
 .srow .slab .slab-deficit{color:var(--danger)}
@@ -2684,8 +2685,11 @@ function renderSummary(){
     const row = document.createElement("div"); row.className = "srow" + (cls ? " " + cls : "");
     const lab = document.createElement("div"); lab.className = "slab";
     const t = document.createElement("span"); t.textContent = title;
-    const b = document.createElement("b"); b.textContent = valueText || fmt(sum);
-    const values = document.createElement("div"); values.className = "slab-values"; values.append(b);
+    const b = document.createElement("b"); b.textContent = fmt(sum);
+    if(valueText !== undefined){ t.append(" ", b); } // Betrag direkt neben dem Titel, rechts nur valueText
+    const values = document.createElement("div"); values.className = "slab-values";
+    if(valueText === undefined) values.append(b);
+    else if(valueText){ const v = document.createElement("b"); v.textContent = valueText; values.append(v); }
     if(title === "Ausgaben" && incM > 0 && sum - incM > 0.005){
       const deficit = document.createElement("b"); deficit.className = "slab-deficit"; deficit.textContent = fmt(incM - sum);
       deficit.title = `Über den Einnahmen: ${fmt(sum - incM)}`; values.append(deficit);
@@ -2726,7 +2730,7 @@ function renderSummary(){
       return out;
     });
     const bookedSum = bookedParts.filter(x => x.done).reduce((t, x) => t + x.v, 0);
-    makeRow("Ausgaben", shown, bookedParts, `Keine Ausgaben ${label}`, "", bookedSum > 0.005 ? `${fmt(shown)} · noch zu zahlen: ${fmt(Math.max(shown - bookedSum, 0))}` : "");
+    makeRow("Ausgaben", shown, bookedParts, `Keine Ausgaben ${label}`, "", bookedSum > 0.005 ? `noch zu zahlen: ${fmt(Math.max(shown - bookedSum, 0))}` : "");
     if(false){
       const paid = entries.reduce((s,e) => s + paidInPeriod(e, y, mo), 0);
       const noDate = entries.filter(e => !hasDue(e) && e.interval !== "once").reduce((s,e) => s + monthly(e), 0);
