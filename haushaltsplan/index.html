@@ -1301,7 +1301,7 @@ function nextDue(e){
 }
 const dm2 = d => `${d.getDate()}.${d.getMonth()+1}.`;
 // Abgebucht / noch offen im Zeitraum (y, m) – zählt nur nach den Haken, nicht nach dem Datum
-function bookedIn(e, y, m){ return paidKeys(e)[mkey(periodStart(y, m))] ? (amountInMonth(e, y, m) || e.amount) : 0; }
+function bookedIn(e, y, m){ return paidKeys(e)[mkey(periodStart(y, m))] ? amountInMonth(e, y, m) : 0; }
 function openIn(e, y, m){ return paidKeys(e)[mkey(periodStart(y, m))] ? 0 : amountInMonth(e, y, m); }
 function dueThisMonth(){
   const cur = periodOf(today0());
@@ -1603,6 +1603,7 @@ function paidKeys(e){
 }
 // Ausgewählter Zeitraum (Monat bzw. „Mein Monat“), auf den sich der Haken bezieht; jeder Monat hat seinen eigenen Haken
 function bookKey(e){
+  if(e.interval === "once" && hasDue(e)){ const [y, m, d] = e.due.date.split("-").map(Number); return mkey(new Date(y, m - 1, d)); } // einmalig: immer der Monat der Zahlung
   return mkey(periodStart(cal.y, cal.m));
 }
 function isBooked(e){ return !!(e && paidKeys(e)[bookKey(e)]); }
@@ -1611,7 +1612,7 @@ function act(a, id){
   const e = state.entries.find(x => x.id === id); if(!e) return;
   if(a === "booked"){
     const on = toggleBooked(e, bookKey(e));
-    persist(); render(); renderCalendars(); toast(on ? `Abgebucht für ${mStart() === 1 ? MONTHS[cal.m] + " " + cal.y : periodLabel(cal.y, cal.m, true)}` : "Markierung entfernt");
+    persist(); render(); renderCalendars(); toast(on ? (e.interval === "once" && hasDue(e) ? `Abgebucht (${fmtIso(e.due.date)})` : `Abgebucht für ${mStart() === 1 ? MONTHS[cal.m] + " " + cal.y : periodLabel(cal.y, cal.m, true)}`) : "Markierung entfernt");
   }
   if(a === "del"){
     askConfirm(`„${e.name}“ löschen?`).then(ok => { if(ok){ state.entries = state.entries.filter(x => x.id !== id); cleanGroups(); if(editId===id) resetForm(); render(); toast("Gelöscht"); } });
@@ -2715,7 +2716,7 @@ function renderSummary(){
   } else {
     makeRow("Ausgaben", shown, aboParts, `Keine Ausgaben ${label}`);
     const pkey = (yy, mm) => yy + "-" + String(mm + 1).padStart(2, "0");
-    const bookedVal = e => { const pk = e.paid || {}; return yearView ? [...Array(12).keys()].reduce((t, mm) => t + (pk[pkey(y, mm)] ? (amountInMonth(e, y, mm) || e.amount) : 0), 0) : (pk[pkey(y, mo)] ? (val(e) || e.amount) : 0); };
+    const bookedVal = e => { const pk = e.paid || {}; return yearView ? [...Array(12).keys()].reduce((t, mm) => t + (pk[pkey(y, mm)] ? amountInMonth(e, y, mm) : 0), 0) : (pk[pkey(y, mo)] ? val(e) : 0); };
     const bookedParts = entries.map(e => ({e, v: bookedVal(e)})).filter(x => x.v > 0).sort((a,b) => b.v - a.v);
     const bookedSum = bookedParts.reduce((t, x) => t + x.v, 0);
     makeRow("Abgebucht", bookedSum, bookedParts, `Noch nichts abgebucht ${label}`);
