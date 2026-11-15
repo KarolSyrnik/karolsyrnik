@@ -441,7 +441,7 @@ img.ico{width:1.25em;height:1.25em;object-fit:cover;border-radius:22%;vertical-a
 .strips{display:grid;gap:10px;margin-top:14px}
 .srow .slab{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:.88rem;margin-bottom:4px}
 .srow .slab span{color:var(--muted);font-weight:500}
-.srow .slab span b{color:var(--fg)}
+.srow .slab span.slab-main{color:var(--fg);font-weight:700}
 .srow .slab b{font-variant-numeric:tabular-nums}
 .srow .slab-values{display:flex;align-items:baseline;gap:10px;white-space:nowrap;margin-left:auto}
 .srow .slab .slab-deficit{color:var(--danger)}
@@ -2686,7 +2686,7 @@ function renderSummary(){
     const lab = document.createElement("div"); lab.className = "slab";
     const t = document.createElement("span"); t.textContent = title;
     const b = document.createElement("b"); b.textContent = fmt(sum);
-    if(valueText !== undefined){ t.append(" ", b); } // Betrag direkt neben dem Titel, rechts nur valueText
+    if(valueText !== undefined){ t.textContent = title + ": "; t.append(b); t.className = "slab-main"; } // Betrag direkt neben dem Titel, rechts nur valueText
     const values = document.createElement("div"); values.className = "slab-values";
     if(valueText === undefined) values.append(b);
     else if(valueText){ const v = document.createElement("b"); v.textContent = valueText; values.append(v); }
