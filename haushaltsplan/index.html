@@ -66,6 +66,7 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid 
 .facts{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:10px;color:var(--muted);font-size:.95rem}
 .facts b{color:var(--fg);font-weight:600;font-variant-numeric:tabular-nums}
 .facts .neg b{color:var(--danger)} .facts .pos b{color:var(--ok)}
+.facts .stack{display:flex;flex-direction:column;gap:6px;flex-basis:100%}
 
 /* Kostenstreifen */
 .strip{display:flex;height:56px;margin-top:18px;border-radius:14px;overflow:hidden;background:var(--soft)}
@@ -74,6 +75,8 @@ button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid 
   border-right:2px solid var(--bg);transition:flex-grow .4s ease
 }
 .strip span:last-child{border-right:0}
+.strip span.done{position:relative;opacity:.4}
+.strip span.done::after{content:"";position:absolute;left:3px;right:3px;top:50%;height:3px;margin-top:-1.5px;border-radius:2px;background:var(--fg)}
 .strip .rest{background:transparent;color:var(--muted);font-size:.8rem}
 .strip-empty{display:grid;place-items:center;width:100%;color:var(--muted);font-size:.9rem}
 
@@ -2622,9 +2625,8 @@ function renderSummary(){
     if(bk > 0) facts.unshift(`<span class="pos">Abgebucht: <b>${fmt(bk)}</b></span>`);
     if(dm > 0) facts.push(`<span>Davon noch fällig: <b>${fmt(dm)}</b></span>`);
   }
-  facts.push(`<span>Ø pro Monat: <b>${fmt(perMonth)}</b></span>`);
+  facts.push(`<span class="stack"><span>Ø pro Monat: <b>${fmt(perMonth)}</b></span>${yearView ? "" : `<span>Pro Jahr: <b>${fmt(perMonth*12)}</b></span>`}</span>`);
   if((state.debts || []).length){ const dt = state.debts.reduce((s,d) => s + (+d.amount||0), 0); facts.push(`<span class="${dt > 0 ? "neg" : "pos"}">Schulden: <b>${fmt(dt)}</b></span>`); }
-  if(!yearView) facts.push(`<span>Pro Jahr: <b>${fmt(perMonth*12)}</b></span>`);
   $("facts").innerHTML = facts.join("");
 
   // Jahr + Monate
@@ -2678,11 +2680,11 @@ function renderSummary(){
     const all = shown;
   const base = Math.max(incM, all, 0.01);
   const colorOf = new Map(); aboParts.forEach((x, i) => colorOf.set(x.e.id, hue(i)));
-  const makeRow = (title, sum, parts, empty, cls) => {
+  const makeRow = (title, sum, parts, empty, cls, valueText) => {
     const row = document.createElement("div"); row.className = "srow" + (cls ? " " + cls : "");
     const lab = document.createElement("div"); lab.className = "slab";
     const t = document.createElement("span"); t.textContent = title;
-    const b = document.createElement("b"); b.textContent = fmt(sum);
+    const b = document.createElement("b"); b.textContent = valueText || fmt(sum);
     const values = document.createElement("div"); values.className = "slab-values"; values.append(b);
     if(title === "Ausgaben" && incM > 0 && sum - incM > 0.005){
       const deficit = document.createElement("b"); deficit.className = "slab-deficit"; deficit.textContent = fmt(incM - sum);
@@ -2692,12 +2694,12 @@ function renderSummary(){
     const strip = document.createElement("div"); strip.className = "strip";
     if(!parts.length){ strip.innerHTML = `<div class="strip-empty"></div>`; strip.firstChild.textContent = empty; }
     else {
-      parts.forEach(({e, v}) => {
-        const sp = document.createElement("span");
+      parts.forEach(({e, v, done}) => {
+        const sp = document.createElement("span"); if(done) sp.className = "done";
         sp.style.flexGrow = v / base * 1000;
         sp.style.background = colorOf.get(e.id);
         sp.append(iconEl(e));
-        sp.title = `${e.name}: ${fmt(v)} ${label}`;
+        sp.title = `${e.name}: ${fmt(v)} ${label}${done ? " (abgebucht)" : ""}`;
         strip.append(sp);
       });
       if(incM > 0 && sum < incM){
@@ -2717,9 +2719,15 @@ function renderSummary(){
     makeRow("Ausgaben", shown, aboParts, `Keine Ausgaben ${label}`);
     const pkey = (yy, mm) => yy + "-" + String(mm + 1).padStart(2, "0");
     const bookedVal = e => { const pk = e.paid || {}; return yearView ? [...Array(12).keys()].reduce((t, mm) => t + (pk[pkey(y, mm)] ? amountInMonth(e, y, mm) : 0), 0) : (pk[pkey(y, mo)] ? val(e) : 0); };
-    const bookedParts = entries.map(e => ({e, v: bookedVal(e)})).filter(x => x.v > 0).sort((a,b) => b.v - a.v);
-    const bookedSum = bookedParts.reduce((t, x) => t + x.v, 0);
-    makeRow("Abgebucht", bookedSum, bookedParts, `Noch nichts abgebucht ${label}`);
+    // alle Ausgaben zeigen, abgebuchte durchgestrichen; rechts steht, was noch zu zahlen ist
+    const bookedParts = aboParts.flatMap(({e, v}) => {
+      const bv = Math.min(bookedVal(e), v), out = [];
+      if(bv > 0.005) out.push({e, v: bv, done: true});
+      if(v - bv > 0.005) out.push({e, v: v - bv});
+      return out;
+    });
+    const bookedSum = bookedParts.filter(x => x.done).reduce((t, x) => t + x.v, 0);
+    makeRow("Abgebucht", shown, bookedParts, `Keine Ausgaben ${label}`, "", `Noch zu zahlen: ${fmt(Math.max(shown - bookedSum, 0))}`);
     if(false){
       const paid = entries.reduce((s,e) => s + paidInPeriod(e, y, mo), 0);
       const noDate = entries.filter(e => !hasDue(e) && e.interval !== "once").reduce((s,e) => s + monthly(e), 0);
