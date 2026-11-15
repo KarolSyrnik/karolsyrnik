@@ -1300,10 +1300,12 @@ function nextDue(e){
   return null;
 }
 const dm2 = d => `${d.getDate()}.${d.getMonth()+1}.`;
+// Noch offen im aktuellen Zeitraum; abgehakte (abgebucht) Einträge zählen als schon bezahlt
 function dueThisMonth(){
-  const t = today0(), cur = periodOf(t), end = periodEnd(cur.y, cur.m); let sum = 0;
+  const t = today0(), cur = periodOf(t), end = periodEnd(cur.y, cur.m), key = mkey(periodStart(cur.y, cur.m)); let sum = 0;
   state.entries.forEach(e => {
-    if(!hasDue(e)) return;
+    if(paidKeys(e)[key]) return;
+    if(!hasDue(e)){ if(e.interval !== "once") sum += amountInMonth(e, cur.y, cur.m); return; }
     for(const dt = addDays(t, -rlen(e)); dt <= end; dt.setDate(dt.getDate()+1)) if(matchesDay(e, dt)) sum += e.amount;
   });
   return sum;
@@ -2663,7 +2665,7 @@ function renderSummary(){
     if(isNow){
       const due = dueThisMonth(), paid = Math.max(shown - due, 0);
       const from = periodStart(y, mo), end = periodEnd(y, mo);
-      addRest(`Schon ausgegeben seit ${from.getDate()}.${from.getMonth()+1}.`, -paid);
+      addRest(`Schon ausgegeben seit ${from.getDate()}.${from.getMonth()+1}.`, paid ? -paid : 0);
       addRest("Gerade noch übrig", incM - paid);
       if(due > 0) addRest(`Noch fällig bis ${end.getDate()}.${end.getMonth()+1}.`, -due);
       addRest(`Übrig am ${end.getDate()}.${end.getMonth()+1}.`, incM - shown);
@@ -2715,7 +2717,7 @@ function renderSummary(){
   } else {
     makeRow("Ausgaben", shown, aboParts, `Keine Ausgaben ${label}`);
     const pkey = (yy, mm) => yy + "-" + String(mm + 1).padStart(2, "0");
-    const bookedVal = e => { const pk = e.paid || {}; return yearView ? [...Array(12).keys()].reduce((t, mm) => t + (pk[pkey(y, mm)] ? amountInMonth(e, y, mm) : 0), 0) : (pk[pkey(y, mo)] ? val(e) : 0); };
+    const bookedVal = e => { const pk = e.paid || {}; return yearView ? [...Array(12).keys()].reduce((t, mm) => t + (pk[pkey(y, mm)] ? (amountInMonth(e, y, mm) || e.amount) : 0), 0) : (pk[pkey(y, mo)] ? (val(e) || e.amount) : 0); };
     const bookedParts = entries.map(e => ({e, v: bookedVal(e)})).filter(x => x.v > 0).sort((a,b) => b.v - a.v);
     const bookedSum = bookedParts.reduce((t, x) => t + x.v, 0);
     makeRow("Abgebucht", bookedSum, bookedParts, `Noch nichts abgebucht ${label}`);
