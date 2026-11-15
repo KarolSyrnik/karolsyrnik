@@ -737,6 +737,10 @@ header h1{flex:1}
 
   <section class="card">
     <h2 id="formTitle">Neuer Eintrag</h2>
+    <div class="field" id="tplWrap" hidden>
+      <label for="tpl">Vorlage</label>
+      <select id="tpl"><option value="">Vorherige Abbuchung übernehmen …</option></select>
+    </div>
     <div class="emojibar">
       <button class="barbtn" id="openPicker" aria-label="Alle Emojis" title="Alle Emojis">＋</button>
       <div class="emojis" id="emojiPicker" aria-label="Meine Emojis"></div>
@@ -1463,7 +1467,7 @@ function applyTheme(){
 
 function render(){
   const {entries, settings} = state;
-  renderSummary();
+  renderSummary(); renderTpl();
 
   // Liste
   const list = $("list"); list.innerHTML = "";
@@ -1789,7 +1793,23 @@ function updKindUI(){
   $("dateRow").hidden = formDebt;
   $("amountLbl").textContent = formDebt ? "Aktueller Stand" : "Kosten";
   $("name").placeholder = formDebt ? "z. B. Kredit Auto, Papa" : "z. B. Miete";
+  renderTpl();
 }
+// Vorlage: Werte eines vorhandenen Eintrags in das Formular für einen neuen Eintrag übernehmen
+function renderTpl(){
+  const sel = $("tpl"), es = state.entries;
+  $("tplWrap").hidden = !!editId || formDebt || !es.length;
+  sel.length = 1;
+  [...es].sort((a,b) => a.name.localeCompare(b.name,"de")).forEach(e => sel.add(new Option(`${imgById(e.img) ? "🖼️" : e.emoji} ${e.name} – ${fmt(e.amount)}`, e.id)));
+  sel.value = "";
+}
+$("tpl").onchange = () => {
+  const e = state.entries.find(x => x.id === $("tpl").value); if(!e) return;
+  $("name").value = e.name; $("amount").value = e.amount; $("interval").value = e.interval;
+  setKind(); $("emoji").value = e.emoji; $("emojiFallback").value = e.fallbackEmoji || ""; setFormImg(imgById(e.img) ? e.img : null);
+  fillDateFields(e); syncDateFields(); renderEmojiPicker(); renderPreview();
+  toast("Vorlage übernommen – anpassen und hinzufügen");
+};
 function setKind(){
   formDebt = false;
   updKindUI(); renderPreview();
