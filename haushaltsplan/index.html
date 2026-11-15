@@ -184,6 +184,8 @@ li{
   width:34px;height:34px;border-radius:8px;font-size:1rem
 }
 .li-actions .booked-btn.on{color:var(--accent)}
+.formonth{display:inline-block;padding:1px 7px;border-radius:999px;background:var(--line);color:var(--fg);font-size:.8em;font-weight:600;white-space:nowrap}
+.formonth[hidden]{display:none}
 .li-actions button:hover{background:var(--soft);color:var(--fg)}
 .empty{padding:28px 0;color:var(--muted);text-align:center}
 
@@ -1495,7 +1497,7 @@ function render(){
     const sub = (e.interval !== "monthly" && e.interval !== "once" ? `≈ ${fmt(monthly(e))} / Monat` : iv.label);
     li.innerHTML = `
       <div class="em"></div>
-      <div><div class="name"></div><div class="sub"><span class="desc"></span> <span class="due"></span></div></div>
+      <div><div class="name"></div><div class="sub"><span class="desc"></span> <span class="due"></span> <span class="formonth" hidden></span></div></div>
       <div class="amt">${fmt(e.amount)}<div class="sub"></div></div>
       <div class="li-actions">
         <button data-act="booked" class="booked-btn${isBooked(e)?' on':''}" aria-pressed="${isBooked(e)}" aria-label="Als abgebucht markieren" title="${isBooked(e)?'Im ausgewählten Monat abgebucht (klicken zum Zurücksetzen)':'Im ausgewählten Monat als abgebucht markieren'}">${isBooked(e)?'✅':'☐'}</button>
@@ -1509,6 +1511,14 @@ function render(){
     dueEl.hidden = !!e.displayOnly;
     dueEl.textContent = e.displayOnly ? "" : relDue(nd, e);
     if(!e.displayOnly && nd && (nd - today0()) / 86400000 <= 2) dueEl.classList.add("soon");
+    // Mein Monat: Zahlung fällt schon in den nächsten Kalendermonat (z. B. 1.12.), gehört aber zum Monat davor
+    if(ownOn() && hasDue(e)){
+      let dt = null; const pe = periodEnd(cal.y, cal.m);
+      for(const d = periodStart(cal.y, cal.m); d <= pe && !dt; d.setDate(d.getDate() + 1)) if(matchesDay(e, d)) dt = new Date(d);
+      dt = dt || nd;
+      const p = dt && periodOf(dt);
+      if(p && dt.getMonth() !== p.m){ const fm = li.querySelector(".formonth"); fm.hidden = false; fm.textContent = `für ${MONTHS[p.m]}`; }
+    }
     li.querySelector(".amt .sub").textContent = sub === iv.label ? "" : sub;
     li.querySelectorAll("button").forEach(b => b.onclick = () => act(b.dataset.act, e.id));
     list.append(li);
