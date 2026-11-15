@@ -1511,13 +1511,13 @@ function render(){
     dueEl.hidden = !!e.displayOnly;
     dueEl.textContent = e.displayOnly ? "" : relDue(nd, e);
     if(!e.displayOnly && nd && (nd - today0()) / 86400000 <= 2) dueEl.classList.add("soon");
-    // Mein Monat: Zahlung fällt schon in den nächsten Kalendermonat (z. B. 1.12.), gehört aber zum Monat davor
-    if(ownOn() && hasDue(e)){
+    // Mein Monat: Zahlung fällt schon in den nächsten Kalendermonat (z. B. 1.12.) → „für Dezember“
+    if(ownOn() && hasDue(e) && !e.displayOnly){
       let dt = null; const pe = periodEnd(cal.y, cal.m);
       for(const d = periodStart(cal.y, cal.m); d <= pe && !dt; d.setDate(d.getDate() + 1)) if(matchesDay(e, d)) dt = new Date(d);
       dt = dt || nd;
       const p = dt && periodOf(dt);
-      if(p && dt.getMonth() !== p.m){ const fm = li.querySelector(".formonth"); fm.hidden = false; fm.textContent = `für ${MONTHS[p.m]}`; }
+      if(p && dt.getMonth() !== p.m){ const fm = li.querySelector(".formonth"); fm.hidden = false; fm.textContent = `für ${MONTHS[dt.getMonth()]}`; }
     }
     li.querySelector(".amt .sub").textContent = sub === iv.label ? "" : sub;
     li.querySelectorAll("button").forEach(b => b.onclick = () => act(b.dataset.act, e.id));
